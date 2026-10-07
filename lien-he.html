@@ -7,15 +7,45 @@
     <meta name="description" content="Liên hệ Cơ Khí Hòa Long nhận báo giá kệ chứa hàng, nhà thép tiền chế. Văn phòng TP.HCM & Nhà máy Bến Lức, Long An. Hotline: 0901 890 689.">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <style>
-        :root { --primary: #004b93; --accent: #ff6600; }
+        :root { --primary: #004b93; --accent: #ff6600; --bg-light: #f8f9fa; }
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Roboto', sans-serif; }
-        body { color: #333; line-height: 1.6; }
+        body { color: #333; line-height: 1.6; background-color: #fff; }
+        
+        /* Header & Navigation */
         header { background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000; }
         .container { width: 90%; max-width: 1200px; margin: auto; display: flex; justify-content: space-between; align-items: center; padding: 15px 0; }
         .logo { font-size: 22px; font-weight: 700; color: var(--primary); text-decoration: none; }
         nav a { margin-left: 20px; text-decoration: none; color: #333; font-weight: 500; }
         nav a:hover, nav a.active { color: var(--primary); font-weight: 700; }
-        .contact-box { background: #f8f9fa; border: 1px solid #ddd; padding: 25px; border-radius: 6px; margin-top: 20px; }
+        
+        /* Main Layout */
+        .content-section { padding: 40px 0; }
+        .grid-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 25px; }
+        @media (max-width: 768px) { .grid-2col { grid-template-columns: 1fr; } }
+
+        /* Contact Info & Form Styles */
+        .contact-box { background: var(--bg-light); border: 1px solid #e1e1e1; padding: 30px; border-radius: 8px; }
+        .contact-box h2 { color: var(--primary); font-size: 20px; margin-bottom: 15px; }
+        .contact-box p { margin-bottom: 10px; font-size: 15px; }
+        
+        .form-group { margin-bottom: 18px; }
+        .form-group label { display: block; font-weight: 500; margin-bottom: 6px; color: #444; }
+        .form-group input, .form-group textarea, .form-group select { 
+            width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 4px; font-size: 14px; outline: none; 
+        }
+        .form-group input:focus, .form-group textarea:focus, .form-group select:focus { border-color: var(--primary); }
+        .btn-submit { 
+            background: var(--accent); color: white; border: none; padding: 14px 28px; font-size: 16px; font-weight: bold; 
+            border-radius: 4px; cursor: pointer; width: 100%; transition: background 0.3s; 
+        }
+        .btn-submit:hover { background: #e05500; }
+
+        /* Google Maps Container */
+        .map-container { width: 100%; height: 380px; border-radius: 8px; overflow: hidden; border: 1px solid #ddd; margin-top: 25px; }
+        .map-container iframe { width: 100%; height: 100%; border: 0; }
+
+        /* Footer */
+        footer { background: #1a1a1a; color: white; padding: 30px 0; margin-top: 50px; text-align: center; font-size: 14px; }
     </style>
 </head>
 <body>
@@ -33,19 +63,87 @@
         </div>
     </header>
 
-    <div class="container" style="flex-direction: column; padding-top: 40px;">
-        <h1 style="color: var(--primary);">THÔNG TIN LIÊN HỆ BÁO GIÁ</h1>
-        
-        <div class="contact-box" style="width: 100%;">
-            <h2>CÔNG TY CỔ PHẦN SẢN XUẤT CƠ KHÍ HÒA LONG</h2>
-            <p><strong>Mã số thuế:</strong> 1101890689</p>
-            <p><strong>Hotline:</strong> 0901 890 689 | 028 710 88 660 (ext 311)</p>
-            <p><strong>Email:</strong> contact@hoalongcorp.com</p>
-            <p><strong>Website chính:</strong> <a href="https://hoalongcorp.com" style="color: var(--accent);">hoalongcorp.com</a></p>
-            <hr style="margin: 15px 0;">
-            <p><strong>Văn phòng kinh doanh:</strong> 19 Trần Quý Kiên, Phường Bình Trưng, TP. Hồ Chí Minh</p>
-            <p><strong>Nhà máy sản xuất:</strong> 192 Nguyễn Văn Tuôi, Khu phố 6, Xã Bến Lức, Tỉnh Tây Ninh</p>
+    <main class="container content-section" style="flex-direction: column;">
+        <h1 style="color: var(--primary); text-align: center;">THÔNG TIN LIÊN HỆ & YÊU CẦU BÁO GIÁ</h1>
+
+        <div class="grid-2col" style="width: 100%;">
+            <!-- Cột 1: Thông tin công ty & Bản đồ -->
+            <div>
+                <div class="contact-box">
+                    <h2>CÔNG TY CỔ PHẦN SẢN XUẤT CƠ KHÍ HÒA LONG</h2>
+                    <p><strong>Mã số thuế:</strong> 1101890689</p>
+                    <p><strong>Hotline:</strong> 0901 890 689 | 028 710 88 660 (ext 311)</p>
+                    <p><strong>Email:</strong> contact@hoalongcorp.com</p>
+                    <p><strong>Website chính:</strong> <a href="https://hoalongcorp.com" target="_blank" style="color: var(--accent); font-weight: bold;">hoalongcorp.com</a></p>
+                    <hr style="margin: 15px 0; border: 0; border-top: 1px solid #ddd;">
+                    <p><strong>Văn phòng kinh doanh:</strong> 19 Trần Quý Kiên, Phường Bình Trưng, TP. Hồ Chí Minh</p>
+                    <p><strong>Nhà máy sản xuất:</strong> 192 Nguyễn Văn Tuôi, Khu phố 6, Xã Bến Lức, Tỉnh Tây Ninh</p>
+                </div>
+
+                <!-- Google Maps iframe nhúng Văn phòng kinh doanh -->
+                <div class="map-container">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.467882255734!2d106.75338307583803!3d10.775354959211328!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3175274e727934d9%3A0x6895b348c70b89ad!2zQ8OWTkcgVFkgQ-G7kCBQSOG6pk4gU0IOC4o04gWE_DgVQgQ8ACIEtIw40gSMOSQSBMT05H!5e0!3m2!1svi!2svn!4v1710000000000!5m2!1svi!2svn" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+
+            <!-- Cột 2: Form đăng ký tư vấn tự động gửi Mail -->
+            <div>
+                <div class="contact-box" style="background: #fff; border-color: var(--primary);">
+                    <h2>GỬI YÊU CẦU TƯ VẤN & BÁO GIÁ</h2>
+                    <p style="font-size: 13px; color: #666; margin-bottom: 20px;">Vui lòng điền thông tin bên dưới, kỹ sư HLM sẽ liên hệ tư vấn và gửi bản vẽ trong vòng 24h.</p>
+
+                    <!-- Formspree Endpoint tự động thông báo về giaiphapkho@gmail.com -->
+                    <form action="https://formspree.io/f/giaiphapkho@gmail.com" method="POST">
+                        <!-- Tự động thiết lập Tiêu đề Email nhận được -->
+                        <input type="hidden" name="_subject" value="[HLM Web Form] Yêu cầu tư vấn báo giá mới">
+                        <input type="hidden" name="_language" value="vi">
+
+                        <div class="form-group">
+                            <label for="fullname">Họ và tên *</label>
+                            <input type="text" id="fullname" name="Ho_Va_Ten" placeholder="Nguyễn Văn A" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Số điện thoại *</label>
+                            <input type="tel" id="phone" name="So_Dien_Thoai" placeholder="0901234567" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email liên hệ *</label>
+                            <input type="email" id="email" name="Email" placeholder="example@company.com" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="service">Giải pháp quan tâm</label>
+                            <select id="service" name="Giai_Phap_Quan_Tam">
+                                <option value="Kệ Selective / Heavy Duty">Kệ Selective / Heavy Duty</option>
+                                <option value="Kệ Lối Đi Hẹp VNA">Kệ Lối Đi Hẹp VNA</option>
+                                <option value="Kệ Radio Shuttle / ASRS">Kệ Radio Shuttle / ASRS</option>
+                                <option value="Sàn Mezzanine / Multi-Tier">Sàn Mezzanine / Multi-Tier</option>
+                                <option value="Nhà Thép Tiền Chế PEB">Nhà Thép Tiền Chế PEB</option>
+                                <option value="Dịch vụ Di dời / Bảo trì Kệ">Dịch vụ Di dời / Bảo trì Kệ</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Nhu cầu chi tiết (Diện tích kho, Tải trọng/Pallet...)</label>
+                            <textarea id="message" name="Noi_Dung_Yeu_Cau" rows="4" placeholder="Ví dụ: Cần thiết kế kho lạnh diện tích 500m2, tải trọng 1000kg/pallet..."></textarea>
+                        </div>
+
+                        <button type="submit" class="btn-submit">GỬI YÊU CẦU BÁO GIÁ</button>
+                    </form>
+                </div>
+            </div>
         </div>
-    </div>
+    </main>
+
+    <footer>
+        <p>© 2026 CÔNG TY CỔ PHẦN SẢN XUẤT CƠ KHÍ HÒA LONG (HLM). All rights reserved.</p>
+    </footer>
 </body>
 </html>
