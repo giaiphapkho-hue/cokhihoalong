@@ -1,97 +1,307 @@
-<!-- FOOTER CHUẨN CƠ KHÍ HÒA LONG -->
+<!-- FOOTER CƠ KHÍ HÒA LONG (DÙNG CHUNG CHO TẤT CẢ CÁC TRANG) -->
+<style>
+    :root {
+        --footer-bg: #111827;
+        --footer-card-bg: #1f2937;
+        --footer-text: #9ca3af;
+        --footer-heading: #ffffff;
+        --footer-accent: #ff6600;
+        --footer-primary: #004b93;
+        --footer-border: #374151;
+        --zalo-color: #0068ff;
+        --phone-color: #22c55e;
+    }
+
+    footer.main-footer {
+        background-color: var(--footer-bg);
+        color: var(--footer-text);
+        font-family: 'Roboto', sans-serif;
+        padding: 50px 0 0 0;
+        font-size: 14px;
+        line-height: 1.6;
+        position: relative;
+    }
+
+    .footer-container {
+        width: 90%;
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 30px;
+        padding-bottom: 40px;
+    }
+
+    .footer-col h3 {
+        color: var(--footer-heading);
+        font-size: 16px;
+        font-weight: 700;
+        margin-bottom: 18px;
+        text-transform: uppercase;
+        position: relative;
+        padding-bottom: 8px;
+        letter-spacing: 0.5px;
+    }
+
+    .footer-col h3::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 40px;
+        height: 2px;
+        background-color: var(--footer-accent);
+    }
+
+    .company-title {
+        color: #fff;
+        font-size: 15px;
+        font-weight: 700;
+        margin-bottom: 8px;
+        line-height: 1.4;
+    }
+
+    .footer-info-item {
+        margin-bottom: 12px;
+    }
+
+    .footer-info-item strong {
+        color: #e5e7eb;
+    }
+
+    .footer-info-item a {
+        color: var(--footer-text);
+        text-decoration: none;
+        transition: color 0.2s;
+    }
+
+    .footer-info-item a:hover {
+        color: var(--footer-accent);
+    }
+
+    /* Social Icons Styles */
+    .social-links {
+        display: flex;
+        gap: 12px;
+        margin-top: 15px;
+    }
+
+    .social-btn {
+        width: 38px;
+        height: 38px;
+        background: var(--footer-card-bg);
+        border: 1px solid var(--footer-border);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 13px;
+        transition: all 0.3s ease;
+    }
+
+    .social-btn:hover {
+        background: var(--footer-accent);
+        border-color: var(--footer-accent);
+        color: #fff;
+        transform: translateY(-3px);
+    }
+
+    /* Quick Links */
+    .footer-links {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .footer-links li {
+        margin-bottom: 8px;
+    }
+
+    .footer-links a {
+        color: var(--footer-text);
+        text-decoration: none;
+        transition: color 0.2s;
+    }
+
+    .footer-links a:hover {
+        color: var(--footer-accent);
+        padding-left: 4px;
+    }
+
+    /* Copyright Bar */
+    .footer-bottom {
+        background-color: #0b0f17;
+        border-top: 1px solid var(--footer-border);
+        padding: 18px 0;
+        text-align: center;
+        font-size: 13px;
+        color: #6b7280;
+    }
+
+    /* ================= SYSTEM NÚT LIÊN HỆ ĐỘNG (FLOATING ACTION BUTTONS) ================= */
+    .floating-contact-bar {
+        position: fixed;
+        bottom: 25px;
+        left: 20px;
+        z-index: 9999;
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+    }
+
+    .float-btn {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: #fff;
+        border-radius: 50px;
+        padding: 4px 16px 4px 4px;
+        font-weight: 600;
+        font-size: 13px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        position: relative;
+    }
+
+    .float-btn .icon-box {
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 18px;
+        background: rgba(255, 255, 255, 0.2);
+        margin-right: 10px;
+    }
+
+    /* Nút Điện thoại Call */
+    .btn-phone {
+        background: linear-gradient(135deg, #16a34a, #22c55e);
+        animation: pulse-green 2s infinite;
+    }
+
+    /* Nút Zalo Chat */
+    .btn-zalo {
+        background: linear-gradient(135deg, #0052cc, #0068ff);
+        animation: pulse-blue 2.2s infinite;
+    }
+
+    /* Nút Yêu cầu báo giá */
+    .btn-quote-float {
+        background: linear-gradient(135deg, #ea580c, #ff6600);
+        animation: pulse-orange 2.4s infinite;
+    }
+
+    /* Hiệu ứng Hover kéo dài & Rung nhẹ */
+    .float-btn:hover {
+        transform: scale(1.08) translateX(5px);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    .float-btn:hover .icon-box {
+        animation: shake 0.5s ease-in-out infinite alternate;
+    }
+
+    /* Keyframe Animations */
+    @keyframes pulse-green {
+        0% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); }
+        70% { box-shadow: 0 0 0 14px rgba(34, 197, 94, 0); }
+        100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+    }
+
+    @keyframes pulse-blue {
+        0% { box-shadow: 0 0 0 0 rgba(0, 104, 255, 0.7); }
+        70% { box-shadow: 0 0 0 14px rgba(0, 104, 255, 0); }
+        100% { box-shadow: 0 0 0 0 rgba(0, 104, 255, 0); }
+    }
+
+    @keyframes pulse-orange {
+        0% { box-shadow: 0 0 0 0 rgba(255, 102, 0, 0.7); }
+        70% { box-shadow: 0 0 0 14px rgba(255, 102, 0, 0); }
+        100% { box-shadow: 0 0 0 0 rgba(255, 102, 0, 0); }
+    }
+
+    @keyframes shake {
+        0% { transform: rotate(-10deg); }
+        100% { transform: rotate(10deg); }
+    }
+
+    @media (max-width: 768px) {
+        .footer-container {
+            grid-template-columns: 1fr;
+            gap: 25px;
+        }
+        .floating-contact-bar {
+            bottom: 15px;
+            left: 15px;
+            gap: 10px;
+        }
+        .float-btn span.btn-text {
+            display: none; /* Trên màn hình điện thoại chỉ hiển thị icon tròn để tránh che màn hình */
+        }
+        .float-btn {
+            padding: 4px;
+            border-radius: 50%;
+        }
+        .float-btn .icon-box {
+            margin-right: 0;
+        }
+    }
+</style>
+
 <footer class="main-footer">
     <div class="footer-container">
         
-        <!-- Cột 1: Thông tin Công ty & Văn phòng -->
+        <!-- Cột 1: Thông tin công ty & Văn phòng -->
         <div class="footer-col">
             <div class="company-title">CÔNG TY CỔ PHẦN SẢN XUẤT CƠ KHÍ HÒA LONG</div>
             <div class="footer-info-item" style="margin-bottom: 15px;">
                 <strong>Mã số thuế:</strong> 1101890689
             </div>
             
-            <h3>Văn Phòng</h3>
+            <h3>Văn Phòng Kinh Doanh</h3>
             <div class="footer-info-item">
-                <i class="fa-solid fa-location-dot"></i> 19 Trần Quý Kiên, Phường Bình Trưng, TP. Hồ Chí Minh
+                📍 19 Trần Quý Kiên, Phường Bình Trưng, TP. Hồ Chí Minh
             </div>
             <div class="footer-info-item">
-                <i class="fa-solid fa-phone"></i> Điện thoại: <a href="tel:02871088660">028 710 88 660 (ext 311)</a>
+                ☎️ Điện thoại: <a href="tel:02871088660">028 710 88 660 (ext 311)</a>
             </div>
         </div>
 
-        <!-- Cột 2: Nhà máy sản xuất & Hotline -->
+        <!-- Cột 2: Nhà máy sản xuất & Liên hệ -->
         <div class="footer-col">
             <h3>Nhà Máy Sản Xuất</h3>
             <div class="footer-info-item">
-                <i class="fa-solid fa-industry"></i> 192 Nguyễn Văn Tuôi, Khu phố 6, Xã Bến Lức, Tỉnh Tây Ninh
+                🏭 192 Nguyễn Văn Tuôi, Khu phố 6, Xã Bến Lức, Tỉnh Tây Ninh
             </div>
             <div class="footer-info-item">
-                <i class="fa-solid fa-phone"></i> Điện thoại: <a href="tel:02722496959">027 2249 6959</a>
+                ☎️ Điện thoại: <a href="tel:02722496959">027 2249 6959</a>
             </div>
-            <div class="footer-info-item" style="margin-top: 15px;">
-                <i class="fa-solid fa-mobile-screen-button"></i> Hotline/Zalo: <a href="tel:0901890689" style="color:var(--accent-color); font-weight:bold;">+84 901 890 689</a>
+            <div class="footer-info-item" style="margin-top: 12px;">
+                📞 Hotline/Zalo: <a href="tel:0901890689" style="color:#fff; font-weight:bold;">+84 901 890 689</a>
             </div>
             <div class="footer-info-item">
-                <i class="fa-solid fa-envelope"></i> Email: <a href="mailto:contact@hoalongcorp.com">contact@hoalongcorp.com</a>
+                ✉️ Email: <a href="mailto:contact@hoalongcorp.com">contact@hoalongcorp.com</a>
             </div>
         </div>
 
-        <!-- Cột 3: Danh mục liên kết -->
+        <!-- Cột 3: Danh mục sản phẩm chính -->
         <div class="footer-col">
-            <h3>Danh Mục Chính</h3>
+            <h3>Sản Phẩm & Dịch Vụ</h3>
             <ul class="footer-links">
-                <li><a href="gioi-thieu.html"><i class="fa-solid fa-angle-right"></i> Về Cơ Khí Hòa Long</a></li>
-                <li><a href="san-pham.html"><i class="fa-solid fa-angle-right"></i> Hệ Thống Kệ Kho Chứa Hàng</a></li>
-                <li><a href="san-pham.html"><i class="fa-solid fa-angle-right"></i> Nhà Thép Tiền Chế & Xà Gồ</a></li>
-                <li><a href="dich-vu.html"><i class="fa-solid fa-angle-right"></i> Di Dời & Lắp Đặt Kệ Kho</a></li>
-                <li><a href="lien-he.html"><i class="fa-solid fa-angle-right"></i> Tư Vấn & Yêu Cầu Báo Giá</a></li>
+                <li><a href="san-pham.html">• Hệ Thống Kệ Selective & VNA</a></li>
+                <li><a href="san-pham.html">• Kệ Tự Động Radio Shuttle & ASRS</a></li>
+                <li><a href="san-pham.html">• Sàn Mezzanine & Multi-Tier Shelving</a></li>
+                <li><a href="san-pham.html">• Nhà Thép Tiền Chế (PEB) & Xà Gồ C/Z</a></li>
+                <li><a href="dich-vu.html">• Di Dời, Tháo Dỡ & Cải Tạo Kệ Kho</a></li>
             </ul>
         </div>
 
-        <!-- Cột 4: Kết nối Mạng xã hội -->
+        <!-- Cột 4: Mạng xã hội -->
         <div class="footer-col">
             <h3>Mạng Xã Hội</h3>
-            <p style="font-size: 13px; line-height: 1.5;">Theo dõi chúng tôi trên các nền tảng truyền thông chính thức:</p>
-            
-            <div class="social-btn-group">
-                <a href="https://facebook.com" target="_blank" class="social-btn" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                <a href="https://zalo.me/0901890689" target="_blank" class="social-btn" title="Zalo"><i class="fa-solid fa-comment"></i></a>
-                <a href="https://youtube.com" target="_blank" class="social-btn" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
-                <a href="https://linkedin.com" target="_blank" class="social-btn" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-            </div>
-            <p style="margin-top: 15px; font-size: 12px; color: #6b7280;">Thành viên thuộc FGROUP</p>
-        </div>
-
-    </div>
-
-    <!-- Copyright -->
-    <div class="footer-bottom">
-        © 2026 CÔNG TY CỔ PHẦN SẢN XUẤT CƠ KHÍ HÒA LONG. All rights reserved. | Website: hoalongcorp.com
-    </div>
-</footer>
-
-<!-- Schema Markup Local Business hỗ trợ SEO -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "ManufacturingBusiness",
-  "name": "CÔNG TY CỔ PHẦN SẢN XUẤT CƠ KHÍ HÒA LONG",
-  "vatID": "1101890689",
-  "url": "https://hoalongcorp.com",
-  "email": "contact@hoalongcorp.com",
-  "telephone": "+84901890689",
-  "address": [
-    {
-      "@type": "PostalAddress",
-      "addressLocality": "TP. Hồ Chí Minh",
-      "streetAddress": "19 Trần Quý Kiên, Phường Bình Trưng",
-      "addressCountry": "VN"
-    },
-    {
-      "@type": "PostalAddress",
-      "addressLocality": "Tây Ninh",
-      "streetAddress": "192 Nguyễn Văn Tuôi, Khu phố 6, Xã Bến Lức",
-      "addressCountry": "VN"
-    }
-  ]
-}
-</script>
+            <p style="margin-bottom: 10px;">Kết nối với Cơ Khí Hòa Long trên các nền tảng:</
