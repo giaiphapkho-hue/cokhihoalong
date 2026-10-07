@@ -42,7 +42,7 @@
     </div>
 </footer>
 
-<!-- Nút liên hệ nhanh (Zalo & Hotline) -->
+<!-- Nút liên hệ nhanh nổi (Zalo & Hotline) -->
 <div class="floating-contact">
     <a href="https://zalo.me/0901890689" target="_blank" class="contact-btn btn-zalo" title="Chat Zalo: 0901890689" aria-label="Chat Zalo">
         <i class="fa-regular fa-comment-dots"></i>
@@ -52,14 +52,17 @@
     </a>
 </div>
 
-<!-- Tích hợp FontAwesome icons nếu chưa khai báo trên <head> -->
+<!-- TÍCH HỢP TIDIO CHATBOT (Nếu dùng mã Tidio riêng, hãy thay link src bên dưới) -->
+<script src="//code.tidio.co/YOUR_TIDIO_PUBLIC_KEY.js" async></script>
+
+<!-- Thư viện Icon FontAwesome 6 -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-<!-- CSS DÀNH RIÊNG CHO FOOTER & FLOATING CONTACT BUTTONS -->
+<!-- CSS FOOTER & FLOATING CONTACT -->
 <style>
-    /* Reset & Base Footer Style */
+    /* Footer Styling */
     .site-footer {
-        background-color: #003366; /* Màu xanh đậm thương hiệu */
+        background-color: #003366;
         color: #ffffff;
         padding: 50px 0 0 0;
         font-family: 'Roboto', sans-serif;
@@ -86,7 +89,6 @@
         text-transform: uppercase;
         position: relative;
         padding-bottom: 8px;
-        letter-spacing: 0.5px;
     }
 
     .footer-col h3::after {
@@ -96,7 +98,7 @@
         bottom: 0;
         width: 40px;
         height: 2px;
-        background-color: #ff6600; /* Màu cam điểm nhấn */
+        background-color: #ff6600;
     }
 
     .footer-col p {
@@ -144,85 +146,70 @@
         font-size: 13px;
     }
 
-    /* Floating Contact Buttons CSS */
+    /* Floating Contact Buttons - Cố định góc dưới màn hình */
     .floating-contact {
-        position: fixed;
-        bottom: 25px;
-        right: 25px;
-        z-index: 9999;
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
+        position: fixed !important;
+        bottom: 30px !important;
+        left: 25px !important; /* Đặt bên TRÁI màn hình để tránh đè lên khung chat Tidio ở bên PHẢI */
+        z-index: 999999 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 15px !important;
     }
 
     .contact-btn {
-        width: 50px;
-        height: 50px;
+        width: 52px;
+        height: 52px;
         border-radius: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
-        color: #ffffff;
+        color: #ffffff !important;
         font-size: 22px;
         text-decoration: none;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
         transition: transform 0.3s ease, box-shadow 0.3s ease;
-        position: relative;
     }
 
     .contact-btn:hover {
         transform: scale(1.1);
-        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
-        color: #ffffff;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
     }
 
-    /* Zalo Button Color */
+    /* Nút Zalo màu xanh dương */
     .btn-zalo {
-        background-color: #0088fe;
+        background-color: #0088fe !important;
         animation: pulse-blue 2s infinite;
     }
 
-    /* Phone Button Color */
+    /* Nút Hotline màu xanh lá */
     .btn-phone {
-        background-color: #00a859;
+        background-color: #00a859 !important;
         animation: pulse-green 2s infinite;
     }
 
-    /* Pulse Effect Animations */
+    /* Hiệu ứng xung động */
     @keyframes pulse-blue {
-        0% {
-            box-shadow: 0 0 0 0 rgba(0, 136, 254, 0.7);
-        }
-        70% {
-            box-shadow: 0 0 0 14px rgba(0, 136, 254, 0);
-        }
-        100% {
-            box-shadow: 0 0 0 0 rgba(0, 136, 254, 0);
-        }
+        0% { box-shadow: 0 0 0 0 rgba(0, 136, 254, 0.7); }
+        70% { box-shadow: 0 0 0 15px rgba(0, 136, 254, 0); }
+        100% { box-shadow: 0 0 0 0 rgba(0, 136, 254, 0); }
     }
 
     @keyframes pulse-green {
-        0% {
-            box-shadow: 0 0 0 0 rgba(0, 168, 89, 0.7);
-        }
-        70% {
-            box-shadow: 0 0 0 14px rgba(0, 168, 89, 0);
-        }
-        100% {
-            box-shadow: 0 0 0 0 rgba(0, 168, 89, 0);
-        }
+        0% { box-shadow: 0 0 0 0 rgba(0, 168, 89, 0.7); }
+        70% { box-shadow: 0 0 0 15px rgba(0, 168, 89, 0); }
+        100% { box-shadow: 0 0 0 0 rgba(0, 168, 89, 0); }
     }
 
-    /* Responsive adjustments */
     @media (max-width: 768px) {
         .floating-contact {
-            bottom: 18px;
-            right: 18px;
-            gap: 12px;
+            bottom: 20px !important;
+            left: 15px !important;
+            gap: 10px !important;
         }
         .contact-btn {
-            width: 45px;
-            height: 45px;
+            width: 46px;
+            height: 46px;
             font-size: 19px;
         }
     }
