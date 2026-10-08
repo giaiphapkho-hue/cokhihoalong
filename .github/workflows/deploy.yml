@@ -28,7 +28,7 @@ jobs:
       - name: Install Eleventy & Build
         run: |
           npm install @11ty/eleventy@^2.0.1
-          npx @11ty/eleventy
+          npx @11ty/eleventy --config=.eleventy.js
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
