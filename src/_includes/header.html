@@ -1,4 +1,4 @@
-<!-- HEADER CHUẨN CƠ KHÍ HÒA LONG -->
+<!-- HEADER CHUẨN CƠ KHÍ HÒA LONG & ĐA NGÔN NGỮ TỐI ƯU -->
 <style>
     /* TOP BAR STYLES */
     .top-bar {
@@ -40,10 +40,15 @@
     .top-info a:hover {
         color: #ff6600;
     }
+    .top-actions {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
     .top-social {
         display: flex;
         align-items: center;
-        gap: 12px;
+        gap: 8px;
     }
     .top-social a {
         color: #d1d5db;
@@ -62,6 +67,78 @@
         background-color: #ff6600;
         color: #ffffff;
         transform: translateY(-2px);
+    }
+
+    /* CUSTOM LANGUAGE SWITCHER STYLES */
+    .custom-lang-switcher {
+        position: relative;
+        display: inline-block;
+    }
+    .lang-btn {
+        background-color: rgba(255, 255, 255, 0.1);
+        color: #ffffff;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        padding: 4px 10px;
+        border-radius: 4px;
+        font-size: 0.8rem;
+        font-weight: 600;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        transition: all 0.2s ease;
+    }
+    .lang-btn:hover {
+        border-color: #ff6600;
+        background-color: rgba(255, 102, 0, 0.2);
+    }
+    .lang-flag {
+        width: 18px;
+        height: 13px;
+        object-fit: cover;
+        border-radius: 2px;
+    }
+    .lang-dropdown {
+        position: absolute;
+        top: calc(100% + 5px);
+        right: 0;
+        background-color: #002244;
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        border-radius: 6px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        min-width: 140px;
+        display: none;
+        z-index: 2000;
+        overflow: hidden;
+    }
+    .lang-dropdown.show {
+        display: block;
+    }
+    .lang-option {
+        padding: 8px 12px;
+        color: #e2e8f0;
+        font-size: 0.82rem;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        cursor: pointer;
+        transition: background-color 0.2s ease;
+    }
+    .lang-option:hover {
+        background-color: #ff6600;
+        color: #ffffff;
+    }
+
+    /*Ẩn hoàn toàn Google Translate Widget gốc & Google Banner */
+    #google_translate_element {
+        display: none !important;
+    }
+    body {
+        top: 0 !important;
+    }
+    .goog-te-banner-frame, .skiptranslate, .goog-te-balloon-frame {
+        display: none !important;
     }
 
     /* MAIN HEADER STYLES */
@@ -125,13 +202,9 @@
         align-items: center;
         gap: 5px;
     }
-    .nav-link:hover,
-    .nav-link.active {
+    .nav-link:hover {
         color: #003366;
         background-color: #f0f4f8;
-    }
-    .nav-link.active {
-        color: #ff6600;
     }
 
     /* DROPDOWN MENU */
@@ -139,7 +212,7 @@
         position: absolute;
         top: 100%;
         left: 0;
-        width: 230px;
+        width: 240px;
         background-color: #ffffff;
         box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
         border-radius: 6px;
@@ -195,6 +268,8 @@
     /* MOBILE TOGGLE BUTTON */
     .menu-toggle {
         display: none;
+        background: transparent;
+        border: none;
         font-size: 1.4rem;
         color: #003366;
         cursor: pointer;
@@ -202,25 +277,29 @@
         border-radius: 4px;
         transition: background-color 0.2s ease;
     }
-    .menu-toggle:hover {
-        background-color: #f0f4f8;
-    }
 
-    /* RESPONSIVE DESIGN (DI ĐỘNG & TABLET) */
+    /* RESPONSIVE DESIGN */
     @media (max-width: 992px) {
         .top-bar {
+            display: block;
+            padding: 6px 0;
+        }
+        .top-info {
             display: none;
+        }
+        .top-bar-container {
+            justify-content: flex-end;
         }
         .menu-toggle {
             display: block;
         }
         .main-nav {
             position: fixed;
-            top: 65px;
+            top: 60px;
             left: -100%;
             width: 80%;
             max-width: 320px;
-            height: calc(100vh - 65px);
+            height: calc(100vh - 60px);
             background-color: #ffffff;
             flex-direction: column;
             align-items: flex-start;
@@ -266,7 +345,7 @@
     }
 </style>
 
-<!-- TOP BAR -->
+<!-- TOP BAR WITH CUSTOM LANGUAGE SWITCHER -->
 <div class="top-bar">
     <div class="top-bar-container">
         <div class="top-info">
@@ -274,11 +353,42 @@
             <span><i class="fa-solid fa-phone"></i> Hotline/Zalo: <a href="tel:0901890689">+84 901 890 689</a></span>
             <span><i class="fa-solid fa-envelope"></i> <a href="mailto:contact@hoalongcorp.com">contact@hoalongcorp.com</a></span>
         </div>
-        <div class="top-social">
-            <a href="https://facebook.com" target="_blank" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-            <a href="https://zalo.me/0901890689" target="_blank" title="Zalo"><i class="fa-solid fa-comment"></i></a>
-            <a href="https://youtube.com" target="_blank" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
-            <a href="https://linkedin.com" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        <div class="top-actions">
+            <!-- Custom Language Switcher -->
+            <div class="custom-lang-switcher">
+                <button class="lang-btn" id="langBtn" aria-label="Select Language">
+                    <img src="https://flagcdn.com/w20/vn.png" alt="VIE" class="lang-flag" id="currentLangFlag">
+                    <span id="currentLangText">VIE</span>
+                    <i class="fa-solid fa-chevron-down" style="font-size: 0.7rem; margin-left: 2px;"></i>
+                </button>
+                <div class="lang-dropdown" id="langDropdown">
+                    <div class="lang-option" data-lang="vi" data-flag="https://flagcdn.com/w20/vn.png" data-label="VIE">
+                        <img src="https://flagcdn.com/w20/vn.png" alt="VN" class="lang-flag"> Tiếng Việt
+                    </div>
+                    <div class="lang-option" data-lang="en" data-flag="https://flagcdn.com/w20/gb.png" data-label="ENG">
+                        <img src="https://flagcdn.com/w20/gb.png" alt="EN" class="lang-flag"> English
+                    </div>
+                    <div class="lang-option" data-lang="zh-CN" data-flag="https://flagcdn.com/w20/cn.png" data-label="CHI">
+                        <img src="https://flagcdn.com/w20/cn.png" alt="ZH" class="lang-flag"> 中文 (Chinese)
+                    </div>
+                    <div class="lang-option" data-lang="ja" data-flag="https://flagcdn.com/w20/jp.png" data-label="JPN">
+                        <img src="https://flagcdn.com/w20/jp.png" alt="JA" class="lang-flag"> 日本語 (Japanese)
+                    </div>
+                    <div class="lang-option" data-lang="ko" data-flag="https://flagcdn.com/w20/kr.png" data-label="KOR">
+                        <img src="https://flagcdn.com/w20/kr.png" alt="KO" class="lang-flag"> 한국어 (Korean)
+                    </div>
+                </div>
+            </div>
+
+            <!-- Google Translate Container (Hidden) -->
+            <div id="google_translate_element"></div>
+
+            <div class="top-social">
+                <a href="https://facebook.com" target="_blank" rel="noopener" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://zalo.me/0901890689" target="_blank" rel="noopener" title="Zalo"><i class="fa-solid fa-comment"></i></a>
+                <a href="https://youtube.com" target="_blank" rel="noopener" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                <a href="https://linkedin.com" target="_blank" rel="noopener" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            </div>
         </div>
     </div>
 </div>
@@ -286,46 +396,164 @@
 <!-- MAIN HEADER -->
 <header class="main-header">
     <div class="header-container">
-        <a href="index.html" class="brand-logo">
+        <a href="/cokhihoalong/" class="brand-logo">
             <span class="logo-title">CƠ KHÍ HÒA LONG</span>
             <span class="logo-subtitle">Giải Pháp Lưu Trữ Kho Hàng & PEB</span>
         </a>
 
-        <div class="menu-toggle" id="mobileMenuBtn" aria-label="Toggle Navigation">
-            <i class="fa-solid fa-bars" id="menuIcon"></i>
-        </div>
+        <button class="menu-toggle" id="hlMobileMenuBtn" aria-label="Toggle Navigation">
+            <i class="fa-solid fa-bars" id="hlMenuIcon"></i>
+        </button>
 
-        <nav class="main-nav" id="mainNav">
+        <nav class="main-nav" id="hlMainNav" itemscope itemtype="http://schema.org/SiteNavigationElement">
             <div class="nav-item">
-                <a href="index.html" class="nav-link">Trang Chủ</a>
+                <a href="/cokhihoalong/" class="nav-link">Trang Chủ</a>
             </div>
             <div class="nav-item">
-                <a href="gioi-thieu.html" class="nav-link">Giới Thiệu</a>
+                <a href="/cokhihoalong/gioi-thieu/" class="nav-link">Giới Thiệu</a>
             </div>
             <!-- Submenu Sản Phẩm -->
             <div class="nav-item">
-                <a href="san-pham.html" class="nav-link">
+                <a href="/cokhihoalong/san-pham/" class="nav-link">
                     Sản Phẩm <i class="fa-solid fa-chevron-down" style="font-size: 0.75rem;"></i>
                 </a>
                 <div class="dropdown-menu">
-                    <a href="san-pham.html#ke-chua-hang">Kệ Chứa Hàng Tải Nặng</a>
-                    <a href="san-pham.html#ke-trung-tai">Kệ Trung Tải & Sàn Mezzanine</a>
-                    <a href="san-pham.html#nha-thep-tien-che">Nhà Thép Tiền Chế (PEB)</a>
-                    <a href="san-pham.html#phu-kien-kho">Phụ Kiện Nhà Kho</a>
+                    <a href="/cokhihoalong/san-pham/#ke-chua-hang">Kệ Chứa Hàng Tải Nặng</a>
+                    <a href="/cokhihoalong/san-pham/#ke-trung-tai">Kệ Trung Tải & Sàn Mezzanine</a>
+                    <a href="/cokhihoalong/san-pham/#nha-thep-tien-che">Nhà Thép Tiền Chế (PEB)</a>
+                    <a href="/cokhihoalong/san-pham/#phu-kien-kho">Phụ Kiện Nhà Kho</a>
                 </div>
             </div>
             <div class="nav-item">
-                <a href="dich-vu.html" class="nav-link">Dịch Vụ</a>
+                <a href="/cokhihoalong/dich-vu/" class="nav-link">Dịch Vụ</a>
             </div>
             <div class="nav-item">
-                <a href="thong-tin.html" class="nav-link">Tin Tức</a>
+                <a href="/cokhihoalong/thong-tin/" class="nav-link">Tin Tức</a>
             </div>
             <div class="nav-item">
-                <a href="lien-he.html" class="nav-link">Liên Hệ</a>
+                <a href="/cokhihoalong/lien-he/" class="nav-link">Liên Hệ</a>
             </div>
-            <a href="lien-he.html" class="btn-quote">
+            <a href="/cokhihoalong/lien-he/" class="btn-quote">
                 <i class="fa-solid fa-paper-plane"></i> Nhận Báo Giá
             </a>
         </nav>
     </div>
 </header>
+
+<!-- GOOGLE TRANSLATE SDK -->
+<script type="text/javascript">
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement({
+            pageLanguage: 'vi',
+            includedLanguages: 'vi,en,zh-CN,ja,ko',
+            layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+            autoDisplay: false
+        }, 'google_translate_element');
+    }
+</script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+<!-- CUSTOM SCRIPT ĐIỀU KHIỂN TRANSLATE & MENU MOBILE -->
+<script>
+    (function() {
+        // --- 1. XỬ LÝ CHUYỂN ĐỔI NGÔN NGỮ CỦA CUSTOM UI ---
+        const langBtn = document.getElementById('langBtn');
+        const langDropdown = document.getElementById('langDropdown');
+        const currentLangFlag = document.getElementById('currentLangFlag');
+        const currentLangText = document.getElementById('currentLangText');
+        const langOptions = document.querySelectorAll('.lang-option');
+
+        // Hàm đọc cookie
+        function getCookie(name) {
+            const v = document.cookie.match('(^|;) ?' + name + '=([^;]*)(;|\$)');
+            return v ? v[2] : null;
+        }
+
+        // Hàm thiết lập cookie Translate
+        function setTranslateCookie(lang) {
+            const domain = window.location.hostname;
+            document.cookie = `googtrans=/vi/${lang}; path=/; domain=${domain}`;
+            document.cookie = `googtrans=/vi/${lang}; path=/`;
+        }
+
+        // Cập nhật giao diện nút dựa trên ngôn ngữ đang chọn
+        function updateUI(lang, flag, label) {
+            currentLangFlag.src = flag;
+            currentLangText.textContent = label;
+        }
+
+        // Kiểm tra cookie hiện tại khi tải trang
+        const currentTrans = getCookie('googtrans');
+        if (currentTrans) {
+            const langCode = currentTrans.split('/').pop();
+            const matchedOpt = Array.from(langOptions).find(opt => opt.getAttribute('data-lang') === langCode);
+            if (matchedOpt) {
+                updateUI(langCode, matchedOpt.getAttribute('data-flag'), matchedOpt.getAttribute('data-label'));
+            }
+        }
+
+        // Bật/tắt menu ngôn ngữ
+        if (langBtn && langDropdown) {
+            langBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                langDropdown.classList.toggle('show');
+            });
+
+            document.addEventListener('click', function() {
+                langDropdown.classList.remove('show');
+            });
+        }
+
+        // Xử lý sự kiện khi chọn ngôn ngữ
+        langOptions.forEach(opt => {
+            opt.addEventListener('click', function() {
+                const targetLang = this.getAttribute('data-lang');
+                const flag = this.getAttribute('data-flag');
+                const label = this.getAttribute('data-label');
+
+                updateUI(targetLang, flag, label);
+                langDropdown.classList.remove('show');
+
+                if (targetLang === 'vi') {
+                    // Trở về mặc định
+                    document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+                    document.cookie = `googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=${window.location.hostname}`;
+                } else {
+                    setTranslateCookie(targetLang);
+                }
+
+                location.reload();
+            });
+        });
+
+        // --- 2. XỬ LÝ MENU MOBILE ---
+        const btn = document.getElementById('hlMobileMenuBtn');
+        const nav = document.getElementById('hlMainNav');
+        const icon = document.getElementById('hlMenuIcon');
+
+        if (btn && nav) {
+            btn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                nav.classList.toggle('active');
+                if (nav.classList.contains('active')) {
+                    icon.className = 'fa-solid fa-xmark';
+                } else {
+                    icon.className = 'fa-solid fa-bars';
+                }
+            });
+        }
+
+        document.querySelectorAll('.main-nav .nav-item').forEach(function(item) {
+            const dropdown = item.querySelector('.dropdown-menu');
+            const link = item.querySelector('.nav-link');
+            if (dropdown && link) {
+                link.addEventListener('click', function(e) {
+                    if (window.innerWidth <= 992) {
+                        e.preventDefault();
+                        item.classList.toggle('open');
+                    }
+                });
+            }
+        });
+    })();
+</script>
