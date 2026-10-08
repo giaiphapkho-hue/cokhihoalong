@@ -1,217 +1,331 @@
-<!DOCTYPE html>
-<html lang="vi">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tin Tức & Chuyên Mục - Cơ Khí Hòa Long</title>
-    <meta name="description" content="Cập nhật tin tức ngành kho vận, giải pháp tối ưu không gian nhà kho và tài liệu kỹ thuật từ Cơ Khí Hòa Long.">
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-    
-    <style>
-        :root { 
-            --primary: #004b93; 
-            --primary-dark: #002e5c;
-            --accent: #ff6600; 
-            --accent-hover: #e65c00;
-            --text-main: #1a1a1a;
-            --text-muted: #666666;
-            --bg-light: #f8f9fa;
-            --border-color: #e5e7eb;
-            --font-serif: 'Merriweather', Georgia, serif;
-            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+<!-- HEADER CHUẨN CƠ KHÍ HÒA LONG -->
+<style>
+    /* TOP BAR STYLES */
+    .top-bar {
+        background-color: #002244;
+        color: #d1d5db;
+        font-size: 0.85rem;
+        padding: 8px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .top-bar-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    .top-info {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+    .top-info span {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+    }
+    .top-info i {
+        color: #ff6600;
+    }
+    .top-info a {
+        color: #ffffff;
+        text-decoration: none;
+        transition: color 0.2s ease;
+    }
+    .top-info a:hover {
+        color: #ff6600;
+    }
+    .top-social {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+    .top-social a {
+        color: #d1d5db;
+        width: 26px;
+        height: 26px;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.08);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.75rem;
+        text-decoration: none;
+        transition: all 0.3s ease;
+    }
+    .top-social a:hover {
+        background-color: #ff6600;
+        color: #ffffff;
+        transform: translateY(-2px);
+    }
+
+    /* MAIN HEADER STYLES */
+    .main-header {
+        background-color: #ffffff;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        transition: all 0.3s ease;
+    }
+    .header-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 12px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    /* BRAND LOGO */
+    .brand-logo {
+        display: flex;
+        flex-direction: column;
+        text-decoration: none;
+    }
+    .brand-logo .logo-title {
+        font-size: 1.5rem;
+        font-weight: 800;
+        color: #003366;
+        letter-spacing: 0.5px;
+        line-height: 1.1;
+    }
+    .brand-logo .logo-subtitle {
+        font-size: 0.7rem;
+        font-weight: 700;
+        color: #ff6600;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        margin-top: 2px;
+    }
+
+    /* NAVIGATION */
+    .main-nav {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+    .nav-item {
+        position: relative;
+    }
+    .nav-link {
+        padding: 10px 14px;
+        color: #2c3e50;
+        font-weight: 600;
+        font-size: 0.95rem;
+        text-decoration: none;
+        border-radius: 4px;
+        transition: all 0.2s ease;
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+    }
+    .nav-link:hover,
+    .nav-link.active {
+        color: #003366;
+        background-color: #f0f4f8;
+    }
+    .nav-link.active {
+        color: #ff6600;
+    }
+
+    /* DROPDOWN MENU */
+    .dropdown-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 230px;
+        background-color: #ffffff;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+        border-radius: 6px;
+        padding: 8px 0;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(10px);
+        transition: all 0.3s ease;
+        z-index: 1001;
+    }
+    .nav-item:hover .dropdown-menu {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+    .dropdown-menu a {
+        display: block;
+        padding: 9px 18px;
+        color: #4a5568;
+        font-size: 0.9rem;
+        font-weight: 500;
+        text-decoration: none;
+        transition: all 0.2s ease;
+    }
+    .dropdown-menu a:hover {
+        background-color: #f8fafc;
+        color: #ff6600;
+        padding-left: 22px;
+    }
+
+    /* CTA BUTTON */
+    .btn-quote {
+        background: linear-gradient(135deg, #ff6600 0%, #e05500 100%);
+        color: #ffffff !important;
+        padding: 10px 20px;
+        border-radius: 50px;
+        font-weight: 700;
+        font-size: 0.9rem;
+        box-shadow: 0 4px 12px rgba(255, 102, 0, 0.3);
+        transition: all 0.3s ease;
+        margin-left: 10px;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        text-decoration: none;
+    }
+    .btn-quote:hover {
+        background: linear-gradient(135deg, #e05500 0%, #cc4c00 100%);
+        box-shadow: 0 6px 18px rgba(255, 102, 0, 0.45);
+        transform: translateY(-1px);
+    }
+
+    /* MOBILE TOGGLE BUTTON */
+    .menu-toggle {
+        display: none;
+        font-size: 1.4rem;
+        color: #003366;
+        cursor: pointer;
+        padding: 8px;
+        border-radius: 4px;
+        transition: background-color 0.2s ease;
+    }
+    .menu-toggle:hover {
+        background-color: #f0f4f8;
+    }
+
+    /* RESPONSIVE DESIGN (DI ĐỘNG & TABLET) */
+    @media (max-width: 992px) {
+        .top-bar {
+            display: none;
         }
-
-        .news-container { width: 92%; max-width: 1200px; margin: 20px auto 60px; font-family: var(--font-sans); color: var(--text-main); }
-
-        /* Breadcrumb Cấu trúc Cha - Con */
-        .breadcrumb { font-size: 13px; color: var(--text-muted); margin-bottom: 20px; display: flex; align-items: center; gap: 8px; }
-        .breadcrumb a { color: var(--text-muted); text-decoration: none; }
-        .breadcrumb a:hover { color: var(--primary); }
-        .breadcrumb span.separator { color: #999; }
-        .breadcrumb span.current { color: var(--primary); font-weight: 600; }
-
-        .news-section-title { 
-            border-bottom: 2px solid var(--primary); 
-            padding-bottom: 8px; 
-            margin: 25px 0 20px 0; 
-            font-family: var(--font-serif); 
-            font-size: 20px; 
-            color: var(--primary); 
-            text-transform: uppercase; 
-            font-weight: 700; 
-            letter-spacing: 0.5px;
+        .menu-toggle {
+            display: block;
         }
-
-        /* Hero Spotlight */
-        .news-hero { display: grid; grid-template-columns: 1fr; gap: 24px; margin-bottom: 30px; }
-        .featured-card { 
-            position: relative; 
-            border-radius: 8px; 
-            overflow: hidden; 
-            min-height: 380px; 
-            background: #111;
-            display: flex;
-            align-items: flex-end;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        .main-nav {
+            position: fixed;
+            top: 65px;
+            left: -100%;
+            width: 80%;
+            max-width: 320px;
+            height: calc(100vh - 65px);
+            background-color: #ffffff;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 20px;
+            box-shadow: 4px 0 15px rgba(0, 0, 0, 0.1);
+            transition: left 0.3s ease;
+            overflow-y: auto;
+            gap: 5px;
         }
-        .featured-card img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.75; transition: transform 0.4s ease; }
-        .featured-card:hover img { transform: scale(1.02); }
-        .featured-content { 
-            position: relative; 
-            z-index: 2; 
-            padding: 32px; 
-            background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.9) 100%);
+        .main-nav.active {
+            left: 0;
+        }
+        .nav-item {
             width: 100%;
-            color: #fff;
         }
-        .badge-tag { display: inline-block; background: var(--accent); color: #fff; font-size: 11px; font-weight: 700; text-transform: uppercase; padding: 4px 10px; border-radius: 3px; margin-bottom: 12px; }
-        .featured-title { font-family: var(--font-serif); font-size: 24px; font-weight: 700; line-height: 1.3; margin-bottom: 10px; }
-        .featured-title a { color: #fff; text-decoration: none; }
-        .featured-title a:hover { color: #ffd1b3; }
-        .featured-snippet { font-size: 14px; color: #ddd; line-height: 1.6; margin-bottom: 14px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; max-width: 900px; }
+        .nav-link {
+            width: 100%;
+            padding: 12px;
+            justify-content: space-between;
+        }
+        .dropdown-menu {
+            position: static;
+            opacity: 1;
+            visibility: visible;
+            transform: none;
+            box-shadow: none;
+            width: 100%;
+            padding-left: 15px;
+            display: none;
+            background-color: #f8fafc;
+            border-radius: 4px;
+            margin-top: 4px;
+        }
+        .nav-item.open .dropdown-menu {
+            display: block;
+        }
+        .btn-quote {
+            width: 100%;
+            justify-content: center;
+            margin: 15px 0 0 0;
+            border-radius: 6px;
+        }
+    }
+</style>
 
-        /* Articles & Sidebar */
-        .news-body { display: grid; grid-template-columns: 2.8fr 1.2fr; gap: 32px; }
-        @media (max-width: 900px) { .news-body { grid-template-columns: 1fr; } }
+<!-- TOP BAR -->
+<div class="top-bar">
+    <div class="top-bar-container">
+        <div class="top-info">
+            <span><i class="fa-solid fa-building"></i> MST: 1101890689</span>
+            <span><i class="fa-solid fa-phone"></i> Hotline/Zalo: <a href="tel:0901890689">+84 901 890 689</a></span>
+            <span><i class="fa-solid fa-envelope"></i> <a href="mailto:contact@hoalongcorp.com">contact@hoalongcorp.com</a></span>
+        </div>
+        <div class="top-social">
+            <a href="https://facebook.com" target="_blank" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://zalo.me/0901890689" target="_blank" title="Zalo"><i class="fa-solid fa-comment"></i></a>
+            <a href="https://youtube.com" target="_blank" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://linkedin.com" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+    </div>
+</div>
 
-        .articles-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 24px; }
-        .article-card { background: #fff; border: 1px solid var(--border-color); border-radius: 6px; overflow: hidden; display: flex; flex-direction: column; transition: transform 0.2s, box-shadow 0.2s; }
-        .article-card:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.06); }
-        .article-thumb { height: 170px; width: 100%; object-fit: cover; }
-        .article-content { padding: 18px; display: flex; flex-direction: column; flex-grow: 1; }
-        .article-title { font-family: var(--font-serif); font-size: 15px; font-weight: 700; color: var(--text-main); margin-bottom: 10px; line-height: 1.4; }
-        .article-title a { color: var(--text-main); text-decoration: none; }
-        .article-title a:hover { color: var(--primary); }
-        .article-excerpt { font-size: 13px; color: var(--text-muted); margin-bottom: 15px; flex-grow: 1; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
-        .article-link { font-size: 13px; color: var(--accent); font-weight: 600; text-decoration: none; }
+<!-- MAIN HEADER -->
+<header class="main-header">
+    <div class="header-container">
+        <a href="index.html" class="brand-logo">
+            <span class="logo-title">CƠ KHÍ HÒA LONG</span>
+            <span class="logo-subtitle">Giải Pháp Lưu Trữ Kho Hàng & PEB</span>
+        </a>
 
-        .sidebar-widget { background: var(--bg-light); border: 1px solid var(--border-color); padding: 20px; border-radius: 6px; margin-bottom: 24px; }
-        .widget-title { font-family: var(--font-serif); font-size: 16px; font-weight: 700; color: var(--primary); margin-bottom: 15px; padding-bottom: 8px; border-bottom: 2px solid var(--accent); }
-        .brand-box { background: var(--primary); color: #fff; text-align: center; padding: 24px 16px; border-radius: 6px; }
-        .brand-box h3 { font-family: var(--font-serif); font-size: 18px; margin-bottom: 10px; }
-        .brand-box p { font-size: 13px; color: #dbeafe; margin-bottom: 16px; line-height: 1.5; }
-        .btn-action { background: var(--accent); color: #fff; text-decoration: none; padding: 10px 18px; border-radius: 4px; font-weight: 600; font-size: 13px; display: inline-block; transition: background 0.2s; }
-        .btn-action:hover { background: var(--accent-hover); }
-
-        .category-list { list-style: none; font-size: 14px; line-height: 2.2; }
-        .category-list a { color: var(--text-main); text-decoration: none; display: flex; justify-content: space-between; border-bottom: 1px dashed var(--border-color); }
-        .category-list a:hover { color: var(--accent); }
-
-        .skeleton { background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%); background-size: 200% 100%; animation: loading 1.5s infinite; border-radius: 4px; }
-        @keyframes loading { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } }
-    </style>
-</head>
-<body>
-
-    {% include "header.html" %}
-
-    <main class="news-container">
-        
-        <!-- Breadcrumb thể hiện quan hệ Cha (Trang chủ) - Con (Thông tin) -->
-        <nav class="breadcrumb">
-            <a href="/">Trang chủ</a>
-            <span class="separator">›</span>
-            <span class="current">Thông tin & Tin tức</span>
-        </nav>
-
-        <div class="news-section-title">Tiêu Điểm Tin Tức</div>
-        <div id="hero-spotlight" class="news-hero">
-            <div class="featured-card skeleton" style="height: 380px;"></div>
+        <div class="menu-toggle" id="mobileMenuBtn" aria-label="Toggle Navigation">
+            <i class="fa-solid fa-bars" id="menuIcon"></i>
         </div>
 
-        <div class="news-section-title">Bài Viết Mới Nhất</div>
-        <div class="news-body">
-            
-            <div>
-                <div class="articles-grid" id="rss-news-list">
-                    <div class="article-card" style="height: 300px;"><div class="skeleton" style="height: 100%;"></div></div>
-                    <div class="article-card" style="height: 300px;"><div class="skeleton" style="height: 100%;"></div></div>
-                    <div class="article-card" style="height: 300px;"><div class="skeleton" style="height: 100%;"></div></div>
+        <nav class="main-nav" id="mainNav">
+            <div class="nav-item">
+                <a href="index.html" class="nav-link">Trang Chủ</a>
+            </div>
+            <div class="nav-item">
+                <a href="gioi-thieu.html" class="nav-link">Giới Thiệu</a>
+            </div>
+            <!-- Submenu Sản Phẩm -->
+            <div class="nav-item">
+                <a href="san-pham.html" class="nav-link">
+                    Sản Phẩm <i class="fa-solid fa-chevron-down" style="font-size: 0.75rem;"></i>
+                </a>
+                <div class="dropdown-menu">
+                    <a href="san-pham.html#ke-chua-hang">Kệ Chứa Hàng Tải Nặng</a>
+                    <a href="san-pham.html#ke-trung-tai">Kệ Trung Tải & Sàn Mezzanine</a>
+                    <a href="san-pham.html#nha-thep-tien-che">Nhà Thép Tiền Chế (PEB)</a>
+                    <a href="san-pham.html#phu-kien-kho">Phụ Kiện Nhà Kho</a>
                 </div>
             </div>
-
-            <aside>
-                <div class="brand-box">
-                    <h3>Cơ Khí Hòa Long</h3>
-                    <p>Chuyên tư vấn & chế tạo hệ thống kệ chứa hàng công nghiệp, nhà thép tiền chế tiêu chuẩn ISO 9001:2015.</p>
-                    <a href="/lien-he/" class="btn-action">Yêu Cầu Báo Giá</a>
-                </div>
-
-                <div class="sidebar-widget" style="margin-top: 24px;">
-                    <div class="widget-title">Chuyên Mục Sản Phẩm</div>
-                    <ul class="category-list">
-                        <li><a href="/san-pham/"><span>⚙️ Kệ Tải Trọng Nặng</span> <span>›</span></a></li>
-                        <li><a href="/san-pham/"><span>🏗️ Nhà Thép Tiền Chế (PEB)</span> <span>›</span></a></li>
-                        <li><a href="/san-pham/"><span>📦 Kệ Kho Thông Minh ASRS</span> <span>›</span></a></li>
-                        <li><a href="/san-pham/"><span>🏢 Sàn Mezzanine Nhà Kho</span> <span>›</span></a></li>
-                        <li><a href="/san-pham/"><span>❄️ Kệ Kho Lạnh F&B</span> <span>›</span></a></li>
-                    </ul>
-                </div>
-            </aside>
-        </div>
-
-    </main>
-
-    {% include "footer.html" %}
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const rssUrl = 'https://hoalongcorp.com/feed/';
-            const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`;
-
-            fetch(apiUrl)
-                .then(res => res.json())
-                .then(data => {
-                    if (data.status === 'ok' && data.items.length > 0) {
-                        const items = data.items;
-                        
-                        const heroContainer = document.getElementById('hero-spotlight');
-                        const firstPost = items[0];
-                        const firstThumb = firstPost.thumbnail || 'https://via.placeholder.com/800x500?text=C%C6%A1+Kh%C3%AD+H%C3%B2a+Long';
-                        const firstDesc = firstPost.description.replace(/(<([^>]+)>)/gi, "").substring(0, 160);
-
-                        heroContainer.innerHTML = `
-                            <div class="featured-card">
-                                <img src="${firstThumb}" alt="${firstPost.title}">
-                                <div class="featured-content">
-                                    <span class="badge-tag">Bài Viết Mới</span>
-                                    <h1 class="featured-title">
-                                        <a href="${firstPost.link}" target="_blank" rel="noopener">${firstPost.title}</a>
-                                    </h1>
-                                    <p class="featured-snippet">${firstDesc}...</p>
-                                    <a href="${firstPost.link}" target="_blank" rel="noopener" style="color: #ffa466; font-weight: 700; text-decoration: none; font-size: 14px;">Xem chi tiết bài viết →</a>
-                                </div>
-                            </div>
-                        `;
-
-                        const gridContainer = document.getElementById('rss-news-list');
-                        gridContainer.innerHTML = '';
-                        
-                        items.slice(1).forEach(post => {
-                            const card = document.createElement('article');
-                            card.className = 'article-card';
-                            const thumb = post.thumbnail || 'https://via.placeholder.com/400x250?text=Hoa+Long+Mechanical';
-                            const desc = post.description.replace(/(<([^>]+)>)/gi, "").substring(0, 100);
-
-                            card.innerHTML = `
-                                <img class="article-thumb" src="${thumb}" alt="${post.title}" loading="lazy">
-                                <div class="article-content">
-                                    <h3 class="article-title">
-                                        <a href="${post.link}" target="_blank" rel="noopener">${post.title}</a>
-                                    </h3>
-                                    <p class="article-excerpt">${desc}...</p>
-                                    <a href="${post.link}" target="_blank" rel="noopener" class="article-link">Đọc tiếp →</a>
-                                </div>
-                            `;
-                            gridContainer.appendChild(card);
-                        });
-                    }
-                })
-                .catch(err => console.log('Lỗi tải dữ liệu tin tức:', err));
-        });
-    </script>
-</body>
-</html>
+            <div class="nav-item">
+                <a href="dich-vu.html" class="nav-link">Dịch Vụ</a>
+            </div>
+            <div class="nav-item">
+                <a href="thong-tin.html" class="nav-link">Tin Tức</a>
+            </div>
+            <div class="nav-item">
+                <a href="lien-he.html" class="nav-link">Liên Hệ</a>
+            </div>
+            <a href="lien-he.html" class="btn-quote">
+                <i class="fa-solid fa-paper-plane"></i> Nhận Báo Giá
+            </a>
+        </nav>
+    </div>
+</header>
