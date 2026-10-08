@@ -3,369 +3,377 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dịch Vụ Di Dời, Tháo Dỡ & Cải Tạo Kệ Kho Chuyên Nghiệp - Cơ Khí Hòa Long</title>
-    <meta name="description" content="Chuyên tháo dỡ, di dời, lắp đặt và cải tạo nâng cấp hệ thống kệ kho công nghiệp (Selective, VNA, Shuttle). Giúp tiết kiệm 30-60% chi phí, tái sử dụng 80% kệ cũ an toàn chuẩn HLM.">
-    <meta name="keywords" content="tháo dỡ kệ kho, di dời kệ kho, cải tạo kho xưởng, tối ưu hệ kệ, bảo trì kệ chứa hàng, cơ khí hòa long">
-    <link rel="canonical" href="https://giaiphapkho-hue.github.io/cokhihoalong/dich-vu.html" />
-
-    <!-- Geo Meta Tags (SEO/GEO Local) -->
-    <meta name="geo.region" content="VN-SG" />
-    <meta name="geo.placename" content="TP. Hồ Chí Minh" />
-    <meta name="geo.position" content="10.775355;106.753383" />
-    <meta name="ICBM" content="10.775355, 106.753383" />
-
-    <!-- Google Fonts & Style -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <title>Dịch Vụ - Cơ Khí Hòa Long</title>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        :root {
-            --primary: #004b93;
-            --primary-dark: #003366;
-            --accent: #ff6600;
-            --accent-hover: #e05500;
-            --bg-light: #f8f9fa;
-            --text-dark: #222;
-            --text-gray: #555;
-            --border-color: #e2e8f0;
+        /* BASE STYLES */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
         }
 
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Roboto', sans-serif; }
-        body { color: var(--text-dark); line-height: 1.6; background-color: #fff; overflow-x: hidden; }
-
-        /* Header & Navigation */
-        header { background: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.08); position: sticky; top: 0; z-index: 1000; }
-        .container { width: 90%; max-width: 1200px; margin: auto; display: flex; justify-content: space-between; align-items: center; padding: 15px 0; }
-        .logo { font-size: 22px; font-weight: 700; color: var(--primary); text-decoration: none; display: flex; align-items: center; gap: 8px; }
-        nav a { margin-left: 20px; text-decoration: none; color: #333; font-weight: 500; transition: color 0.2s; }
-        nav a:hover, nav a.active { color: var(--primary); font-weight: 700; }
-
-        /* Hero Banner Section */
-        .hero {
-            background: linear-gradient(135deg, rgba(0,75,147,0.92), rgba(0,30,70,0.92)), url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1600&q=80') center/cover;
-            color: white; padding: 80px 0; text-align: center; position: relative;
+        /* HEADER STYLES */
+        .top-bar {
+            background-color: #1a252f;
+            color: #ecf0f1;
+            font-size: 0.85rem;
+            padding: 8px 0;
         }
-        .hero h1 { font-size: 36px; font-weight: 700; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 0.5px; }
-        .hero p { font-size: 18px; max-width: 800px; margin: 0 auto 25px; opacity: 0.95; }
-        .hero-badges { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 20px; }
-        .badge-item { background: rgba(255,255,255,0.15); backdrop-filter: blur(5px); padding: 8px 18px; border-radius: 30px; font-size: 14px; border: 1px solid rgba(255,255,255,0.2); }
+        .top-bar-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .top-info span {
+            margin-right: 15px;
+        }
+        .top-info a:hover, .top-social a:hover {
+            color: #e67e22;
+        }
+        .top-social a {
+            margin-left: 10px;
+            color: #ecf0f1;
+        }
 
-        /* Section Global */
-        .section { padding: 65px 0; }
-        .section-title { text-align: center; margin-bottom: 45px; }
-        .section-title h2 { font-size: 28px; color: var(--primary); text-transform: uppercase; margin-bottom: 10px; }
-        .section-title p { color: var(--text-gray); font-size: 16px; }
+        .main-header {
+            background-color: #ffffff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .brand-logo {
+            font-weight: bold;
+            font-size: 1.4rem;
+            color: #2c3e50;
+            display: flex;
+            flex-direction: column;
+        }
+        .brand-logo span {
+            font-size: 0.7rem;
+            color: #7f8c8d;
+            letter-spacing: 1px;
+        }
+        .main-nav {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .main-nav a {
+            font-weight: 600;
+            color: #333;
+            transition: color 0.3s;
+        }
+        .main-nav a:hover, .main-nav a.active {
+            color: #e67e22;
+        }
+        .btn-quote {
+            background-color: #e67e22;
+            color: #fff !important;
+            padding: 8px 16px;
+            border-radius: 4px;
+            transition: background 0.3s;
+        }
+        .btn-quote:hover {
+            background-color: #d35400;
+        }
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
 
-        /* Service Cards Grid (Hover & Animation Effects) */
-        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
+        /* PAGE BANNER */
+        .page-banner {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://via.placeholder.com/1200x300') center/cover no-repeat;
+            color: #fff;
+            text-align: center;
+            padding: 60px 20px;
+        }
+        .page-banner h1 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+        }
+
+        /* SERVICES CONTENT SECTION */
+        .services-section {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
         .service-card {
-            background: #fff; border-radius: 12px; border: 1px solid var(--border-color); overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.04); transition: all 0.35s ease; position: relative; display: flex; flex-direction: column;
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
         }
-        .service-card:hover { transform: translateY(-8px); box-shadow: 0 12px 30px rgba(0,75,147,0.15); border-color: var(--primary); }
-        .card-header { background: var(--primary); color: white; padding: 20px; text-align: center; }
-        .card-header h3 { font-size: 20px; font-weight: 700; }
-        .card-body { padding: 25px; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; }
-        .card-body ul { list-style: none; margin: 15px 0; }
-        .card-body ul li { margin-bottom: 10px; padding-left: 22px; position: relative; color: var(--text-gray); font-size: 14.5px; }
-        .card-body ul li::before { content: "✓"; position: absolute; left: 0; color: var(--accent); font-weight: bold; }
-
-        /* Process Steps Timeline */
-        .process-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; margin-top: 30px; }
-        .step-box { background: var(--bg-light); border: 1px solid var(--border-color); border-radius: 8px; padding: 20px; text-align: center; transition: 0.3s; }
-        .step-box:hover { background: #fff; border-color: var(--accent); box-shadow: 0 5px 15px rgba(255,102,0,0.1); }
-        .step-number { width: 40px; height: 40px; background: var(--primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; margin: 0 auto 12px; }
-
-        /* Comparison Table Section */
-        .table-responsive { overflow-x: auto; margin-top: 25px; }
-        .comparison-table { width: 100%; border-collapse: collapse; background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
-        .comparison-table th, .comparison-table td { padding: 15px 20px; text-align: left; border-bottom: 1px solid var(--border-color); font-size: 14.5px; }
-        .comparison-table th { background: var(--primary); color: white; text-transform: uppercase; font-size: 14px; letter-spacing: 0.5px; }
-        .comparison-table tr:hover { background-color: rgba(0,75,147,0.02); }
-        .highlight-col { background-color: rgba(255,102,0,0.05); font-weight: 500; color: var(--primary-dark); }
-
-        /* Contact & Form Section */
-        .contact-container { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; background: var(--bg-light); padding: 40px; border-radius: 12px; border: 1px solid var(--border-color); margin-top: 40px; }
-        @media (max-width: 850px) { .contact-container { grid-template-columns: 1fr; padding: 20px; } }
-        
-        .form-group { margin-bottom: 16px; }
-        .form-group label { display: block; font-weight: 500; margin-bottom: 6px; font-size: 14px; }
-        .form-group input, .form-group textarea, .form-group select {
-            width: 100%; padding: 12px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 14px; outline: none; transition: border-color 0.2s;
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
         }
-        .form-group input:focus, .form-group textarea:focus, .form-group select:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(0,75,147,0.1); }
-        .btn-submit { background: var(--accent); color: white; border: none; padding: 14px 28px; font-size: 16px; font-weight: bold; border-radius: 6px; cursor: pointer; width: 100%; transition: background 0.3s; }
-        .btn-submit:hover { background: var(--accent-hover); }
+        .service-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background-color: #ddd;
+        }
+        .service-content {
+            padding: 20px;
+        }
+        .service-content h3 {
+            font-size: 1.25rem;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        .service-content p {
+            color: #666;
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+        }
 
-        /* Footer */
-        footer { background: #111; color: #aaa; padding: 40px 0 20px; font-size: 14px; margin-top: 60px; text-align: center; }
+        /* FOOTER STYLES */
+        .main-footer {
+            background-color: #1a252f;
+            color: #ecf0f1;
+            padding: 50px 0 20px;
+            margin-top: 60px;
+        }
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        .footer-col h4 {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            color: #e67e22;
+            position: relative;
+        }
+        .footer-col p, .footer-col ul {
+            font-size: 0.9rem;
+            color: #bdc3c7;
+        }
+        .footer-col ul {
+            list-style: none;
+        }
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+        .footer-col ul li a:hover {
+            color: #e67e22;
+        }
+        .footer-bottom {
+            border-top: 1px solid #34495e;
+            margin-top: 40px;
+            padding-top: 20px;
+            text-align: center;
+            font-size: 0.85rem;
+            color: #bdc3c7;
+        }
+
+        /* RESPONSIVE DESIGN */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+            .main-nav {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: #fff;
+                padding: 20px;
+                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+            }
+            .main-nav.active {
+                display: flex;
+            }
+            .top-info span {
+                display: block;
+                margin-bottom: 5px;
+            }
+        }
     </style>
-
-    <!-- Schema.org Service Markup -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Service",
-      "serviceType": "Dịch vụ tháo dỡ, di dời & cải tạo kệ kho công nghiệp",
-      "provider": {
-        "@type": "ManufacturingBusiness",
-        "name": "Cơ Khí Hòa Long (HLM)"
-      },
-      "areaServed": "Vietnam",
-      "description": "Giải pháp kỹ thuật di dời kệ kho an toàn, thi công tối ưu lại layout, gia cố kiểm định chịu tải chuẩn HLM."
-    }
-    </script>
 </head>
 <body>
 
-    <!-- Header / Navigation -->
-    <header>
-        <div class="container">
-            <a href="index.html" class="logo">CƠ KHÍ HÒA LONG</a>
-            <nav>
-                <a href="index.html">Trang chủ</a>
-                <a href="gioi-thieu.html">Giới thiệu</a>
-                <a href="san-pham.html">Sản phẩm</a>
-                <a href="dich-vu.html" class="active">Dịch vụ</a>
-                <a href="thong-tin.html">Thông tin</a>
-                <a href="lien-he.html">Liên hệ</a>
+    <!-- HEADER CHUẨN CƠ KHÍ HÒA LONG -->
+    <div class="top-bar">
+        <div class="top-bar-container">
+            <div class="top-info">
+                <span><i class="fa-solid fa-building"></i> MST: 1101890689</span>
+                <span><i class="fa-solid fa-phone"></i> Hotline/Zalo: <a href="tel:0901890689">+84 901 890 689</a></span>
+                <span><i class="fa-solid fa-envelope"></i> <a href="mailto:contact@hoalongcorp.com">contact@hoalongcorp.com</a></span>
+            </div>
+            <div class="top-social">
+                <a href="https://facebook.com" target="_blank" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://zalo.me/0901890689" target="_blank" title="Zalo"><i class="fa-solid fa-comment"></i></a>
+                <a href="https://youtube.com" target="_blank" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                <a href="https://linkedin.com" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <header class="main-header">
+        <div class="header-container">
+            <a href="index.html" class="brand-logo">
+                CƠ KHÍ HÒA LONG
+                <span>GIẢI PHÁP LƯU TRỮ KHO HÀNG & PEB</span>
+            </a>
+
+            <div class="menu-toggle" id="mobileMenuBtn">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+
+            <nav class="main-nav" id="mainNav">
+                <a href="index.html">Trang Chủ</a>
+                <a href="gioi-thieu.html">Giới Thiệu</a>
+                <a href="san-pham.html">Sản Phẩm</a>
+                <a href="dich-vu.html" class="active">Dịch Vụ</a>
+                <a href="thong-tin.html">Tin Tức</a>
+                <a href="lien-he.html">Liên Hệ</a>
+                <a href="lien-he.html" class="btn-quote">Báo Giá</a>
             </nav>
         </div>
     </header>
 
-    <!-- Hero Banner -->
-    <section class="hero">
-        <div class="container" style="flex-direction: column;">
-            <h1>DỊCH VỤ THÁO DỠ, DI DỜI & CẢI TẠO KỆ KHO</h1>
-            <p>An Toàn Kết Cấu – Đúng Kỹ Thuật Chịu Tải – Tối Ưu Tối Đa Sức Chứa Nhà Kho</p>
-            <div class="hero-badges">
-                <span class="badge-item">✔ Tiết kiệm 30 - 60% chi phí đầu tư</span>
-                <span class="badge-item">✔ Tái sử dụng 60 - 80% hệ kệ cũ</span>
-                <span class="badge-item">✔ Hỗ trợ vẽ lại Layout 2D/3D miễn phí</span>
-            </div>
-        </div>
+    <!-- BANNER PAGE -->
+    <section class="page-banner">
+        <h1>DỊCH VỤ CỦA CHÚNG TÔI</h1>
+        <p>Cung cấp giải pháp trọn gói về hệ thống kệ chứa hàng và nhà thép tiền chế</p>
     </section>
 
-    <!-- Main Services Grid -->
-    <section class="section">
-        <div class="container" style="flex-direction: column;">
-            <div class="section-title">
-                <h2>GIẢI PHÁP KỸ THUẬT KHO DÀNH CHO DOANH NGHIỆP</h2>
-                <p>Không chỉ là tháo dỡ – HLM đồng hành đảm bảo an toàn & vận hành lâu dài</p>
+    <!-- MAIN SERVICES CONTENT -->
+    <main class="services-section">
+        <div class="services-grid">
+            
+            <div class="service-card">
+                <div class="service-img" style="background: #e0e0e0; display:flex; align-items:center; justify-content:center;">
+                    <i class="fa-solid fa-drafting-compass fa-3x" style="color:#777;"></i>
+                </div>
+                <div class="service-content">
+                    <h3>Tư Vấn & Thiết Kế Hệ Thống Kho</h3>
+                    <p>Khảo sát mặt bằng thực tế, lập bản vẽ 2D/3D tối ưu hóa không gian lưu trữ và luồng vận chuyển cho kho hàng của bạn.</p>
+                </div>
             </div>
 
-            <div class="grid-3" style="width: 100%;">
-                <!-- Card 1 -->
-                <div class="service-card">
-                    <div class="card-header">
-                        <h3>1. Tháo Dỡ & Di Dời Kệ Kho</h3>
-                    </div>
-                    <div class="card-body">
-                        <p>Dịch vụ trọn gói giúp doanh nghiệp chuyển nhà kho, nâng cấp mặt bằng mà không làm gián đoạn chuỗi cung ứng.</p>
-                        <ul>
-                            <li>Tháo dỡ chuẩn kỹ thuật các dòng kệ Selective, VNA, Drive-in, Shuttle.</li>
-                            <li>Đóng gói, phân loại vật liệu tránh trầy xước sơn và biến dạng khung.</li>
-                            <li>Vận chuyển an toàn tới mặt bằng kho mới.</li>
-                            <li>Cân chỉnh thẳng đứng, bắt bu lông neo sàn chuẩn an toàn HLM.</li>
-                        </ul>
-                    </div>
+            <div class="service-card">
+                <div class="service-img" style="background: #e0e0e0; display:flex; align-items:center; justify-content:center;">
+                    <i class="fa-solid fa-industry fa-3x" style="color:#777;"></i>
                 </div>
+                <div class="service-content">
+                    <h3>Sản Xuất Kệ Chứa Hàng Heavy Duty</h3>
+                    <p>Gia công sản xuất các loại kệ tải trọng nặng, kệ Selective, Drive-in, Shuttle Rack đạt tiêu chuẩn chất lượng cao.</p>
+                </div>
+            </div>
 
-                <!-- Card 2 -->
-                <div class="service-card">
-                    <div class="card-header" style="background: #003366;">
-                        <h3>2. Cải Tạo Kho & Tối Ưu Hệ Kệ</h3>
-                    </div>
-                    <div class="card-body">
-                        <p>Nâng cấp sức chứa kho xưởng hiện hữu khi SKU tăng đột biến hoặc cần thay đổi mô hình vận hành.</p>
-                        <ul>
-                            <li>Đánh giá lại ma trận SKU, tần suất xuất nhập và luồng di chuyển xe nâng.</li>
-                            <li>Thay đổi chiều cao tầng beam, bổ sung thanh Support Bar / Lưới bảo vệ.</li>
-                            <li>Chuyển đổi kệ Selective sang VNA hoặc Radio Shuttle tăng 40% sức chứa.</li>
-                            <li>Sơn lại chống ăn mòn cho kho lạnh và kho hóa chất.</li>
-                        </ul>
-                    </div>
+            <div class="service-card">
+                <div class="service-img" style="background: #e0e0e0; display:flex; align-items:center; justify-content:center;">
+                    <i class="fa-solid fa-warehouse fa-3x" style="color:#777;"></i>
                 </div>
+                <div class="service-content">
+                    <h3>Thi Công Nhà Thép Tiền Chế (PEB)</h3>
+                    <p>Cung cấp giải pháp thiết kế, gia công và lắp dựng nhà xưởng, nhà kho thép tiền chế toàn diện, an toàn và tiến độ.</p>
+                </div>
+            </div>
 
-                <!-- Card 3 -->
-                <div class="service-card">
-                    <div class="card-header" style="background: #212529;">
-                        <h3>3. Kiểm Định & Bảo Trì Định Kỳ</h3>
-                    </div>
-                    <div class="card-body">
-                        <p>Khắc phục rủi ro va chạm xe nâng, đảm bảo hệ thống kệ luôn đạt tiêu chuẩn chịu tải thiết kế ban đầu.</p>
-                        <ul>
-                            <li>Kiểm tra độ võng chân chân kệ (Upright) và thanh chéo.</li>
-                            <li>Thay thế phụ kiện bị lão hóa, gia cố ốp chân bảo vệ góc.</li>
-                            <li>Thử tải nghiệm thu và dán bảng thông số tải trọng an toàn.</li>
-                            <li>Cấp hồ sơ chứng nhận kỹ thuật cho các kỳ kiểm định an toàn lao động.</li>
-                        </ul>
-                    </div>
+            <div class="service-card">
+                <div class="service-img" style="background: #e0e0e0; display:flex; align-items:center; justify-content:center;">
+                    <i class="fa-solid fa-screwdriver-wrench fa-3x" style="color:#777;"></i>
                 </div>
+                <div class="service-content">
+                    <h3>Lắp Đặt & Di Dời Hệ Thống Kệ</h3>
+                    <p>Đội ngũ kỹ thuật chuyên nghiệp hỗ trợ tháo dỡ, di dời và lắp đặt lại hệ thống kệ kho đảm bảo an toàn tuyệt đối.</p>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-img" style="background: #e0e0e0; display:flex; align-items:center; justify-content:center;">
+                    <i class="fa-solid fa-clipboard-check fa-3x" style="color:#777;"></i>
+                </div>
+                <div class="service-content">
+                    <h3>Bảo Trì & Kiểm Định An Toàn</h3>
+                    <p>Dịch vụ bảo dưỡng định kỳ, kiểm tra tải trọng và xử lý sự cố giúp hệ thống vận hành bền bỉ, an toàn liên tục.</p>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- FOOTER CHUẨN CƠ KHÍ HÒA LONG -->
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h4>CÔNG TY CỔ PHẦN CƠ KHÍ HÒA LONG</h4>
+                <p><i class="fa-solid fa-location-dot"></i> Mã số thuế: 1101890689</p>
+                <p><i class="fa-solid fa-phone"></i> Hotline: +84 901 890 689</p>
+                <p><i class="fa-solid fa-envelope"></i> Email: contact@hoalongcorp.com</p>
+            </div>
+            <div class="footer-col">
+                <h4>LIÊN KẾT NHANH</h4>
+                <ul>
+                    <li><a href="index.html">Trang Chủ</a></li>
+                    <li><a href="gioi-thieu.html">Giới Thiệu</a></li>
+                    <li><a href="san-pham.html">Sản Phẩm</a></li>
+                    <li><a href="dich-vu.html">Dịch Vụ</a></li>
+                    <li><a href="lien-he.html">Báo Giá & Liên Hệ</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>DỊCH VỤ CHÍNH</h4>
+                <ul>
+                    <li>Tư vấn & Thiết kế kho hàng</li>
+                    <li>Sản xuất kệ tải trọng nặng</li>
+                    <li>Thi công nhà thép tiền chế (PEB)</li>
+                    <li>Bảo trì & Kiểm định an toàn</li>
+                </ul>
             </div>
         </div>
-    </section>
-
-    <!-- Quy Trình 6 Bước Triển Khai -->
-    <section class="section" style="background: var(--bg-light);">
-        <div class="container" style="flex-direction: column;">
-            <div class="section-title">
-                <h2>QUY TRÌNH THI CÔNG chuẩn kỹ thuật HLM</h2>
-                <p>6 Bước minh bạch - Đảm bảo tiến độ và an toàn tuyệt đối</p>
-            </div>
-
-            <div class="process-grid" style="width: 100%;">
-                <div class="step-box">
-                    <div class="step-number">1</div>
-                    <h4 style="color: var(--primary);">Khảo Sát Hiện Trạng</h4>
-                    <p style="font-size: 13px; color: #666; margin-top: 5px;">Kiểm tra tình trạng vật liệu, lực sàn & kích thước kho mới.</p>
-                </div>
-                <div class="step-box">
-                    <div class="step-number">2</div>
-                    <h4 style="color: var(--primary);">Lập Phương Án</h4>
-                    <p style="font-size: 13px; color: #666; margin-top: 5px;">Thiết kế layout kho mới & phương án đóng gói an toàn.</p>
-                </div>
-                <div class="step-box">
-                    <div class="step-number">3</div>
-                    <h4 style="color: var(--primary);">Tháo Dỡ Phân Loại</h4>
-                    <p style="font-size: 13px; color: #666; margin-top: 5px;">Phân loại chi tiết tái sử dụng hoặc thay thế gia cố.</p>
-                </div>
-                <div class="step-box">
-                    <div class="step-number">4</div>
-                    <h4 style="color: var(--primary);">Lắp Đặt Cân Chỉnh</h4>
-                    <p style="font-size: 13px; color: #666; margin-top: 5px;">Định vị chân kệ, siết lực bu lông & đo độ thẳng đứng.</p>
-                </div>
-                <div class="step-box">
-                    <div class="step-number">5</div>
-                    <h4 style="color: var(--primary);">Nghiệm Thu Bàn Giao</h4>
-                    <p style="font-size: 13px; color: #666; margin-top: 5px;">Gắn bảng tải trọng, bàn giao hồ sơ kỹ thuật vận hành.</p>
-                </div>
-                <div class="step-box">
-                    <div class="step-number">6</div>
-                    <h4 style="color: var(--primary);">Bảo Hành Định Kỳ</h4>
-                    <p style="font-size: 13px; color: #666; margin-top: 5px;">Hỗ trợ kỹ thuật 24/7 và kiểm tra lực an toàn định kỳ.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Bảng Phân Tích ROI: Mua Mới vs Tái Sử Dụng Kệ Kho -->
-    <section class="section">
-        <div class="container" style="flex-direction: column;">
-            <div class="section-title">
-                <h2>HIỆU QUẢ TÀI CHÍNH (ROI): MUA MỚI VS TÁI SỬ DỤNG KỆ KHO</h2>
-                <p>Thực tế triển khai của HLM ghi nhận 60-80% kệ cũ vẫn đủ điều kiện tái sử dụng an toàn</p>
-            </div>
-
-            <div class="table-responsive" style="width: 100%;">
-                <table class="comparison-table">
-                    <thead>
-                        <tr>
-                            <th>Tiêu Chí So Sánh</th>
-                            <th>Mua Mới Hệ Thống Kệ Kho</th>
-                            <th class="highlight-col">Tái Sử Dụng & Di Dời Kệ (HLM)</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>Chi phí đầu tư ban đầu</strong></td>
-                            <td>Cao (100%)</td>
-                            <td class="highlight-col">Thấp hơn <strong>30 – 60%</strong> tùy tình trạng kệ</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Tận dụng vật liệu thép</strong></td>
-                            <td>Chỉ dùng 100% thép mới</td>
-                            <td class="highlight-col">Tận dụng khung, chân, thanh beam còn đạt tải</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Thời gian triển khai</strong></td>
-                            <td>6 – 10 tuần (chờ sản xuất)</td>
-                            <td class="highlight-col"><strong>1 – 3 tuần</strong> (triển khai nhanh)</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Thời gian gián đoạn kho (Downtime)</strong></td>
-                            <td>Cao</td>
-                            <td class="highlight-col"><strong>Rất thấp</strong> (thi công linh hoạt từng khu vực)</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Khả năng tối ưu Layout kho</strong></td>
-                            <td>Thiết kế mới theo mặt bằng</td>
-                            <td class="highlight-col"><strong>HLM tái thiết kế hoàn toàn theo kho mới</strong></td>
-                        </tr>
-                        <tr>
-                            <td><strong>Tuổi thọ sau thi công</strong></td>
-                            <td>100%</td>
-                            <td class="highlight-col"><strong>70 – 90%</strong> sau kiểm định & gia cố HLM</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </section>
-
-    <!-- Tích hợp Form Đăng Ký Tư Vấn (Bắn Email về giaiphapkho@gmail.com) -->
-    <section class="section" style="background: var(--bg-light);" id="dang-ky-tu-van">
-        <div class="container" style="flex-direction: column;">
-            <div class="contact-container" style="width: 100%;">
-                <!-- Thông tin cam kết -->
-                <div>
-                    <h2 style="color: var(--primary); font-size: 22px; margin-bottom: 15px;">CAM KẾT NĂNG LỰC TỪ HOA LONG MECHANICAL</h2>
-                    <p style="margin-bottom: 15px;">Chúng tôi thấu hiểu rằng an toàn kết cấu kệ kho liên quan trực tiếp đến tính mạng con người và tài sản doanh nghiệp. HLM cam kết:</p>
-                    <ul style="list-style: none; line-height: 2;">
-                        <li>✔ <strong>Không lắp đặt</strong> khi chưa đánh giá đủ an toàn & tải trọng.</li>
-                        <li>✔ Đội ngũ kỹ sư cơ khí kho vận giàu kinh nghiệm am hiểu kho lạnh & kho tự động.</li>
-                        <li>✔ Bản vẽ khảo sát 2D/3D mặt bằng kho mới hoàn toàn miễn phí.</li>
-                    </ul>
-                    <div style="margin-top: 25px; background: #fff; padding: 15px; border-radius: 8px; border-left: 4px solid var(--accent);">
-                        <p style="font-size: 14px; color: #444;"><strong>Hotline tư vấn kỹ thuật trực tiếp:</strong><br>
-                        <span style="font-size: 18px; color: var(--accent); font-weight: bold;">0901 890 689</span> | 028 710 88 660 (ext 311)</p>
-                    </div>
-                </div>
-
-                <!-- Form đăng ký -->
-                <div style="background: #fff; padding: 25px; border-radius: 8px; border: 1px solid var(--border-color);">
-                    <h3 style="color: var(--primary); margin-bottom: 15px;">ĐĂNG KÝ KHẢO SÁT & BÁO GIÁ DỊCH VỤ</h3>
-                    <form action="https://formspree.io/f/giaiphapkho@gmail.com" method="POST">
-                        <input type="hidden" name="_subject" value="[HLM Service Form] Yêu cầu Dịch vụ Kệ Kho mới">
-                        <input type="hidden" name="_language" value="vi">
-
-                        <div class="form-group">
-                            <label for="fullname">Họ và tên *</label>
-                            <input type="text" id="fullname" name="Ho_Va_Ten" placeholder="Nguyễn Văn A" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="phone">Số điện thoại / Zalo *</label>
-                            <input type="tel" id="phone" name="So_Dien_Thoai" placeholder="0901234567" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="service_type">Dịch vụ quan tâm *</label>
-                            <select id="service_type" name="Dich_Vu_Quan_Tam" required>
-                                <option value="Tháo dỡ & Di dời kệ kho sang mặt bằng mới">Tháo dỡ & Di dời kệ kho sang mặt bằng mới</option>
-                                <option value="Cải tạo kho xưởng & Tối ưu lại hệ kệ hiện hữu">Cải tạo kho xưởng & Tối ưu lại hệ kệ hiện hữu</option>
-                                <option value="Kiểm định, sửa chữa & Bảo trì an toàn kệ kho">Kiểm định, sửa chữa & Bảo trì an toàn kệ kho</option>
-                                <option value="Thiết kế bản vẽ kho 2D/3D miễn phí">Thiết kế bản vẽ kho 2D/3D miễn phí</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="message">Ghi chú nhu cầu (Diện tích kho, Loại kệ, Địa điểm...)</label>
-                            <textarea id="message" name="Noi_Dung_Yeu_Cau" rows="3" placeholder="Ví dụ: Cần di dời 300 Pallet kệ Selective từ Q.12 sang Bến Lức..."></textarea>
-                        </div>
-
-                        <button type="submit" class="btn-submit">NHẬN TƯ VẤN & BÁO GIÁ TRỌN GÓI</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container" style="flex-direction: column;">
-            <p>© 2026 CÔNG TY CỔ PHẦN SẢN XUẤT CƠ KHÍ HÒA LONG (HLM). All rights reserved.</p>
-            <p style="font-size: 12px; margin-top: 5px; color: #777;">Thương hiệu thuộc FGROUP - Chuyên gia giải pháp lưu trữ nhà kho công nghiệp.</p>
+        <div class="footer-bottom">
+            <p>&copy; 2026 CƠ KHÍ HÒA LONG. All Rights Reserved.</p>
         </div>
     </footer>
 
+    <!-- SCRIPT TOGGLE MOBILE MENU -->
+    <script>
+        document.getElementById('mobileMenuBtn').addEventListener('click', function() {
+            document.getElementById('mainNav').classList.toggle('active');
+        });
+    </script>
 </body>
 </html>
