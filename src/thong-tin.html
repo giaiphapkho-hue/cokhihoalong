@@ -3,18 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tin Tức & Chuyên Mục - Cơ Khí Hòa Long</title>
-    <meta name="description" content="Cập nhật tin tức ngành kho vận, giải pháp tối ưu không gian nhà kho và tài liệu kỹ thuật từ Cơ Khí Hòa Long.">
-    
+    <title>Tin Tức, Văn Hóa & Kiến Thức Ngành Kệ Kho - Cơ Khí Hòa Long</title>
+    <meta name="description" content="Cập nhật tin tức sự kiện Cơ Khí Hòa Long, giá trị văn hóa doanh nghiệp và chuyên mục kiến thức kỹ thuật kệ kho công nghiệp, logistics mới nhất.">
+    <link rel="canonical" href="https://hoalongcorp.com/thong-tin/">
+
+    <!-- Geo SEO Tags -->
+    <meta name="geo.region" content="VN-LA">
+    <meta name="geo.placename" content="Long An">
+    <meta name="geo.position" content="10.5833;106.5000">
+    <meta name="ICBM" content="10.5833, 106.5000">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@700&display=swap" rel="stylesheet">
+
+    <!-- Schema Structured Data cho Tin Tức & Blog -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "Tin Tức & Chuyên Mục - Cơ Khí Hòa Long",
+      "description": "Chuyên mục tin tức sự kiện, văn hóa doanh nghiệp và kiến thức chuyên ngành kệ kho bãi.",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Cơ Khí Hòa Long",
+        "url": "https://hoalongcorp.com"
+      }
+    }
+    </script>
+
     <style>
-        :root { 
-            --primary: #004b93; 
+        :root {
+            --primary: #004b93;
             --primary-dark: #002e5c;
-            --accent: #ff6600; 
+            --accent: #ff6600;
             --accent-hover: #e65c00;
             --text-main: #1a1a1a;
             --text-muted: #666666;
@@ -24,184 +46,362 @@
             --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
         }
 
-        .news-container { width: 92%; max-width: 1200px; margin: 30px auto 60px; font-family: var(--font-sans); color: var(--text-main); }
-
-        .news-section-title { 
-            border-bottom: 2px solid var(--primary); 
-            padding-bottom: 8px; 
-            margin: 35px 0 20px 0; 
-            font-family: var(--font-serif); 
-            font-size: 20px; 
-            color: var(--primary); 
-            text-transform: uppercase; 
-            font-weight: 700; 
-            letter-spacing: 0.5px;
+        body {
+            font-family: var(--font-sans);
+            color: var(--text-main);
+            background-color: #ffffff;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
         }
 
-        /* Feature Spotlight */
-        .news-hero { display: grid; grid-template-columns: 1fr; gap: 24px; margin-bottom: 30px; }
-        .featured-card { 
-            position: relative; 
-            border-radius: 8px; 
-            overflow: hidden; 
-            min-height: 380px; 
-            background: #111;
+        .container {
+            width: 92%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Hero Banner */
+        .page-hero {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+            color: #ffffff;
+            padding: 48px 0;
+            text-align: center;
+        }
+        .page-hero h1 {
+            font-family: var(--font-serif);
+            font-size: 32px;
+            margin-bottom: 12px;
+        }
+        .page-hero p {
+            font-size: 16px;
+            color: #dbeafe;
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        /* Breadcrumb Nav */
+        .breadcrumb {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin: 20px 0;
             display: flex;
-            align-items: flex-end;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            align-items: center;
+            gap: 8px;
         }
-        .featured-card img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.75; transition: transform 0.4s ease; }
-        .featured-card:hover img { transform: scale(1.02); }
-        .featured-content { 
-            position: relative; 
-            z-index: 2; 
-            padding: 32px; 
-            background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.9) 100%);
+        .breadcrumb a {
+            color: var(--text-muted);
+            text-decoration: none;
+        }
+        .breadcrumb a:hover {
+            color: var(--primary);
+        }
+        .breadcrumb .sep { color: #aaa; }
+        .breadcrumb .current { color: var(--primary); font-weight: 600; }
+
+        /* Category Filter Tabs */
+        .category-tabs {
+            display: flex;
+            gap: 12px;
+            margin: 30px 0 36px;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 12px;
+            overflow-x: auto;
+        }
+        .tab-btn {
+            background: var(--bg-light);
+            color: var(--text-main);
+            padding: 8px 18px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            white-space: nowrap;
+            transition: all 0.2s ease;
+            border: 1px solid var(--border-color);
+        }
+        .tab-btn:hover, .tab-btn.active {
+            background: var(--primary);
+            color: #ffffff;
+            border-color: var(--primary);
+        }
+
+        /* News Main Layout Grid */
+        .news-layout {
+            display: grid;
+            grid-template-columns: 2.7fr 1fr;
+            gap: 36px;
+            margin-bottom: 60px;
+        }
+
+        /* News Cards Grid */
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+            gap: 28px;
+        }
+        .news-card {
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+        .news-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+        }
+        .news-img {
+            height: 180px;
+            background: #f1f5f9;
+            position: relative;
+            overflow: hidden;
+        }
+        .news-img img {
             width: 100%;
-            color: #fff;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
         }
-        .badge-tag { display: inline-block; background: var(--accent); color: #fff; font-size: 11px; font-weight: 700; text-transform: uppercase; padding: 4px 10px; border-radius: 3px; margin-bottom: 12px; }
-        .featured-title { font-family: var(--font-serif); font-size: 24px; font-weight: 700; line-height: 1.3; margin-bottom: 10px; }
-        .featured-title a { color: #fff; text-decoration: none; }
-        .featured-title a:hover { color: #ffd1b3; }
-        .featured-snippet { font-size: 14px; color: #ddd; line-height: 1.6; margin-bottom: 14px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; max-width: 900px; }
-
-        /* Main Layout Grid */
-        .news-body { display: grid; grid-template-columns: 2.8fr 1.2fr; gap: 32px; }
-        @media (max-width: 900px) { .news-body { grid-template-columns: 1fr; } }
-
-        .articles-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 24px; }
-        .article-card { background: #fff; border: 1px solid var(--border-color); border-radius: 6px; overflow: hidden; display: flex; flex-direction: column; transition: transform 0.2s, box-shadow 0.2s; }
-        .article-card:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.06); }
-        .article-thumb { height: 170px; width: 100%; object-fit: cover; }
-        .article-content { padding: 18px; display: flex; flex-direction: column; flex-grow: 1; }
-        .article-title { font-family: var(--font-serif); font-size: 15px; font-weight: 700; color: var(--text-main); margin-bottom: 10px; line-height: 1.4; }
-        .article-title a { color: var(--text-main); text-decoration: none; }
-        .article-title a:hover { color: var(--primary); }
-        .article-excerpt { font-size: 13px; color: var(--text-muted); margin-bottom: 15px; flex-grow: 1; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
-        .article-link { font-size: 13px; color: var(--accent); font-weight: 600; text-decoration: none; }
+        .news-card:hover .news-img img {
+            transform: scale(1.05);
+        }
+        .news-badge {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background: var(--primary);
+            color: #ffffff;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 3px 8px;
+            border-radius: 4px;
+            text-transform: uppercase;
+        }
+        .news-content {
+            padding: 18px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+        .news-date {
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+        }
+        .news-title {
+            font-family: var(--font-serif);
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 1.4;
+            margin: 0 0 10px;
+        }
+        .news-title a {
+            color: var(--text-main);
+            text-decoration: none;
+        }
+        .news-title a:hover {
+            color: var(--primary);
+        }
+        .news-excerpt {
+            font-size: 13px;
+            color: var(--text-muted);
+            line-height: 1.5;
+            margin-bottom: 16px;
+            flex-grow: 1;
+        }
+        .read-more {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--accent);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+        .read-more:hover {
+            color: var(--accent-hover);
+        }
 
         /* Sidebar Widgets */
-        .sidebar-widget { background: var(--bg-light); border: 1px solid var(--border-color); padding: 20px; border-radius: 6px; margin-bottom: 24px; }
-        .widget-title { font-family: var(--font-serif); font-size: 16px; font-weight: 700; color: var(--primary); margin-bottom: 15px; padding-bottom: 8px; border-bottom: 2px solid var(--accent); }
-        .brand-box { background: var(--primary); color: #fff; text-align: center; padding: 24px 16px; border-radius: 6px; }
-        .brand-box h3 { font-family: var(--font-serif); font-size: 18px; margin-bottom: 10px; }
-        .brand-box p { font-size: 13px; color: #dbeafe; margin-bottom: 16px; line-height: 1.5; }
-        .btn-action { background: var(--accent); color: #fff; text-decoration: none; padding: 10px 18px; border-radius: 4px; font-weight: 600; font-size: 13px; display: inline-block; transition: background 0.2s; }
-        .btn-action:hover { background: var(--accent-hover); }
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 28px;
+        }
+        .widget {
+            background: var(--bg-light);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+        }
+        .widget-title {
+            font-family: var(--font-serif);
+            font-size: 17px;
+            color: var(--primary);
+            margin: 0 0 16px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--primary);
+        }
+        .widget-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .widget-list li {
+            margin-bottom: 12px;
+            padding-bottom: 12px;
+            border-bottom: 1px dashed var(--border-color);
+        }
+        .widget-list li:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+        .widget-list a {
+            color: var(--text-main);
+            text-decoration: none;
+            font-size: 13.5px;
+            font-weight: 500;
+            line-height: 1.4;
+            display: block;
+        }
+        .widget-list a:hover {
+            color: var(--primary);
+        }
 
-        .category-list { list-style: none; font-size: 14px; line-height: 2.2; }
-        .category-list a { color: var(--text-main); text-decoration: none; display: flex; justify-content: space-between; border-bottom: 1px dashed var(--border-color); }
-        .category-list a:hover { color: var(--accent); }
-
-        /* Loading Skeleton */
-        .skeleton { background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%); background-size: 200% 100%; animation: loading 1.5s infinite; border-radius: 4px; }
-        @keyframes loading { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } }
+        @media (max-width: 868px) {
+            .news-layout { grid-template-columns: 1fr; }
+            .page-hero h1 { font-size: 26px; }
+        }
     </style>
 </head>
 <body>
 
     {% include "header.html" %}
 
-    <main class="news-container">
-        
-        <div class="news-section-title">Tiêu Điểm Tin Tức</div>
-        <div id="hero-spotlight" class="news-hero">
-            <div class="featured-card skeleton" style="height: 380px;"></div>
+    <section class="page-hero">
+        <div class="container">
+            <h1>Tin Tức & Chuyên Mục Bản Tin HLM</h1>
+            <p>Khám phá văn hóa doanh nghiệp, hoạt động sự kiện nổi bật và cập nhật các xu hướng kiến thức mới nhất trong ngành kho vận & cơ khí.</p>
+        </div>
+    </section>
+
+    <main class="container">
+
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="/">Trang chủ</a>
+            <span class="sep">›</span>
+            <span class="current">Tin tức & Chuyên mục</span>
+        </nav>
+
+        <!-- Bộ Lọc Chuyên Mục Phân Loại Nhanh -->
+        <div class="category-tabs">
+            <a href="/thong-tin/" class="tab-btn active">Tất Cả Bài Viết</a>
+            <a href="https://hoalongcorp.com/van-hoa-gia-tri/" target="_blank" class="tab-btn">Văn Hóa & Giá Trị</a>
+            <a href="https://hoalongcorp.com/tin-tuc/tin-trong-nganh/" target="_blank" class="tab-btn">Tin Trong Ngành</a>
+            <a href="https://hoalongcorp.com/tin-tuc/tin-tuc-su-kien/" target="_blank" class="tab-btn">Tin Tức & Sự Kiện HLM</a>
         </div>
 
-        <div class="news-section-title">Bài Viết Mới Nhất</div>
-        <div class="news-body">
+        <div class="news-layout">
             
-            <div>
-                <div class="articles-grid" id="rss-news-list">
-                    <div class="article-card" style="height: 300px;"><div class="skeleton" style="height: 100%;"></div></div>
-                    <div class="article-card" style="height: 300px;"><div class="skeleton" style="height: 100%;"></div></div>
-                    <div class="article-card" style="height: 300px;"><div class="skeleton" style="height: 100%;"></div></div>
-                </div>
-            </div>
+            <!-- Danh Sách Bài Viết -->
+            <section class="news-grid">
 
-            <aside>
-                <div class="brand-box">
-                    <h3>Cơ Khí Hòa Long</h3>
-                    <p>Chuyên tư vấn & chế tạo hệ thống kệ chứa hàng công nghiệp, nhà thép tiền chế tiêu chuẩn ISO 9001:2015.</p>
-                    <a href="/lien-he/" class="btn-action">Yêu Cầu Báo Giá</a>
-                </div>
+                <!-- Bài viết 1: Tin Tức Sự Kiện -->
+                <article class="news-card">
+                    <div class="news-img">
+                        <span class="news-badge">Tin Sự Kiện</span>
+                        <img src="https://via.placeholder.com/600x400/004b93/ffffff?text=Hoa+Long+8+Nam" alt="8 Năm Chuyển Mình Để Tiếp Bước">
+                    </div>
+                    <div class="news-content">
+                        <div class="news-date">📅 15/08/2026</div>
+                        <h2 class="news-title">
+                            <a href="https://hoalongcorp.com/tin-tuc/tin-tuc-su-kien/" target="_blank">8 Năm Chuyển Mình Để Tiếp Bước: Kỷ Niệm Thành Lập Cơ Khí Hòa Long</a>
+                        </h2>
+                        <p class="news-excerpt">Nhìn lại hành trình 8 năm hình thành và phát triển của Cơ Khí Hòa Long (HLM) - Khẳng định vị thế nhà cung cấp kệ kho công nghiệp hàng đầu.</p>
+                        <a href="https://hoalongcorp.com/tin-tuc/tin-tuc-su-kien/" target="_blank" class="read-more">Đọc tiếp →</a>
+                    </div>
+                </article>
 
-                <div class="sidebar-widget" style="margin-top: 24px;">
-                    <div class="widget-title">Chuyên Mục Sản Phẩm</div>
-                    <ul class="category-list">
-                        <li><a href="#"><span>⚙️ Kệ Tải Trọng Nặng</span> <span>›</span></a></li>
-                        <li><a href="#"><span>🏗️ Nhà Thép Tiền Chế (PEB)</span> <span>›</span></a></li>
-                        <li><a href="#"><span>📦 Kệ Kho Thông Minh ASRS</span> <span>›</span></a></li>
-                        <li><a href="#"><span>🏢 Sàn Mezzanine Nhà Kho</span> <span>›</span></a></li>
-                        <li><a href="#"><span>❄️ Kệ Kho Lạnh F&B</span> <span>›</span></a></li>
+                <!-- Bài viết 2: Văn Hóa & Giá Trị -->
+                <article class="news-card">
+                    <div class="news-img">
+                        <span class="news-badge" style="background: var(--accent);">Văn Hóa HLM</span>
+                        <img src="https://via.placeholder.com/600x400/002e5c/ffffff?text=Van+Hoa+Doanh+Nghiep" alt="Văn hóa doanh nghiệp Hòa Long">
+                    </div>
+                    <div class="news-content">
+                        <div class="news-date">📅 02/06/2026</div>
+                        <h2 class="news-title">
+                            <a href="https://hoalongcorp.com/van-hoa-gia-tri/" target="_blank">Triết Lý "Engineered by HLM": Cam Kết An Toàn Trong Mỗi Khung Kệ</a>
+                        </h2>
+                        <p class="news-excerpt">Văn hóa chú trọng vào chất lượng kỹ thuật thực tế và tính an toàn tuyệt đối cho công trình nhà kho của khách hàng.</p>
+                        <a href="https://hoalongcorp.com/van-hoa-gia-tri/" target="_blank" class="read-more">Đọc tiếp →</a>
+                    </div>
+                </article>
+
+                <!-- Bài viết 3: Tin Trong Ngành -->
+                <article class="news-card">
+                    <div class="news-img">
+                        <span class="news-badge">Tin Trong Ngành</span>
+                        <img src="https://via.placeholder.com/600x400/333333/ffffff?text=Xu+Huong+Kho+ASRS+2026" alt="Xu hướng kho ASRS">
+                    </div>
+                    <div class="news-content">
+                        <div class="news-date">📅 20/04/2026</div>
+                        <h2 class="news-title">
+                            <a href="https://hoalongcorp.com/tin-tuc/tin-trong-nganh/" target="_blank">Xu Hướng Tự Động Hóa Kho Bãi ASRS Cho Ngành Ngành F&B Năm 2026</a>
+                        </h2>
+                        <p class="news-excerpt">Giải pháp tích hợp robot Radio Shuttle và hệ thống tự động ASRS giúp tối ưu đến 90% không gian kho lạnh thực phẩm.</p>
+                        <a href="https://hoalongcorp.com/tin-tuc/tin-tuc-su-kien/" target="_blank" class="read-more">Đọc tiếp →</a>
+                    </div>
+                </article>
+
+                <!-- Bài viết 4: Kỹ thuật Picking -->
+                <article class="news-card">
+                    <div class="news-img">
+                        <span class="news-badge">Kiến Thức Kho</span>
+                        <img src="https://via.placeholder.com/600x400/004b93/ffffff?text=Toi+Uu+Picking+Error" alt="Giảm sai sót picking">
+                    </div>
+                    <div class="news-content">
+                        <div class="news-date">📅 10/03/2026</div>
+                        <h2 class="news-title">
+                            <a href="/thong-tin/" class="read-link">10 Giải Pháp Giảm Sai Sót Picking Hàng Trong Kho Linh Kiện Điện Tử</a>
+                        </h2>
+                        <p class="news-excerpt">Cách cải tiến sơ đồ kệ kho tầng Mezzanine kết hợp công nghệ kiểm đếm giúp nâng cao độ chính xác khi xuất nhập tồn.</p>
+                        <a href="/thong-tin/" class="read-more">Đọc tiếp →</a>
+                    </div>
+                </article>
+
+            </section>
+
+            <!-- Sidebar Bên Phải -->
+            <aside class="sidebar">
+                
+                <div class="widget">
+                    <h3 class="widget-title">Chuyên Mục Chính</h3>
+                    <ul class="widget-list">
+                        <li><a href="https://hoalongcorp.com/van-hoa-gia-tri/" target="_blank">🏛️ Văn Hóa & Giá Trị HLM</a></li>
+                        <li><a href="https://hoalongcorp.com/tin-tuc/tin-trong-nganh/" target="_blank">📊 Tin Trong Ngành Logistics</a></li>
+                        <li><a href="https://hoalongcorp.com/tin-tuc/tin-tuc-su-kien/" target="_blank">🎉 Tin Tức & Sự Kiện Doanh Nghiệp</a></li>
+                        <li><a href="/san-pham/">📦 Giải Pháp Sản Phẩm Kệ Kho</a></li>
                     </ul>
                 </div>
+
+                <div class="widget" style="background: linear-gradient(135deg, var(--primary-dark), var(--primary)); color: #ffffff;">
+                    <h3 class="widget-title" style="color: #ffffff; border-color: var(--accent);">Khảo Sát Kho Miễn Phí</h3>
+                    <p style="font-size: 13.5px; color: #dbeafe;">Bạn cần tư vấn phương án thiết kế kệ kho chứa hàng tối ưu nhất?</p>
+                    <a href="/lien-he/" style="display: block; text-align: center; background: var(--accent); color: #ffffff; padding: 10px; border-radius: 4px; font-weight: 700; text-decoration: none; margin-top: 12px;">Đăng Ký Khảo Sát</a>
+                </div>
+
             </aside>
+
         </div>
 
     </main>
 
     {% include "footer.html" %}
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const rssUrl = 'https://hoalongcorp.com/feed/';
-            const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`;
-
-            fetch(apiUrl)
-                .then(res => res.json())
-                .then(data => {
-                    if (data.status === 'ok' && data.items.length > 0) {
-                        const items = data.items;
-                        
-                        // Hero Post
-                        const heroContainer = document.getElementById('hero-spotlight');
-                        const firstPost = items[0];
-                        const firstThumb = firstPost.thumbnail || 'https://via.placeholder.com/800x500?text=C%C6%A1+Kh%C3%AD+H%C3%B2a+Long';
-                        const firstDesc = firstPost.description.replace(/(<([^>]+)>)/gi, "").substring(0, 160);
-
-                        heroContainer.innerHTML = `
-                            <div class="featured-card">
-                                <img src="${firstThumb}" alt="${firstPost.title}">
-                                <div class="featured-content">
-                                    <span class="badge-tag">Bài Viết Mới</span>
-                                    <h1 class="featured-title">
-                                        <a href="${firstPost.link}" target="_blank" rel="noopener">${firstPost.title}</a>
-                                    </h1>
-                                    <p class="featured-snippet">${firstDesc}...</p>
-                                    <a href="${firstPost.link}" target="_blank" rel="noopener" style="color: #ffa466; font-weight: 700; text-decoration: none; font-size: 14px;">Xem chi tiết bài viết →</a>
-                                </div>
-                            </div>
-                        `;
-
-                        // Grid Posts
-                        const gridContainer = document.getElementById('rss-news-list');
-                        gridContainer.innerHTML = '';
-                        
-                        items.slice(1).forEach(post => {
-                            const card = document.createElement('article');
-                            card.className = 'article-card';
-                            const thumb = post.thumbnail || 'https://via.placeholder.com/400x250?text=Hoa+Long+Mechanical';
-                            const desc = post.description.replace(/(<([^>]+)>)/gi, "").substring(0, 100);
-
-                            card.innerHTML = `
-                                <img class="article-thumb" src="${thumb}" alt="${post.title}" loading="lazy">
-                                <div class="article-content">
-                                    <h3 class="article-title">
-                                        <a href="${post.link}" target="_blank" rel="noopener">${post.title}</a>
-                                    </h3>
-                                    <p class="article-excerpt">${desc}...</p>
-                                    <a href="${post.link}" target="_blank" rel="noopener" class="article-link">Đọc tiếp →</a>
-                                </div>
-                            `;
-                            gridContainer.appendChild(card);
-                        });
-                    }
-                })
-                .catch(err => console.log('Lỗi tải dữ liệu tin tức:', err));
-        });
-    </script>
 </body>
 </html>
