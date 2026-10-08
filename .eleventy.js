@@ -1,12 +1,16 @@
 module.exports = function(eleventyConfig) {
-    // Tự động copy thư mục js nếu tồn tại
+    // Copy thư mục js tĩnh nếu có
     eleventyConfig.addPassthroughCopy("src/js");
 
     return {
         dir: {
             input: "src",
+            includes: "_includes",
             output: "dist"
         },
-        pathPrefix: "/cokhihoalong/"
+        pathPrefix: "/cokhihoalong/",
+        htmlTemplateEngine: "njk",
+        markdownTemplateEngine: "njk",
+        templateFormats: ["html", "njk", "md"]
     };
 };
