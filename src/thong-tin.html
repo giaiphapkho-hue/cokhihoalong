@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tin Tức, Văn Hóa & Kiến Thức Ngành Kệ Kho - Cơ Khí Hòa Long</title>
     <meta name="description" content="Cập nhật tin tức sự kiện Cơ Khí Hòa Long, giá trị văn hóa doanh nghiệp và chuyên mục kiến thức kỹ thuật kệ kho công nghiệp, logistics mới nhất.">
-    <link rel="canonical" href="https://hoalongcorp.com/thong-tin/">
+    <link rel="canonical" href="https://hoalongcorp.com/tin-tuc/">
 
     <!-- Geo SEO Tags -->
     <meta name="geo.region" content="VN-LA">
@@ -16,21 +16,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@700&display=swap" rel="stylesheet">
-
-    <!-- Schema Structured Data cho Tin Tức & Blog -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "CollectionPage",
-      "name": "Tin Tức & Chuyên Mục - Cơ Khí Hòa Long",
-      "description": "Chuyên mục tin tức sự kiện, văn hóa doanh nghiệp và kiến thức chuyên ngành kệ kho bãi.",
-      "publisher": {
-        "@type": "Organization",
-        "name": "Cơ Khí Hòa Long",
-        "url": "https://hoalongcorp.com"
-      }
-    }
-    </script>
 
     <style>
         :root {
@@ -126,7 +111,7 @@
             border-color: var(--primary);
         }
 
-        /* News Main Layout Grid */
+        /* News Layout */
         .news-layout {
             display: grid;
             grid-template-columns: 2.7fr 1fr;
@@ -154,7 +139,7 @@
             box-shadow: 0 10px 20px rgba(0,0,0,0.08);
         }
         .news-img {
-            height: 180px;
+            height: 190px;
             background: #f1f5f9;
             position: relative;
             overflow: hidden;
@@ -300,91 +285,46 @@
         <!-- Bộ Lọc Chuyên Mục Phân Loại Nhanh -->
         <div class="category-tabs">
             <a href="/thong-tin/" class="tab-btn active">Tất Cả Bài Viết</a>
-            <a href="https://hoalongcorp.com/van-hoa-gia-tri/" target="_blank" class="tab-btn">Văn Hóa & Giá Trị</a>
-            <a href="https://hoalongcorp.com/tin-tuc/tin-trong-nganh/" target="_blank" class="tab-btn">Tin Trong Ngành</a>
-            <a href="https://hoalongcorp.com/tin-tuc/tin-tuc-su-kien/" target="_blank" class="tab-btn">Tin Tức & Sự Kiện HLM</a>
+            <a href="https://hoalongcorp.com/van-hoa-gia-tri/" target="_blank" rel="noopener" class="tab-btn">Văn Hóa & Giá Trị</a>
+            <a href="https://hoalongcorp.com/tin-tuc/tin-trong-nganh/" target="_blank" rel="noopener" class="tab-btn">Tin Trong Ngành</a>
+            <a href="https://hoalongcorp.com/tin-tuc/tin-tuc-su-kien/" target="_blank" rel="noopener" class="tab-btn">Tin Tức & Sự Kiện HLM</a>
         </div>
 
         <div class="news-layout">
             
-            <!-- Danh Sách Bài Viết -->
+            <!-- Danh Sách Bài Viết Động Lấy Từ WP REST API -->
             <section class="news-grid">
 
-                <!-- Bài viết 1: Tin Tức Sự Kiện -->
+                {% for item in posts %}
                 <article class="news-card">
                     <div class="news-img">
-                        <span class="news-badge">Tin Sự Kiện</span>
-                        <img src="https://via.placeholder.com/600x400/004b93/ffffff?text=Hoa+Long+8+Nam" alt="8 Năm Chuyển Mình Để Tiếp Bước">
+                        <span class="news-badge">{{ item.category }}</span>
+                        <img src="{{ item.image }}" alt="{{ item.title }}" loading="lazy">
                     </div>
                     <div class="news-content">
-                        <div class="news-date">📅 15/08/2026</div>
+                        <div class="news-date">📅 {{ item.date }}</div>
                         <h2 class="news-title">
-                            <a href="https://hoalongcorp.com/tin-tuc/tin-tuc-su-kien/" target="_blank">8 Năm Chuyển Mình Để Tiếp Bước: Kỷ Niệm Thành Lập Cơ Khí Hòa Long</a>
+                            <a href="{{ item.link }}" target="_blank" rel="noopener">{{ item.title }}</a>
                         </h2>
-                        <p class="news-excerpt">Nhìn lại hành trình 8 năm hình thành và phát triển của Cơ Khí Hòa Long (HLM) - Khẳng định vị thế nhà cung cấp kệ kho công nghiệp hàng đầu.</p>
-                        <a href="https://hoalongcorp.com/tin-tuc/tin-tuc-su-kien/" target="_blank" class="read-more">Đọc tiếp →</a>
+                        <p class="news-excerpt">{{ item.excerpt }}</p>
+                        <a href="{{ item.link }}" target="_blank" rel="noopener" class="read-more">Đọc bài gốc trên HLM →</a>
                     </div>
                 </article>
-
-                <!-- Bài viết 2: Văn Hóa & Giá Trị -->
-                <article class="news-card">
-                    <div class="news-img">
-                        <span class="news-badge" style="background: var(--accent);">Văn Hóa HLM</span>
-                        <img src="https://via.placeholder.com/600x400/002e5c/ffffff?text=Van+Hoa+Doanh+Nghiep" alt="Văn hóa doanh nghiệp Hòa Long">
-                    </div>
-                    <div class="news-content">
-                        <div class="news-date">📅 02/06/2026</div>
-                        <h2 class="news-title">
-                            <a href="https://hoalongcorp.com/van-hoa-gia-tri/" target="_blank">Triết Lý "Engineered by HLM": Cam Kết An Toàn Trong Mỗi Khung Kệ</a>
-                        </h2>
-                        <p class="news-excerpt">Văn hóa chú trọng vào chất lượng kỹ thuật thực tế và tính an toàn tuyệt đối cho công trình nhà kho của khách hàng.</p>
-                        <a href="https://hoalongcorp.com/van-hoa-gia-tri/" target="_blank" class="read-more">Đọc tiếp →</a>
-                    </div>
-                </article>
-
-                <!-- Bài viết 3: Tin Trong Ngành -->
-                <article class="news-card">
-                    <div class="news-img">
-                        <span class="news-badge">Tin Trong Ngành</span>
-                        <img src="https://via.placeholder.com/600x400/333333/ffffff?text=Xu+Huong+Kho+ASRS+2026" alt="Xu hướng kho ASRS">
-                    </div>
-                    <div class="news-content">
-                        <div class="news-date">📅 20/04/2026</div>
-                        <h2 class="news-title">
-                            <a href="https://hoalongcorp.com/tin-tuc/tin-trong-nganh/" target="_blank">Xu Hướng Tự Động Hóa Kho Bãi ASRS Cho Ngành Ngành F&B Năm 2026</a>
-                        </h2>
-                        <p class="news-excerpt">Giải pháp tích hợp robot Radio Shuttle và hệ thống tự động ASRS giúp tối ưu đến 90% không gian kho lạnh thực phẩm.</p>
-                        <a href="https://hoalongcorp.com/tin-tuc/tin-tuc-su-kien/" target="_blank" class="read-more">Đọc tiếp →</a>
-                    </div>
-                </article>
-
-                <!-- Bài viết 4: Kỹ thuật Picking -->
-                <article class="news-card">
-                    <div class="news-img">
-                        <span class="news-badge">Kiến Thức Kho</span>
-                        <img src="https://via.placeholder.com/600x400/004b93/ffffff?text=Toi+Uu+Picking+Error" alt="Giảm sai sót picking">
-                    </div>
-                    <div class="news-content">
-                        <div class="news-date">📅 10/03/2026</div>
-                        <h2 class="news-title">
-                            <a href="/thong-tin/" class="read-link">10 Giải Pháp Giảm Sai Sót Picking Hàng Trong Kho Linh Kiện Điện Tử</a>
-                        </h2>
-                        <p class="news-excerpt">Cách cải tiến sơ đồ kệ kho tầng Mezzanine kết hợp công nghệ kiểm đếm giúp nâng cao độ chính xác khi xuất nhập tồn.</p>
-                        <a href="/thong-tin/" class="read-more">Đọc tiếp →</a>
-                    </div>
-                </article>
+                {% else %}
+                <p>Đang cập nhật danh sách bài viết...</p>
+                {% endfor %}
 
             </section>
 
-            <!-- Sidebar Bên Phải -->
+            <!-- Sidebar -->
             <aside class="sidebar">
                 
                 <div class="widget">
                     <h3 class="widget-title">Chuyên Mục Chính</h3>
                     <ul class="widget-list">
-                        <li><a href="https://hoalongcorp.com/van-hoa-gia-tri/" target="_blank">🏛️ Văn Hóa & Giá Trị HLM</a></li>
-                        <li><a href="https://hoalongcorp.com/tin-tuc/tin-trong-nganh/" target="_blank">📊 Tin Trong Ngành Logistics</a></li>
-                        <li><a href="https://hoalongcorp.com/tin-tuc/tin-tuc-su-kien/" target="_blank">🎉 Tin Tức & Sự Kiện Doanh Nghiệp</a></li>
+                        <li><a href="https://hoalongcorp.com/van-hoa-gia-tri/" target="_blank" rel="noopener">🏛️ Văn Hóa & Giá Trị HLM</a></li>
+                        <li><a href="https://hoalongcorp.com/tin-tuc/tin-trong-nganh/" target="_blank" rel="noopener">📊 Tin Trong Ngành Logistics</a></li>
+                        <li><a href="https://hoalongcorp.com/tin-tuc/tin-tuc-su-kien/" target="_blank" rel="noopener">🎉 Tin Tức & Sự Kiện Doanh Nghiệp</a></li>
                         <li><a href="/san-pham/">📦 Giải Pháp Sản Phẩm Kệ Kho</a></li>
                     </ul>
                 </div>
