@@ -24,13 +24,11 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "18"
-          cache: "npm"
 
-      - name: Install Dependencies
-        run: npm ci || npm install
-
-      - name: Build Eleventy Site
-        run: npx @11ty/eleventy
+      - name: Install Eleventy & Build
+        run: |
+          npm install @11ty/eleventy@^2.0.1
+          npx @11ty/eleventy
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
