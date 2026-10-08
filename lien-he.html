@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Liên Hệ Báo Giá - CÔNG TY CỔ PHẦN SẢN XUẤT CƠ KHÍ HÒA LONG</title>
-    <meta name="description" content="Liên hệ Cơ Khí Hòa Long nhận báo giá hệ thống kệ chứa hàng công nghiệp, kệ tải nặng, nhà thép tiền chế (PEB). Hotine/Zalo: 0901.890.689 - Email: phucle@hoalongcorp.com">
+    <title>Liên Hệ Báo Giá - KỆ CHỨA HÀNG HÒA LONG</title>
+    <meta name="description" content="Liên hệ Kệ Chứa Hàng Hòa Long nhận báo giá kệ kho pallet, tự động hóa kho hàng và giải pháp nhà kho công nghiệp. Hotline: 028 710 88 660 - 0901 890 689.">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
@@ -15,7 +15,7 @@
             --bg-light: #f8f9fa;
             --text-dark: #2c3e50;
             --text-muted: #666666;
-            --border-color: #e1e1e1;
+            --border-color: #dcdfe6;
             --shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
         }
 
@@ -34,31 +34,31 @@
 
         /* BANNER TRANG LIÊN HỆ */
         .page-banner {
-            background: linear-gradient(rgba(0, 34, 68, 0.85), rgba(0, 34, 68, 0.85)), url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+            background: linear-gradient(rgba(0, 34, 68, 0.88), rgba(0, 34, 68, 0.88)), url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
             color: #ffffff;
             text-align: center;
-            padding: 60px 20px;
+            padding: 50px 20px;
         }
 
         .page-banner h1 {
-            font-size: 2.2rem;
+            font-size: 2.1rem;
             font-weight: 800;
             margin-bottom: 10px;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
         }
 
         .page-banner p {
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             color: #e0e0e0;
-            max-width: 650px;
+            max-width: 750px;
             margin: 0 auto;
         }
 
         /* BỐ CỤC CHÍNH */
         .contact-container {
             max-width: 1200px;
-            margin: -40px auto 60px;
+            margin: -30px auto 60px;
             padding: 0 20px;
             position: relative;
             z-index: 10;
@@ -66,11 +66,11 @@
 
         .contact-grid {
             display: grid;
-            grid-template-columns: 1fr 1.2fr;
+            grid-template-columns: 1fr 1.25fr;
             gap: 30px;
         }
 
-        /* THÔNG TIN LIÊN HỆ */
+        /* KHỐI THÔNG TIN LIÊN HỆ */
         .contact-info-card {
             background-color: #ffffff;
             border-radius: 8px;
@@ -79,11 +79,12 @@
         }
 
         .contact-info-card h2 {
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             color: var(--primary);
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             position: relative;
             padding-bottom: 10px;
+            text-transform: uppercase;
         }
 
         .contact-info-card h2::after {
@@ -96,43 +97,59 @@
             background-color: var(--accent);
         }
 
-        .info-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 15px;
-            margin-bottom: 25px;
-        }
-
-        .info-icon {
-            width: 45px;
-            height: 45px;
-            background-color: rgba(0, 51, 102, 0.08);
-            color: var(--primary);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-            flex-shrink: 0;
-        }
-
-        .info-details h3 {
-            font-size: 1rem;
-            color: var(--primary);
-            margin-bottom: 4px;
-        }
-
-        .info-details p, .info-details a {
+        .intro-text {
             color: var(--text-muted);
             font-size: 0.95rem;
+            margin-bottom: 25px;
+            text-align: justify;
+        }
+
+        .info-block {
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 1px dashed var(--border-color);
+        }
+
+        .info-block:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .info-block h3 {
+            font-size: 1.05rem;
+            color: var(--primary);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .info-block h3 i {
+            color: var(--accent);
+        }
+
+        .info-details {
+            padding-left: 26px;
+            font-size: 0.95rem;
+        }
+
+        .info-details p {
+            margin-bottom: 6px;
+            color: #4a5568;
+        }
+
+        .info-details a {
+            color: var(--primary);
             text-decoration: none;
+            font-weight: 600;
         }
 
         .info-details a:hover {
             color: var(--accent);
         }
 
-        /* FORM ĐĂNG KÝ BÁO GIÁ */
+        /* KHỐI FORM ĐĂNG KÝ BÁO GIÁ */
         .contact-form-card {
             background-color: #ffffff;
             border-radius: 8px;
@@ -141,41 +158,49 @@
         }
 
         .contact-form-card h2 {
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             color: var(--primary);
-            margin-bottom: 20px;
-            position: relative;
-            padding-bottom: 10px;
+            margin-bottom: 5px;
+            text-transform: uppercase;
         }
 
-        .contact-form-card h2::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 50px;
-            height: 3px;
-            background-color: var(--accent);
+        .form-subtitle {
+            font-size: 0.95rem;
+            color: var(--accent);
+            font-weight: 700;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
         }
 
         .form-group {
-            margin-bottom: 20px;
+            margin-bottom: 18px;
         }
 
         .form-group label {
             display: block;
             font-weight: 600;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
             font-size: 0.9rem;
             color: var(--text-dark);
         }
 
+        .form-group label .required {
+            color: #e53e3e;
+        }
+
         .form-control {
             width: 100%;
-            padding: 12px 15px;
+            padding: 11px 14px;
             border: 1px solid var(--border-color);
             border-radius: 6px;
-            font-size: 0.95rem;
+            font-size: 0.93rem;
             transition: all 0.3s ease;
         }
 
@@ -187,13 +212,38 @@
 
         textarea.form-control {
             resize: vertical;
-            min-height: 120px;
+            min-height: 90px;
         }
 
-        .form-row {
+        /* CHECKBOXES & RADIOS */
+        .checkbox-group {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 10px;
+            margin-top: 6px;
+        }
+
+        .checkbox-label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+            font-weight: normal;
+            cursor: pointer;
+            color: #4a5568;
+        }
+
+        .checkbox-label input[type="checkbox"] {
+            width: 16px;
+            height: 16px;
+            accent-color: var(--accent);
+        }
+
+        .char-counter {
+            text-align: right;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-top: 4px;
         }
 
         .btn-submit {
@@ -208,6 +258,7 @@
             cursor: pointer;
             transition: all 0.3s ease;
             box-shadow: 0 4px 12px rgba(255, 102, 0, 0.3);
+            margin-top: 10px;
         }
 
         .btn-submit:hover {
@@ -215,7 +266,7 @@
             box-shadow: 0 6px 18px rgba(255, 102, 0, 0.4);
         }
 
-        /* BẢN ĐỒ GOOGLE MAPS */
+        /* BẢN ĐỒ */
         .map-section {
             max-width: 1200px;
             margin: 0 auto 60px;
@@ -223,17 +274,18 @@
         }
 
         .map-section h2 {
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             color: var(--primary);
             margin-bottom: 20px;
             text-align: center;
+            text-transform: uppercase;
         }
 
         .map-wrapper {
             border-radius: 8px;
             overflow: hidden;
             box-shadow: var(--shadow);
-            height: 400px;
+            height: 380px;
         }
 
         .map-wrapper iframe {
@@ -243,17 +295,18 @@
         }
 
         /* RESPONSIVE */
-        @media (max-width: 768px) {
+        @media (max-width: 992px) {
             .contact-grid {
                 grid-template-columns: 1fr;
             }
+        }
 
+        @media (max-width: 576px) {
             .form-row {
                 grid-template-columns: 1fr;
             }
-
-            .page-banner h1 {
-                font-size: 1.8rem;
+            .checkbox-group {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -265,86 +318,121 @@
 
     <!-- BANNER TRANG -->
     <section class="page-banner">
-        <h1>Liên Hệ & Nhận Báo Giá</h1>
-        <p>Chuyên tư vấn, thiết kế, sản xuất và thi công hệ thống kệ chứa hàng công nghiệp & nhà thép tiền chế chất lượng cao</p>
+        <h1>Liên Hệ & Tư Vấn Báo Giá</h1>
+        <p>Giải pháp giá kệ chứa hàng & Tự động hóa nhà kho công nghiệp toàn diện</p>
     </section>
 
     <!-- NỘI DUNG CHÍNH -->
     <main class="contact-container">
         <div class="contact-grid">
             
-            <!-- THÔNG TIN LIÊN HỆ CHUẨN CƠ KHÍ HÒA LONG -->
+            <!-- THÔNG TIN LIÊN HỆ CHUẨN HÒA LONG -->
             <div class="contact-info-card">
-                <h2>CƠ KHÍ HÒA LONG</h2>
-                <p style="margin-bottom: 25px; color: var(--text-muted);">
-                    Quý khách hàng có nhu cầu tư vấn thiết kế, nhận báo giá kệ chứa hàng hoặc thi công nhà thép tiền chế, vui lòng liên hệ trực tiếp qua thông tin bên dưới:
+                <h2>KỆ CHỨA HÀNG HÒA LONG</h2>
+                <p class="intro-text">
+                    Với mong muốn nâng cao chất lượng dịch vụ, chúng tôi luôn mong muốn nhận được những ý kiến đóng góp và hợp tác từ quý khách hàng. Nếu bạn có bất kỳ ý kiến đóng góp nào với chúng tôi xin vui lòng điền thông tin vào biểu mẫu hoặc đến trực tiếp văn phòng của chúng tôi.
                 </p>
 
-                <div class="info-item">
-                    <div class="info-icon"><i class="fa-solid fa-phone"></i></div>
+                <div class="info-block">
+                    <h3><i class="fa-solid fa-building"></i> Văn Phòng TP.HCM</h3>
                     <div class="info-details">
-                        <h3>Hotline / Zalo</h3>
-                        <p><a href="tel:0901890689"><strong>0901.890.689</strong></a></p>
+                        <p><strong>Địa chỉ:</strong> 19 Trần Quý Kiên, Phường Bình Trưng Tây, TP. Thủ Đức, Thành phố Hồ Chí Minh</p>
+                        <p><strong>Điện thoại:</strong> <a href="tel:02871088660">028 710 88 660</a></p>
+                        <p><strong>Email:</strong> <a href="mailto:contact@hoalongcorp.com">contact@hoalongcorp.com</a></p>
                     </div>
                 </div>
 
-                <div class="info-item">
-                    <div class="info-icon"><i class="fa-solid fa-envelope"></i></div>
+                <div class="info-block">
+                    <h3><i class="fa-solid fa-industry"></i> Nhà Máy Sản Xuất</h3>
                     <div class="info-details">
-                        <h3>Email</h3>
-                        <p><a href="mailto:phucle@hoalongcorp.com">phucle@hoalongcorp.com</a></p>
+                        <p><strong>Địa chỉ:</strong> 192 Nguyễn Văn Tuôi, KP 6, Thị Trấn Bến Lức, H. Bến Lức, Tỉnh Long An</p>
+                        <p><strong>Điện thoại:</strong> <a href="tel:02871088660">028 710 88 660</a></p>
+                        <p><strong>Email:</strong> <a href="mailto:contact@hoalongcorp.com">contact@hoalongcorp.com</a></p>
                     </div>
                 </div>
 
-                <div class="info-item">
-                    <div class="info-icon"><i class="fa-solid fa-industry"></i></div>
+                <div class="info-block">
+                    <h3><i class="fa-solid fa-headset"></i> Hotline Hỗ Trợ Trực Tiếp</h3>
                     <div class="info-details">
-                        <h3>Địa chỉ nhà máy</h3>
-                        <p>Huyện Bến Lức, Tỉnh Long An, Việt Nam</p>
+                        <p>Gọi điện trực tiếp đến: <a href="tel:0901890689" style="font-size: 1.1rem; color: var(--accent);"><strong>+84 901 890 689</strong></a></p>
+                        <p>Hoặc email: <a href="mailto:contact@hoalongcorp.com">contact@hoalongcorp.com</a></p>
+                        <p style="margin-top: 8px; font-weight: 600; color: var(--primary);">Mong sớm nhận lại phản hồi từ bạn!!</p>
                     </div>
                 </div>
             </div>
 
-            <!-- FORM GỬI YÊU CẦU BÁO GIÁ -->
+            <!-- FORM TƯ VẤN SẢN PHẨM & DỊCH VỤ -->
             <div class="contact-form-card">
-                <h2>Gửi Yêu Cầu Báo Giá</h2>
+                <h2>Yêu Cầu Tư Vấn</h2>
+                <div class="form-subtitle">Giá kệ chứa hàng cho nhà kho công nghiệp</div>
+                
                 <form id="contactForm">
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="fullname">Họ và tên *</label>
-                            <input type="text" id="fullname" class="form-control" placeholder="Nguyễn Văn A" required>
+                            <label for="fullname">Tên của Quý khách <span class="required">*</span></label>
+                            <input type="text" id="fullname" class="form-control" placeholder="Vui lòng cho HLM được biết tên" required>
                         </div>
                         <div class="form-group">
-                            <label for="phone">Số điện thoại *</label>
-                            <input type="tel" id="phone" class="form-control" placeholder="0901890689" required>
+                            <label for="phone">Số điện thoại <span class="required">*</span></label>
+                            <input type="tel" id="phone" class="form-control" placeholder="Nhập số điện thoại" required>
                         </div>
                     </div>
 
                     <div class="form-row">
                         <div class="form-group">
                             <label for="email">Email</label>
-                            <input type="email" id="email" class="form-control" placeholder="example@gmail.com">
+                            <input type="email" id="email" class="form-control" placeholder="example@domain.com">
                         </div>
                         <div class="form-group">
-                            <label for="product">Sản phẩm quan tâm</label>
-                            <select id="product" class="form-control">
-                                <option value="Kệ Selective Racking">Kệ Selective Racking</option>
-                                <option value="Kệ Drive-In Racking">Kệ Drive-In Racking</option>
-                                <option value="Kệ VNA (Very Narrow Aisle)">Kệ VNA (Very Narrow Aisle)</option>
-                                <option value="Kệ Trung Tải Công Nghiệp">Kệ Trung Tải Công Nghiệp</option>
-                                <option value="Nhà Thép Tiền Chế (PEB)">Nhà Thép Tiền Chế (PEB)</option>
-                                <option value="Khác">Sản phẩm / Dịch vụ khác</option>
+                            <label for="company">Tên Công ty</label>
+                            <input type="text" id="company" class="form-control" placeholder="Tên công ty của bạn">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="address">Địa chỉ</label>
+                        <input type="text" id="address" class="form-control" placeholder="Vui lòng cho HLM biết địa chỉ Công ty của Quý khách">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Thông tin cần tư vấn:</label>
+                        <div class="checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="consult_type" value="Kệ kho - Pallet"> Kệ kho - Pallet
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="consult_type" value="Tự động hóa - Công nghệ kho"> Tự động hóa - Công nghệ kho
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="consult_type" value="Giải pháp"> Giải pháp tổng thể
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="area">Diện tích hoặc công suất kho</label>
+                            <input type="text" id="area" class="form-control" placeholder="Ví dụ: 1000m2 / 500 Pallet">
+                        </div>
+                        <div class="form-group">
+                            <label for="timeline">Dự kiến triển khai dự án</label>
+                            <select id="timeline" class="form-control">
+                                <option value="Ngay lập tức">Ngay lập tức</option>
+                                <option value="Tháng tới" selected>Tháng tới</option>
+                                <option value="Trong quý này">Trong quý này</option>
+                                <option value="Đang tìm hiểu">Đang tìm hiểu</option>
                             </select>
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label for="message">Nội dung chi tiết (Kích thước kho, tải trọng yêu cầu...)</label>
-                        <textarea id="message" class="form-control" placeholder="Nhập chi tiết thông số kho hoặc yêu cầu kỹ thuật..."></textarea>
+                        <label for="note">Quý khách còn cần chúng tôi hỗ trợ thêm thông tin gì khác?</label>
+                        <textarea id="note" class="form-control" maxlength="300" placeholder="Nhập ghi chú hoặc thông số chi tiết..."></textarea>
+                        <div class="char-counter"><span id="charCount">0</span>/300 ký tự</div>
                     </div>
 
                     <button type="submit" class="btn-submit">
-                        <i class="fa-solid fa-paper-plane" style="margin-right: 8px;"></i> GỬI YÊU CẦU BÁO GIÁ
+                        <i class="fa-solid fa-paper-plane" style="margin-right: 8px;"></i> GỬI YÊU CẦU TƯ VẤN
                     </button>
                 </form>
             </div>
@@ -352,46 +440,21 @@
         </div>
     </main>
 
-    <!-- BẢN ĐỒ -->
+    <!-- BẢN ĐỒ VỊ TRÍ NHA MÁY & VP -->
     <section class="map-section">
-        <h2>Vị Trí Bản Đồ</h2>
+        <h2>Vị Trí Văn Phòng TP.HCM</h2>
         <div class="map-wrapper">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3920.023253725455!2d106.48805267583688!3d10.655255461320493!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x310a775191fb4fb1%3A0x28637728f3226a27!2zQsOqyIJuIEzMwqA3LCBMb25nIEFuLCBWaeG7h3QgTmFt!5e0!3m2!1svi!2s!4v1700000000000!5m2!1svi!2s" allowfullscreen="" loading="lazy"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.4674753066923!2d106.7533036758374!3d10.775463759211021!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317525c506dc6efd%3A0xc3c940c313214bc1!2zMTkgVHLhuqduIFF1w73MgIEtpw6puLCBCw6xuaCBUcsawbmcgVMOieSwgVGjhu6cgxJDhu6ljLCBUaMOgbmggcGjhu5EgSOG7kyBDaMOtIE1pbmg!5e0!3m2!1svi!2svn!4v1710000000000!5m2!1svi!2svn" allowfullscreen="" loading="lazy"></iframe>
         </div>
     </section>
 
     <!-- KHU VỰC LOAD FOOTER TỰ ĐỘNG -->
     <div id="footer-placeholder"></div>
 
-    <!-- SCRIPT TỰ ĐỘNG LOAD HEADER/FOOTER & XỬ LÝ FORM -->
+    <!-- SCRIPT LOAD HEADER/FOOTER & XỬ LÝ SỰ KIỆN FORM -->
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             // Load Header
             fetch('header.html')
                 .then(response => response.text())
-                .then(data => {
-                    document.getElementById('header-placeholder').innerHTML = data;
-                })
-                .catch(error => console.error('Lỗi khi tải header:', error));
-
-            // Load Footer
-            fetch('footer.html')
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById('footer-placeholder').innerHTML = data;
-                })
-                .catch(error => console.error('Lỗi khi tải footer:', error));
-
-            // Form Submit Event
-            const contactForm = document.getElementById('contactForm');
-            if (contactForm) {
-                contactForm.addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    alert('Cảm ơn Quý khách đã gửi thông tin! Đội ngũ Cơ Khí Hòa Long sẽ liên hệ lại trong thời gian sớm nhất.');
-                    contactForm.reset();
-                });
-            }
-        });
-    </script>
-</body>
-</html>
+                .then(data =>
