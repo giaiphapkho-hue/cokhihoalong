@@ -1,3 +1,9 @@
+---
+layout: base.html # Nếu bạn dùng layout chung, hoặc dùng include bên dưới
+title: Tạp Chí Kỹ Thuật & Kho Vận - Cơ Khí Hòa Long
+description: Cập nhật tin tức ngành kho vận, giải pháp tối ưu không gian nhà kho và tài liệu kỹ thuật từ Cơ Khí Hòa Long.
+---
+
 <!DOCTYPE html>
 <html lang="vi">
 <head>
@@ -6,7 +12,6 @@
     <title>Tạp Chí Kỹ Thuật & Kho Vận - Cơ Khí Hòa Long</title>
     <meta name="description" content="Cập nhật tin tức ngành kho vận, giải pháp tối ưu không gian nhà kho và tài liệu kỹ thuật từ Cơ Khí Hòa Long.">
     
-    <!-- Google Fonts: Merriweather cho Tiêu đề Tạp chí & Inter cho Nội dung -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
@@ -14,7 +19,7 @@
     <style>
         :root { 
             --primary: #004b93; 
-            --primary-dark: #003366;
+            --primary-dark: #002e5c;
             --accent: #ff6600; 
             --accent-hover: #e65c00;
             --text-main: #1a1a1a;
@@ -25,42 +30,32 @@
             --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
         }
 
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { color: var(--text-main); font-family: var(--font-sans); background-color: #fff; line-height: 1.6; }
+        .magazine-container { width: 92%; max-width: 1200px; margin: 30px auto 60px; font-family: var(--font-sans); color: var(--text-main); }
 
-        .container { width: 92%; max-width: 1240px; margin: auto; }
+        .magazine-section-title { 
+            border-bottom: 2px solid var(--primary); 
+            padding-bottom: 8px; 
+            margin: 35px 0 20px 0; 
+            font-family: var(--font-serif); 
+            font-size: 20px; 
+            color: var(--primary); 
+            text-transform: uppercase; 
+            font-weight: 700; 
+            letter-spacing: 0.5px;
+        }
 
-        /* ================= HEADER STANDARD ================= */
-        .top-bar { background: #111; color: #ccc; font-size: 13px; padding: 8px 0; border-bottom: 1px solid #222; }
-        .top-bar .container { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
-        .top-bar-info { display: flex; gap: 20px; }
-        .top-bar-info span { display: inline-flex; align-items: center; gap: 6px; }
-
-        header { background: #fff; border-bottom: 3px solid var(--primary); position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 15px rgba(0,0,0,0.06); }
-        .header-inner { display: flex; justify-content: space-between; align-items: center; padding: 16px 0; }
-        .logo { font-family: var(--font-serif); font-size: 24px; font-weight: 700; color: var(--primary); text-decoration: none; letter-spacing: -0.5px; }
-        .logo span { color: var(--accent); }
-        
-        nav { display: flex; gap: 24px; align-items: center; }
-        nav a { text-decoration: none; color: var(--text-main); font-weight: 600; font-size: 15px; transition: color 0.2s; }
-        nav a:hover, nav a.active { color: var(--accent); }
-        .btn-header-cta { background: var(--accent); color: #fff !important; padding: 8px 16px; border-radius: 4px; font-weight: 700 !important; transition: background 0.2s; }
-        .btn-header-cta:hover { background: var(--accent-hover); }
-
-        /* ================= MAGAZINE HERO SPOTLIGHT ================= */
-        .magazine-hero { margin-top: 24px; display: grid; grid-template-columns: 1fr; gap: 24px; }
-        
+        .magazine-hero { display: grid; grid-template-columns: 1fr; gap: 24px; margin-bottom: 30px; }
         .featured-card { 
             position: relative; 
             border-radius: 8px; 
             overflow: hidden; 
             min-height: 400px; 
-            background: #000;
+            background: #111;
             display: flex;
             align-items: flex-end;
             box-shadow: 0 10px 25px rgba(0,0,0,0.12);
         }
-        .featured-card img { position: absolute; top:0; left:0; width: 100%; height: 100%; object-fit: cover; opacity: 0.75; transition: transform 0.5s ease; }
+        .featured-card img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.75; transition: transform 0.4s ease; }
         .featured-card:hover img { transform: scale(1.03); }
         .featured-content { 
             position: relative; 
@@ -70,21 +65,15 @@
             width: 100%;
             color: #fff;
         }
-        .badge { display: inline-block; background: var(--accent); color: #fff; font-size: 11px; font-weight: 700; text-transform: uppercase; padding: 4px 10px; border-radius: 3px; margin-bottom: 12px; letter-spacing: 0.5px; }
+        .badge-tag { display: inline-block; background: var(--accent); color: #fff; font-size: 11px; font-weight: 700; text-transform: uppercase; padding: 4px 10px; border-radius: 3px; margin-bottom: 12px; }
         .featured-title { font-family: var(--font-serif); font-size: 26px; font-weight: 700; line-height: 1.3; margin-bottom: 12px; }
         .featured-title a { color: #fff; text-decoration: none; }
         .featured-title a:hover { color: #ffd1b3; }
         .featured-snippet { font-size: 14px; color: #ddd; line-height: 1.6; margin-bottom: 14px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; max-width: 900px; }
 
-        /* ================= SECTION HEADERS ================= */
-        .section-header { border-bottom: 2px solid var(--primary); padding-bottom: 8px; margin: 40px 0 24px 0; display: flex; justify-content: space-between; align-items: flex-end; }
-        .section-header h2 { font-family: var(--font-serif); font-size: 20px; color: var(--primary-dark); text-transform: uppercase; letter-spacing: 0.5px; font-weight: 700; }
-
-        /* ================= MAGAZINE BODY LAYOUT ================= */
         .magazine-body { display: grid; grid-template-columns: 2.8fr 1.2fr; gap: 32px; }
         @media (max-width: 900px) { .magazine-body { grid-template-columns: 1fr; } }
 
-        /* Articles Grid */
         .articles-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 24px; }
         .article-card { background: #fff; border: 1px solid var(--border-color); border-radius: 6px; overflow: hidden; display: flex; flex-direction: column; transition: transform 0.2s, box-shadow 0.2s; }
         .article-card:hover { transform: translateY(-4px); box-shadow: 0 12px 20px rgba(0,0,0,0.08); }
@@ -96,7 +85,6 @@
         .article-excerpt { font-size: 13px; color: var(--text-muted); margin-bottom: 15px; flex-grow: 1; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
         .article-meta { font-size: 13px; color: var(--accent); font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 4px; }
 
-        /* Sidebar Widgets */
         .sidebar-widget { background: var(--bg-light); border: 1px solid var(--border-color); padding: 20px; border-radius: 6px; margin-bottom: 24px; }
         .widget-title { font-family: var(--font-serif); font-size: 16px; font-weight: 700; color: var(--primary); margin-bottom: 15px; padding-bottom: 8px; border-bottom: 2px solid var(--accent); }
         .brand-box { background: var(--primary); color: #fff; text-align: center; padding: 24px 16px; border-radius: 6px; }
@@ -109,100 +97,48 @@
         .category-list a { color: var(--text-main); text-decoration: none; display: flex; justify-content: space-between; border-bottom: 1px dashed var(--border-color); }
         .category-list a:hover { color: var(--accent); }
 
-        /* Skeleton Loading */
         .skeleton { background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%); background-size: 200% 100%; animation: loading 1.5s infinite; border-radius: 4px; }
         @keyframes loading { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } }
-
-        /* ================= FOOTER STANDARD ================= */
-        footer { background: #0f172a; color: #94a3b8; font-size: 14px; padding-top: 50px; margin-top: 60px; border-top: 4px solid var(--primary); }
-        .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1.2fr; gap: 30px; padding-bottom: 40px; }
-        @media (max-width: 900px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
-        @media (max-width: 600px) { .footer-grid { grid-template-columns: 1fr; } }
-
-        .footer-col h4 { font-family: var(--font-serif); color: #fff; font-size: 16px; margin-bottom: 18px; position: relative; padding-bottom: 8px; }
-        .footer-col h4::after { content: ''; position: absolute; bottom: 0; left: 0; width: 35px; height: 2px; background: var(--accent); }
-        .footer-col p { margin-bottom: 12px; line-height: 1.6; }
-        .footer-links { list-style: none; }
-        .footer-links li { margin-bottom: 10px; }
-        .footer-links a { color: #94a3b8; text-decoration: none; transition: color 0.2s; }
-        .footer-links a:hover { color: #fff; }
-
-        .footer-bottom { background: #080d1a; padding: 20px 0; font-size: 13px; text-align: center; color: #64748b; border-top: 1px solid #1e293b; }
     </style>
 </head>
 <body>
 
-    <!-- TOP BAR -->
-    <div class="top-bar">
-        <div class="container">
-            <div class="top-bar-info">
-                <span>📍 Lô C, Đường số 1, KCN Hải Sơn, Long An</span>
-                <span>📞 Hotline: 0913 888 111</span>
-            </div>
-            <div><strong>HLM MAGAZINE:</strong> Chuyên san Kỹ thuật & Kho vận Công nghiệp</div>
-        </div>
-    </div>
+    <!-- NHÚNG HEADER CHUẨN TỪ CÙNG THƯ MỤC _INCLUDES -->
+    {% include "header.html" %}
 
-    <!-- MAIN HEADER -->
-    <header>
-        <div class="container header-inner">
-            <a href="index.html" class="logo">CƠ KHÍ <span>HÒA LONG</span></a>
-            <nav>
-                <a href="index.html">Trang chủ</a>
-                <a href="gioi-thieu.html">Giới thiệu</a>
-                <a href="san-pham.html">Sản phẩm</a>
-                <a href="dich-vu.html">Dịch vụ</a>
-                <a href="thong-tin.html" class="active">Thông tin</a>
-                <a href="lien-he.html" class="btn-header-cta">Liên hệ báo giá</a>
-            </nav>
-        </div>
-    </header>
-
-    <!-- MAIN CONTENT AREA -->
-    <main class="container" style="padding-bottom: 20px;">
+    <main class="magazine-container">
         
-        <!-- Hero Spotlight Section -->
-        <div class="section-header">
-            <h2>Tiêu Điểm Kỹ Thuật</h2>
-        </div>
-        
+        <div class="magazine-section-title">Tiêu Điểm Kỹ Thuật</div>
         <div id="hero-spotlight" class="magazine-hero">
-            <!-- Skeleton Loader khi đang tải dữ liệu -->
             <div class="featured-card skeleton" style="height: 380px;"></div>
         </div>
 
-        <!-- Main Content Area: Grid + Sidebar -->
-        <div class="section-header">
-            <h2>Bài Viết & Chuyên Mục Mới Nhất</h2>
-        </div>
-
+        <div class="magazine-section-title">Bài Viết & Chuyên Mục Mới Nhất</div>
         <div class="magazine-body">
-            <!-- Left Column: Articles Grid -->
+            
             <div>
                 <div class="articles-grid" id="rss-news-list">
-                    <!-- Skeletons khi tải bài -->
                     <div class="article-card" style="height: 320px;"><div class="skeleton" style="height: 100%;"></div></div>
                     <div class="article-card" style="height: 320px;"><div class="skeleton" style="height: 100%;"></div></div>
                     <div class="article-card" style="height: 320px;"><div class="skeleton" style="height: 100%;"></div></div>
                 </div>
             </div>
 
-            <!-- Right Column: Sidebar -->
             <aside>
                 <div class="brand-box">
                     <h3>HLM Technical Journal</h3>
                     <p>Giải pháp tối ưu không gian lưu trữ & hệ thống giá kệ công nghiệp đạt tiêu chuẩn ISO.</p>
-                    <a href="lien-he.html" class="btn-subscribe">Đăng Ký Tư Vấn Kỹ Thuật</a>
+                    <a href="/lien-he/" class="btn-subscribe">Đăng Ký Tư Vấn Kỹ Thuật</a>
                 </div>
 
                 <div class="sidebar-widget" style="margin-top: 24px;">
                     <div class="widget-title">Chuyên Mục Chính</div>
                     <ul class="category-list">
-                        <li><a href="#"><span>⚙️ Hệ Thống Kệ Heavy Duty</span> <span>›</span></a></li>
+                        <li><a href="#"><span>⚙️ Kệ Chứa Pallet Tải Trọng Nặng</span> <span>›</span></a></li>
                         <li><a href="#"><span>🏗️ Kết Cấu Nhà Thép Tiền Chế</span> <span>›</span></a></li>
                         <li><a href="#"><span>📦 Giải Pháp Kho Thông Minh ASRS</span> <span>›</span></a></li>
                         <li><a href="#"><span>📋 Tiêu Chuẩn An Toàn Nhà Kho</span> <span>›</span></a></li>
-                        <li><a href="#"><span>❄️ Kệ Kho Mát & Kho Lạnh F&B</span> <span>›</span></a></li>
+                        <li><a href="#"><span>❄️ Kệ Kho Lạnh & Kho Mát F&B</span> <span>›</span></a></li>
                     </ul>
                 </div>
             </aside>
@@ -210,52 +146,9 @@
 
     </main>
 
-    <!-- FOOTER -->
-    <footer>
-        <div class="container footer-grid">
-            <div class="footer-col">
-                <h4 style="color:#fff;">CƠ KHÍ HÒA LONG</h4>
-                <p>Chuyên tư vấn, thiết kế, sản xuất và lắp đặt hệ thống giá kệ chứa hàng công nghiệp, nhà thép tiền chế và giải pháp tự động hóa kho hàng.</p>
-                <p><strong>Hotline:</strong> 0913 888 111</p>
-                <p><strong>Email:</strong> kinhdoanh@hoalongcorp.com</p>
-            </div>
-            
-            <div class="footer-col">
-                <h4>Sản Phẩm Chính</h4>
-                <ul class="footer-links">
-                    <li><a href="#">Kệ Chứa Pallet Selective</a></li>
-                    <li><a href="#">Kệ Drive-In / Drive-Thru</a></li>
-                    <li><a href="#">Hệ Thống Radio Shuttle</a></li>
-                    <li><a href="#">Kệ Sàn Mezzanine Floor</a></li>
-                    <li><a href="#">Nhà Thép Tiền Chế PEB</a></li>
-                </ul>
-            </div>
+    <!-- NHÚNG FOOTER CHUẨN TỪ CÙNG THƯ MỤC _INCLUDES -->
+    {% include "footer.html" %}
 
-            <div class="footer-col">
-                <h4>Liên Kết Nhanh</h4>
-                <ul class="footer-links">
-                    <li><a href="gioi-thieu.html">Về Chúng Tôi</a></li>
-                    <li><a href="dich-vu.html">Dịch Vụ Kỹ Thuật</a></li>
-                    <li><a href="thong-tin.html">Tạp Chí & Tin Tức</a></li>
-                    <li><a href="lien-he.html">Liên Hệ & Khảo Sát</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-col">
-                <h4>Tư Vấn & Khảo Sát</h4>
-                <p>Đăng ký ngay để nhận bản vẽ 2D/3D thiết kế mặt bằng kho miễn phí từ đội ngũ kỹ sư Hòa Long.</p>
-                <a href="lien-he.html" class="btn-subscribe" style="width: 100%; text-align: center; margin-top: 8px;">Yêu Cầu Khảo Sát Kho</a>
-            </div>
-        </div>
-
-        <div class="footer-bottom">
-            <div class="container">
-                © 2026 Cơ Khí Hòa Long (Hoa Long Mechanical). All rights reserved. Đồng bộ dữ liệu trực tiếp từ hoalongcorp.com.
-            </div>
-        </div>
-    </footer>
-
-    <!-- RSS FETCH SCRIPT -->
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             const rssUrl = 'https://hoalongcorp.com/feed/';
@@ -267,7 +160,6 @@
                     if (data.status === 'ok' && data.items.length > 0) {
                         const items = data.items;
                         
-                        // 1. Render Featured Spotlight Article (Bài mới nhất)
                         const heroContainer = document.getElementById('hero-spotlight');
                         const firstPost = items[0];
                         const firstThumb = firstPost.thumbnail || 'https://via.placeholder.com/800x500?text=Hoa+Long+Mechanical';
@@ -277,17 +169,16 @@
                             <div class="featured-card">
                                 <img src="${firstThumb}" alt="${firstPost.title}">
                                 <div class="featured-content">
-                                    <span class="badge">Bài Nổi Bật Mới Nhất</span>
+                                    <span class="badge-tag">Bài Nổi Bật Mới Nhất</span>
                                     <h1 class="featured-title">
-                                        <a href="${firstPost.link}" target="_blank">${firstPost.title}</a>
+                                        <a href="${firstPost.link}" target="_blank" rel="noopener">${firstPost.title}</a>
                                     </h1>
                                     <p class="featured-snippet">${firstDesc}...</p>
-                                    <a href="${firstPost.link}" target="_blank" style="color: #ffa466; font-weight: 700; text-decoration: none; font-size: 14px;">Đọc Chuyên Đề Đầy Đủ →</a>
+                                    <a href="${firstPost.link}" target="_blank" rel="noopener" style="color: #ffa466; font-weight: 700; text-decoration: none; font-size: 14px;">Đọc Chuyên Đề Đầy Đủ →</a>
                                 </div>
                             </div>
                         `;
 
-                        // 2. Render Articles Grid (Các bài còn lại)
                         const gridContainer = document.getElementById('rss-news-list');
                         gridContainer.innerHTML = '';
                         
@@ -301,17 +192,17 @@
                                 <img class="article-thumb" src="${thumb}" alt="${post.title}" loading="lazy">
                                 <div class="article-content">
                                     <h3 class="article-title">
-                                        <a href="${post.link}" target="_blank">${post.title}</a>
+                                        <a href="${post.link}" target="_blank" rel="noopener">${post.title}</a>
                                     </h3>
                                     <p class="article-excerpt">${desc}...</p>
-                                    <a href="${post.link}" target="_blank" class="article-meta">Đọc bài viết →</a>
+                                    <a href="${post.link}" target="_blank" rel="noopener" class="article-meta">Đọc bài viết →</a>
                                 </div>
                             `;
                             gridContainer.appendChild(card);
                         });
                     }
                 })
-                .catch(err => console.log('Không thể tải dữ liệu RSS:', err));
+                .catch(err => console.log('Không thể kết nối RSS:', err));
         });
     </script>
 </body>
