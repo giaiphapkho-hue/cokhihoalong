@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Liên Hệ Báo Giá - CÔNG TY CỔ PHẦN SẢN XUẤT CƠ KHÍ HÒA LONG</title>
-    <meta name="description" content="Liên hệ Cơ Khí Hòa Long nhận báo giá kệ chứa hàng, nhà thép tiền chế. Văn phòng TP.HCM & Nhà máy Bến Lức, Long An. Hotline: 0901.890.689">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <meta name="description" content="Liên hệ Cơ Khí Hòa Long nhận báo giá hệ thống kệ chứa hàng, sàn Mezzanine, nhà thép tiền chế (PEB). Tư vấn giải pháp lưu trữ kho hàng chuyên nghiệp. Hotine/Zalo: 0901 890 689">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
@@ -24,630 +23,389 @@
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Roboto', sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         body {
+            background-color: var(--bg-light);
             color: var(--text-dark);
             line-height: 1.6;
-            background-color: #fff;
         }
 
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        /* HEADER */
-        header {
-            background: #fff;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .header-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 0;
-        }
-
-        .logo-group {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            text-decoration: none;
-        }
-
-        .logo-badge {
-            background: var(--primary);
-            color: #fff;
-            font-weight: 700;
-            padding: 6px 10px;
-            border-radius: 4px;
-            font-size: 18px;
-        }
-
-        .logo-text {
-            font-size: 20px;
-            font-weight: 700;
-            color: var(--primary);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        nav {
-            display: flex;
-            align-items: center;
-        }
-
-        nav a {
-            margin-left: 22px;
-            text-decoration: none;
-            color: var(--text-dark);
-            font-weight: 500;
-            transition: color 0.2s;
-            font-size: 15px;
-        }
-
-        nav a:hover, nav a.active {
-            color: var(--primary);
-            font-weight: 700;
-        }
-
-        .btn-header-cta {
-            background: var(--accent) !important;
-            color: #fff !important;
-            padding: 8px 16px;
-            border-radius: 4px;
-            font-weight: 700 !important;
-            margin-left: 25px;
-            transition: background 0.3s;
-        }
-
-        .btn-header-cta:hover {
-            background: var(--accent-hover) !important;
-        }
-
-        /* HERO BANNER */
-        .page-hero {
-            background: linear-gradient(rgba(0, 75, 147, 0.85), rgba(0, 51, 102, 0.9)), url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
-            color: #fff;
+        /* BANNER TRANG LIÊN HỆ */
+        .page-banner {
+            background: linear-gradient(rgba(0, 51, 102, 0.85), rgba(0, 51, 102, 0.85)), url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+            color: #ffffff;
             text-align: center;
             padding: 60px 20px;
         }
 
-        .page-hero h1 {
-            font-size: 32px;
-            text-transform: uppercase;
+        .page-banner h1 {
+            font-size: 2.2rem;
+            font-weight: 800;
             margin-bottom: 10px;
+            text-transform: uppercase;
             letter-spacing: 1px;
         }
 
-        .page-hero p {
-            font-size: 16px;
-            max-width: 700px;
+        .page-banner p {
+            font-size: 1.1rem;
+            color: #e0e0e0;
+            max-width: 600px;
             margin: 0 auto;
-            opacity: 0.9;
         }
 
-        /* CONTACT SECTION */
-        .contact-section {
-            padding: 60px 0;
-            background: var(--bg-light);
+        /* BỐ CỤC CHÍNH (CONTAINER) */
+        .contact-container {
+            max-width: 1200px;
+            margin: -40px auto 60px;
+            padding: 0 20px;
+            position: relative;
+            z-index: 10;
         }
 
-        .grid-2 {
+        .contact-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 30px;
         }
 
-        .card {
-            background: #fff;
-            padding: 35px;
+        /* KHỐI THÔNG TIN LIÊN HỆ */
+        .contact-info-card {
+            background-color: #ffffff;
             border-radius: 8px;
+            padding: 35px;
             box-shadow: var(--shadow);
         }
 
-        .section-title {
-            color: var(--primary);
-            font-size: 22px;
+        .contact-info-card h2 {
+            font-size: 1.5rem;
+            color: var(--primary-dark);
             margin-bottom: 20px;
+            position: relative;
             padding-bottom: 10px;
-            border-bottom: 2px solid var(--primary);
-            display: inline-block;
         }
 
-        /* CONTACT INFO */
+        .contact-info-card h2::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--accent);
+        }
+
         .info-item {
             display: flex;
             align-items: flex-start;
             gap: 15px;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
 
         .info-icon {
-            background: rgba(0, 75, 147, 0.1);
+            width: 45px;
+            height: 45px;
+            background-color: rgba(0, 75, 147, 0.1);
             color: var(--primary);
-            width: 40px;
-            height: 40px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 18px;
+            font-size: 1.2rem;
             flex-shrink: 0;
         }
 
-        .info-text h4 {
-            font-size: 16px;
+        .info-details h3 {
+            font-size: 1rem;
             color: var(--primary-dark);
             margin-bottom: 4px;
         }
 
-        .info-text p, .info-text a {
-            color: var(--text-dark);
+        .info-details p, .info-details a {
+            color: var(--text-muted);
+            font-size: 0.95rem;
             text-decoration: none;
-            font-size: 15px;
         }
 
-        .info-text a:hover {
+        .info-details a:hover {
             color: var(--accent);
         }
 
-        /* FORM */
+        /* FORM ĐĂNG KÝ BÁO GIÁ */
+        .contact-form-card {
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 35px;
+            box-shadow: var(--shadow);
+        }
+
+        .contact-form-card h2 {
+            font-size: 1.5rem;
+            color: var(--primary-dark);
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .contact-form-card h2::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--accent);
+        }
+
         .form-group {
             margin-bottom: 20px;
         }
 
         .form-group label {
             display: block;
-            margin-bottom: 6px;
-            font-weight: 500;
-            font-size: 14px;
-        }
-
-        .form-group label span {
-            color: red;
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+            color: var(--text-dark);
         }
 
         .form-control {
             width: 100%;
             padding: 12px 15px;
             border: 1px solid var(--border-color);
-            border-radius: 4px;
-            font-size: 14px;
-            outline: none;
-            transition: border-color 0.3s;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
         }
 
         .form-control:focus {
+            outline: none;
             border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(0, 75, 147, 0.15);
         }
 
         textarea.form-control {
             resize: vertical;
-            min-height: 110px;
+            min-height: 120px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
         }
 
         .btn-submit {
             width: 100%;
-            background: var(--accent);
-            color: #fff;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-hover) 100%);
+            color: #ffffff;
             border: none;
             padding: 14px;
-            font-size: 16px;
+            font-size: 1rem;
             font-weight: 700;
-            border-radius: 4px;
+            border-radius: 6px;
             cursor: pointer;
-            text-transform: uppercase;
-            transition: background 0.3s;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(255, 102, 0, 0.3);
         }
 
         .btn-submit:hover {
-            background: var(--accent-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(255, 102, 0, 0.4);
         }
 
-        /* MAP SECTION */
+        /* BẢN ĐỒ GOOGLE MAPS */
         .map-section {
-            padding: 0 0 60px 0;
-            background: var(--bg-light);
+            max-width: 1200px;
+            margin: 0 auto 60px;
+            padding: 0 20px;
         }
 
-        .map-container {
+        .map-section h2 {
+            font-size: 1.5rem;
+            color: var(--primary-dark);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .map-wrapper {
             border-radius: 8px;
             overflow: hidden;
             box-shadow: var(--shadow);
             height: 400px;
         }
 
-        .map-container iframe {
+        .map-wrapper iframe {
             width: 100%;
             height: 100%;
             border: 0;
         }
 
-        /* FOOTER NEW STYLES */
-        .site-footer {
-            background-color: var(--primary-dark);
-            color: #ffffff;
-            padding: 50px 0 0 0;
-            font-size: 14px;
-            line-height: 1.6;
-            position: relative;
-        }
-
-        .footer-container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 30px;
-            padding-bottom: 40px;
-        }
-
-        .footer-col h3 {
-            color: #ffffff;
-            font-size: 16px;
-            font-weight: 700;
-            margin-bottom: 18px;
-            text-transform: uppercase;
-            position: relative;
-            padding-bottom: 8px;
-        }
-
-        .footer-col h3::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 40px;
-            height: 2px;
-            background-color: var(--accent);
-        }
-
-        .footer-col p {
-            margin-bottom: 12px;
-            color: #d1d5db;
-        }
-
-        .footer-col p a {
-            color: #ffffff;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        .footer-col ul {
-            list-style: none;
-        }
-
-        .footer-col ul li {
-            margin-bottom: 10px;
-        }
-
-        .footer-col ul li a {
-            color: #d1d5db;
-            text-decoration: none;
-            transition: all 0.2s ease;
-        }
-
-        .footer-col ul li a:hover {
-            color: var(--accent);
-            padding-left: 5px;
-        }
-
-        .footer-bottom {
-            background-color: #002244;
-            padding: 18px 0;
-            text-align: center;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .footer-bottom p {
-            margin: 0;
-            color: #9ca3af;
-            font-size: 13px;
-        }
-
-        /* FLOATING CONTACT BUTTONS (Đặt ở bên trái để không che Tidio ở bên phải) */
-        .floating-contact {
-            position: fixed !important;
-            bottom: 30px !important;
-            left: 25px !important;
-            z-index: 999999 !important;
-            display: flex !important;
-            flex-direction: column !important;
-            gap: 15px !important;
-        }
-
-        .contact-btn {
-            width: 52px;
-            height: 52px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #ffffff !important;
-            font-size: 22px;
-            text-decoration: none;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .contact-btn:hover {
-            transform: scale(1.1);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
-        }
-
-        .btn-zalo {
-            background-color: #0088fe !important;
-            animation: pulse-blue 2s infinite;
-        }
-
-        .btn-phone {
-            background-color: #00a859 !important;
-            animation: pulse-green 2s infinite;
-        }
-
-        @keyframes pulse-blue {
-            0% { box-shadow: 0 0 0 0 rgba(0, 136, 254, 0.7); }
-            70% { box-shadow: 0 0 0 15px rgba(0, 136, 254, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(0, 136, 254, 0); }
-        }
-
-        @keyframes pulse-green {
-            0% { box-shadow: 0 0 0 0 rgba(0, 168, 89, 0.7); }
-            70% { box-shadow: 0 0 0 15px rgba(0, 168, 89, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(0, 168, 89, 0); }
-        }
-
         /* RESPONSIVE */
-        @media (max-width: 902px) {
-            .grid-2 {
+        @media (max-width: 768px) {
+            .contact-grid {
                 grid-template-columns: 1fr;
             }
-            .header-container {
-                flex-direction: column;
-                gap: 15px;
-            }
-            nav {
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-            nav a {
-                margin: 5px 10px;
-            }
-            .btn-header-cta {
-                margin-left: 10px;
-            }
-        }
 
-        @media (max-width: 768px) {
-            .floating-contact {
-                bottom: 20px !important;
-                left: 15px !important;
-                gap: 10px !important;
+            .form-row {
+                grid-template-columns: 1fr;
             }
-            .contact-btn {
-                width: 46px;
-                height: 46px;
-                font-size: 19px;
+
+            .page-banner h1 {
+                font-size: 1.8rem;
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- HEADER -->
-    <header>
-        <div class="container header-container">
-            <a href="index.html" class="logo-group">
-                <span class="logo-badge">HLM</span>
-                <span class="logo-text">CƠ KHÍ HÒA LONG</span>
-            </a>
-            <nav>
-                <a href="index.html">Trang chủ</a>
-                <a href="gioi-thieu.html">Giới thiệu</a>
-                <a href="san-pham.html">Sản phẩm</a>
-                <a href="dich-vu.html">Dịch vụ</a>
-                <a href="thong-tin.html">Tin tức</a>
-                <a href="lien-he.html" class="active">Liên hệ</a>
-                <a href="lien-he.html" class="btn-header-cta">Nhận Báo Giá</a>
-            </nav>
-        </div>
-    </header>
+    <!-- KHU VỰC LOAD HEADER TỰ ĐỘNG -->
+    <div id="header-placeholder"></div>
 
-    <!-- HERO BANNER -->
-    <section class="page-hero">
-        <div class="container">
-            <h1>Liên Hệ Báo Giá & Tư Vấn</h1>
-            <p>Giải pháp kệ chứa hàng công nghiệp & Nhà thép tiền chế tối ưu cho kho vận của bạn</p>
-        </div>
+    <!-- BANNER TRANG -->
+    <section class="page-banner">
+        <h1>Liên Hệ & Nhận Báo Giá</h1>
+        <p>Giải pháp tối ưu không gian lưu trữ cho nhà kho & công trình công nghiệp</p>
     </section>
 
-    <!-- CONTACT SECTION -->
-    <section class="contact-section">
-        <div class="container">
-            <div class="grid-2">
-                <!-- THÔNG TIN LIÊN HỆ -->
-                <div class="card">
-                    <h2 class="section-title">Thông Tin Liên Hệ</h2>
-                    
-                    <div class="info-item">
-                        <div class="info-icon"><i class="fa-solid fa-location-dot"></i></div>
-                        <div class="info-text">
-                            <h4>Văn Phòng Đại Diện</h4>
-                            <p>19 Trần Quý Kiên, Bình Trưng, TP. Hồ Chí Minh</p>
-                        </div>
-                    </div>
+    <!-- NỘI DUNG CHÍNH -->
+    <main class="contact-container">
+        <div class="contact-grid">
+            
+            <!-- CỘT THÔNG TIN LIÊN HỆ -->
+            <div class="contact-info-card">
+                <h2>CƠ KHÍ HÒA LONG</h2>
+                <p style="margin-bottom: 25px; color: var(--text-muted);">
+                    Quý khách hàng có nhu cầu tư vấn thiết kế, nhận báo giá kệ chứa hàng hoặc thi công nhà thép tiền chế, vui lòng liên hệ trực tiếp qua thông tin bên dưới:
+                </p>
 
-                    <div class="info-item">
-                        <div class="info-icon"><i class="fa-solid fa-industry"></i></div>
-                        <div class="info-text">
-                            <h4>Nhà Máy Sản Xuất</h4>
-                            <p>192 Nguyễn Văn Tuôi, Bến Lức, Tây Ninh</p>
-                        </div>
-                    </div>
-
-                    <div class="info-item">
-                        <div class="info-icon"><i class="fa-solid fa-phone"></i></div>
-                        <div class="info-text">
-                            <h4>Hotline / Zalo Tư Vấn</h4>
-                            <p><a href="tel:0901890689"><strong>0901.890.689</strong></a></p>
-                        </div>
-                    </div>
-
-                    <div class="info-item">
-                        <div class="info-icon"><i class="fa-solid fa-envelope"></i></div>
-                        <div class="info-text">
-                            <h4>Email Báo Giá</h4>
-                            <p><a href="mailto:phucle@hoalongcorp.com">phucle@hoalongcorp.com</a></p>
-                        </div>
-                    </div>
-
-                    <div class="info-item">
-                        <div class="info-icon"><i class="fa-solid fa-globe"></i></div>
-                        <div class="info-text">
-                            <h4>Website Official</h4>
-                            <p><a href="https://hoalongcorp.com" target="_blank" rel="noopener">hoalongcorp.com</a></p>
-                        </div>
-                    </div>
-
-                    <div class="info-item">
-                        <div class="info-icon"><i class="fa-solid fa-clock"></i></div>
-                        <div class="info-text">
-                            <h4>Giờ Làm Việc</h4>
-                            <p>Thứ 2 - Thứ 7: 08:00 - 17:00</p>
-                        </div>
+                <div class="info-item">
+                    <div class="info-icon"><i class="fa-solid fa-location-dot"></i></div>
+                    <div class="info-details">
+                        <h3>Văn Phòng TP.HCM</h3>
+                        <p>Số 14 Đặng Tất, Phường Tân Định, Quận 1, TP. Hồ Chí Minh</p>
                     </div>
                 </div>
 
-                <!-- FORM ĐĂNG KÝ BÁO GIÁ -->
-                <div class="card">
-                    <h2 class="section-title">Gửi Yêu Cầu Báo Giá</h2>
-                    <form action="#" method="POST" onsubmit="alert('Cảm ơn bạn đã gửi thông tin! Chúng tôi sẽ liên hệ lại trong thời gian sớm nhất.'); return false;">
-                        <div class="form-group">
-                            <label for="fullname">Họ và tên <span>*</span></label>
-                            <input type="text" id="fullname" name="fullname" class="form-control" placeholder="Nguyễn Văn A" required>
-                        </div>
+                <div class="info-item">
+                    <div class="info-icon"><i class="fa-solid fa-industry"></i></div>
+                    <div class="info-details">
+                        <h3>Nhà Máy Sản Xuất</h3>
+                        <p>Lô A12, KCN Bến Lức, Huyện Bến Lức, Tỉnh Long An</p>
+                    </div>
+                </div>
 
-                        <div class="form-group">
-                            <label for="phone">Số điện thoại / Zalo <span>*</span></label>
-                            <input type="tel" id="phone" name="phone" class="form-control" placeholder="0901890689" required>
-                        </div>
+                <div class="info-item">
+                    <div class="info-icon"><i class="fa-solid fa-phone"></i></div>
+                    <div class="info-details">
+                        <h3>Hotline / Zalo</h3>
+                        <p><a href="tel:0901890689"><strong>0901 890 689</strong></a> (Tư vấn 24/7)</p>
+                    </div>
+                </div>
 
-                        <div class="form-group">
-                            <label for="email">Email liên hệ</label>
-                            <input type="email" id="email" name="email" class="form-control" placeholder="example@gmail.com">
-                        </div>
+                <div class="info-item">
+                    <div class="info-icon"><i class="fa-solid fa-envelope"></i></div>
+                    <div class="info-details">
+                        <h3>Email Báo Giá</h3>
+                        <p><a href="mailto:contact@hoalongcorp.com">contact@hoalongcorp.com</a></p>
+                    </div>
+                </div>
 
-                        <div class="form-group">
-                            <label for="service">Sản phẩm / Dịch vụ quan tâm</label>
-                            <select id="service" name="service" class="form-control">
-                                <option value="ke-heavy-duty">Kệ tải trọng nặng (Selective, Drive-in, VNA...)</option>
-                                <option value="ke-medium-duty">Kệ trung tải & Kệ kho V lỗ</option>
-                                <option value="nha-thep-tien-che">Nhà thép tiền chế & Kết cấu thép</option>
-                                <option value="di-doi-bao-tri">Dịch vụ di dời, tháo lắp & bảo trì kệ</option>
-                                <option value="khac">Khác (Tư vấn giải pháp kho toàn diện)</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="message">Nội dung chi tiết (Diện tích kho, tải trọng/pallet...)</label>
-                            <textarea id="message" name="message" class="form-control" placeholder="Nhập thông tin yêu cầu của bạn tại đây..."></textarea>
-                        </div>
-
-                        <button type="submit" class="btn-submit">Gửi Yêu Cầu Báo Giá Nhanh</button>
-                    </form>
+                <div class="info-item">
+                    <div class="info-icon"><i class="fa-solid fa-id-card"></i></div>
+                    <div class="info-details">
+                        <h3>Mã Số Thuế</h3>
+                        <p>1101890689</p>
+                    </div>
                 </div>
             </div>
+
+            <!-- CỘT FORM GỬI YÊU CẦU -->
+            <div class="contact-form-card">
+                <h2>Gửi Yêu Cầu Báo Giá</h2>
+                <form id="contactForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="fullname">Họ và tên *</label>
+                            <input type="text" id="fullname" class="form-control" placeholder="Nguyễn Văn A" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Số điện thoại *</label>
+                            <input type="tel" id="phone" class="form-control" placeholder="0901234567" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" class="form-control" placeholder="example@gmail.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="product">Sản phẩm quan tâm</label>
+                            <select id="product" class="form-control">
+                                <option value="Kệ tải nặng (Selective, Drive-In, VNA)">Kệ Tải Nặng</option>
+                                <option value="Kệ Trung Tải & Sàn Mezzanine">Kệ Trung Tải & Sàn Mezzanine</option>
+                                <option value="Nhà Thép Tiền Chế (PEB)">Nhà Thép Tiền Chế (PEB)</option>
+                                <option value="Khác">Sản phẩm / Dịch vụ khác</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Nội dung chi tiết (Kích thước kho, tải trọng yêu cầu...)</label>
+                        <textarea id="message" class="form-control" placeholder="Nhập yêu cầu chi tiết của bạn tại đây..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-submit">
+                        <i class="fa-solid fa-paper-plane" style="margin-right: 8px;"></i> GỬI YÊU CẦU BÁO GIÁ
+                    </button>
+                </form>
+            </div>
+
         </div>
-    </section>
+    </main>
 
     <!-- BẢN ĐỒ -->
     <section class="map-section">
-        <div class="container">
-            <h2 class="section-title" style="margin-bottom: 20px;">Vị trí văn phòng</h2>
-            <div class="map-container">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7838.889137384263!2d106.7482505!3d10.7772225!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3175274e727934d9%3A0x6095b348c70b89ad!2sC%C6%A0%20KH%C3%8D%20H%C3%92A%20LONG%20-%20HOA%20LONG%20MECHANICAL%20(HLM)!5e0!3m2!1svi!2s!4v1791367360168!5m2!1svi!2s" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
+        <h2>Vị Trí Của Chúng Tôi</h2>
+        <div class="map-wrapper">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.262826490605!2d106.6888204!3d10.7911679!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317528ce0a9f5c49%3A0xb36a3a41400bc688!2zMTQgxJDhurduZyBU4bqldCwgVMOibiDEkOG7i25oLCBRdeG6rW4gMSwgVGjDoG5oIHBo4buRIEjhu5MgQ2jDrSBNaW5o!5e0!3m2!1svi!2svn!4v1710000000000!5m2!1svi!2svn" allowfullscreen="" loading="lazy"></iframe>
         </div>
     </section>
 
-    <!-- FOOTER MỚI -->
-    <footer class="site-footer">
-        <div class="footer-container">
-            <div class="footer-col">
-                <h3>CƠ KHÍ HÒA LONG</h3>
-                <p>Chuyên tư vấn, thiết kế, sản xuất và thi công hệ thống kệ chứa hàng công nghiệp, kệ tải nặng, nhà thép tiền chế chất lượng cao.</p>
-                <p><strong>Hotline:</strong> <a href="tel:0901890689">0901.890.689</a></p>
-                <p><strong>Email:</strong> phucle@hoalongcorp.com</p>
-                <p><strong>Địa chỉ nhà máy:</strong> Huyện Bến Lức, Tỉnh Long An, Việt Nam</p>
-            </div>
+    <!-- KHU VỰC LOAD FOOTER TỰ ĐỘNG -->
+    <div id="footer-placeholder"></div>
 
-            <div class="footer-col">
-                <h3>Sản Phẩm Key</h3>
-                <ul>
-                    <li><a href="san-pham.html#selective">Kệ Selective Racking</a></li>
-                    <li><a href="san-pham.html#drivein">Kệ Drive-In Racking</a></li>
-                    <li><a href="san-pham.html#vna">Kệ VNA (Very Narrow Aisle)</a></li>
-                    <li><a href="san-pham.html#trung-tai">Kệ Trung Tải Công Nghiệp</a></li>
-                    <li><a href="san-pham.html#nha-thep">Nhà Thép Tiền Chế (PEB)</a></li>
-                </ul>
-            </div>
+    <!-- SCRIPT TỰ ĐỘNG LOAD HEADER/FOOTER & XỬ LÝ FORM -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Fetch Header
+            fetch('header.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('header-placeholder').innerHTML = data;
+                })
+                .catch(error => console.error('Lỗi khi tải header:', error));
 
-            <div class="footer-col">
-                <h3>Liên Kết Nhanh</h3>
-                <ul>
-                    <li><a href="gioi-thieu.html">Giới thiệu Hòa Long</a></li>
-                    <li><a href="dich-vu.html">Dịch vụ thi công & Di dời</a></li>
-                    <li><a href="thong-tin.html">Tin tức & Dự án</a></li>
-                    <li><a href="lien-he.html">Yêu cầu báo giá</a></li>
-                </ul>
-            </div>
-        </div>
+            // Fetch Footer
+            fetch('footer.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('footer-placeholder').innerHTML = data;
+                })
+                .catch(error => console.error('Lỗi khi tải footer:', error));
 
-        <div class="footer-bottom">
-            <div class="container">
-                <p>&copy; 2026 CÔNG TY CỔ PHẦN SẢN XUẤT CƠ KHÍ HÒA LONG. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- CỤM NÚT LIÊN HỆ NỔI (ZALO & HOTLINE - ĐẶT BÊN TRÁI MÀN HÌNH) -->
-    <div class="floating-contact">
-        <a href="https://zalo.me/0901890689" target="_blank" class="contact-btn btn-zalo" title="Chat Zalo: 0901890689" aria-label="Chat Zalo">
-            <i class="fa-regular fa-comment-dots"></i>
-        </a>
-        <a href="tel:0901890689" class="contact-btn btn-phone" title="Gọi Hotline: 0901890689" aria-label="Gọi điện">
-            <i class="fa-solid fa-phone"></i>
-        </a>
-    </div>
-
-    <!-- INTEGRATE TIDIO CHATBOT (Thay public key Tidio của bạn tại đây) -->
-    <script src="//code.tidio.co/ycjxzqgvql107z03ept4ea6v0uvucsga.js" async></script>
-
-    <!-- SCHEMA MARKUP FOR LOCAL BUSINESS -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "name": "CÔNG TY CỔ PHẦN SẢN XUẤT CƠ KHÍ HÒA LONG",
-      "telephone": "0901890689",
-      "email": "cokhihoalong.corp@gmail.com",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Bến Lức",
-        "addressRegion": "Long An",
-        "addressCountry": "VN"
-      },
-      "url": "https://hoalongcorp.com"
-    }
+            // Xử lý gửi Form
+            const contactForm = document.getElementById('contactForm');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    alert('Cảm ơn bạn đã gửi thông tin! Đội ngũ Cơ Khí Hòa Long sẽ liên hệ tư vấn trong thời gian sớm nhất.');
+                    contactForm.reset();
+                });
+            }
+        });
     </script>
 </body>
 </html>
