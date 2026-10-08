@@ -1,110 +1,555 @@
-<!DOCTYPE html>
-<html lang="vi">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cơ Khí Hòa Long - Hệ Thống Kệ Kho Industrial & Nhà Thép Tiền Chế</title>
-    <meta name="description" content="Chuyên thiết kế, sản xuất và thi công hệ thống kệ chứa hàng công nghiệp (Selective, VNA, Drive-in) và nhà thép tiền chế chuẩn kỹ thuật HLM.">
-    <meta name="keywords" content="kệ kho hàng, kệ tải nặng, kệ selective, kệ vna, nhà thép tiền chế, cơ khí hòa long">
-    <link rel="canonical" href="https://giaiphapkho-hue.github.io/cokhihoalong/" />
-    
-    <!-- Geo Meta Tags (SEO Local) -->
-    <meta name="geo.region" content="VN-SG" />
-    <meta name="geo.placename" content="TP. Hồ Chí Minh" />
-    <meta name="geo.position" content="10.762622;106.660172" />
-    <meta name="ICBM" content="10.762622, 106.660172" />
+---
+layout: base.njk
+title: "Cơ Khí Hòa Long | Hệ Thống Kệ Kho Công Nghiệp & Nhà Thép Tiền Chế (PEB)"
+description: "Chuyên thiết kế, sản xuất và thi công hệ thống kệ chứa hàng tải nặng (Selective, Drive-In, VNA, ASRS) và Nhà thép tiền chế tiêu chuẩn kỹ thuật cao."
+---
 
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <style>
-        :root { --primary: #004b93; --accent: #ff6600; --dark: #111; --light: #f8f9fa; }
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Roboto', sans-serif; }
-        body { color: #333; line-height: 1.6; }
-        header { background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000; }
-        .container { width: 90%; max-width: 1200px; margin: auto; display: flex; justify-content: space-between; align-items: center; padding: 15px 0; }
-        .logo { font-size: 22px; font-weight: 700; color: var(--primary); text-decoration: none; }
-        nav a { margin-left: 20px; text-decoration: none; color: #333; font-weight: 500; }
-        nav a:hover, nav a.active { color: var(--primary); font-weight: 700; }
-        .hero { background: linear-gradient(rgba(0,75,147,0.85), rgba(0,75,147,0.85)), url('https://via.placeholder.com/1920x600') center/cover; color: white; padding: 90px 0; text-align: center; }
-        .hero h1 { font-size: 34px; margin-bottom: 15px; }
-        .btn { background: var(--accent); color: white; padding: 12px 28px; text-decoration: none; border-radius: 4px; font-weight: bold; display: inline-block; }
-        .section { padding: 50px 0; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
-        .card { background: #fff; border: 1px solid #e1e1e1; border-radius: 6px; overflow: hidden; padding: 20px; }
-        footer { background: #1a1a1a; color: white; padding: 40px 0 20px; margin-top: 40px; font-size: 14px; }
-        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 30px; width: 90%; max-width: 1200px; margin: auto; }
-    </style>
-
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "ManufacturingBusiness",
-      "name": "Cơ Khí Hòa Long",
-      "url": "https://hoalongcorp.com",
-      "logo": "https://hoalongcorp.com/wp-content/uploads/logo.png",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "19 Trần Quý Kiên, Phường Bình Trưng",
-        "addressLocality": "TP. Hồ Chí Minh",
-        "addressCountry": "VN"
-      },
-      "telephone": "+84901890689"
+<style>
+    /* VARIABLES & RESET */
+    :root {
+        --primary-navy: #002244;
+        --secondary-blue: #003366;
+        --accent-orange: #ff6600;
+        --accent-hover: #e05500;
+        --bg-light: #f8fafc;
+        --bg-card: #ffffff;
+        --text-dark: #1e293b;
+        --text-muted: #64748b;
+        --border-color: #e2e8f0;
     }
-    </script>
-</head>
-<body>
-    <header>
-        <div class="container">
-            <a href="index.html" class="logo">CƠ KHÍ HÒA LONG</a>
-            <nav>
-                <a href="index.html" class="active">Trang chủ</a>
-                <a href="gioi-thieu.html">Giới thiệu</a>
-                <a href="san-pham.html">Sản phẩm</a>
-                <a href="dich-vu.html">Dịch vụ</a>
-                <a href="thong-tin.html">Thông tin</a>
-                <a href="lien-he.html">Liên hệ</a>
-            </nav>
-        </div>
-    </header>
 
-    <section class="hero">
-        <div class="container" style="flex-direction: column;">
-            <h1>GIẢI PHÁP KỆ KHO CÔNG NGHIỆP & NHÀ THÉP TIỀN CHẾ</h1>
-            <p style="margin-bottom: 20px;">Engineered by HLM – Built for Real Warehouses</p>
-            <a href="lien-he.html" class="btn">NHẬN TƯ VẤN & BÁO GIÁ</a>
-        </div>
-    </section>
+    body {
+        font-family: 'Roboto', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        color: var(--text-dark);
+        background-color: #ffffff;
+        line-height: 1.6;
+    }
 
-    <section class="section">
-        <div class="container" style="flex-direction: column;">
-            <h2 style="color: var(--primary); margin-bottom: 30px;">SẢN PHẨM NỔI BẬT</h2>
-            <div class="grid" style="width:100%;">
-                <div class="card">
-                    <h3>Kệ Selective Tải Nặng</h3>
-                    <p>Tiếp cận 100% Pallet, tối ưu cho kho logistics tiêu chuẩn.</p>
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    .section-padding {
+        padding: 80px 0;
+    }
+
+    .text-center { text-align: center; }
+    .text-orange { color: var(--accent-orange); }
+
+    /* SECTION HEADERS */
+    .section-title-tag {
+        display: inline-block;
+        font-size: 0.85rem;
+        font-weight: 700;
+        color: var(--accent-orange);
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        background-color: rgba(255, 102, 0, 0.1);
+        padding: 4px 12px;
+        border-radius: 4px;
+        margin-bottom: 10px;
+    }
+
+    .section-title {
+        font-size: 2.2rem;
+        font-weight: 800;
+        color: var(--primary-navy);
+        margin-bottom: 15px;
+        line-height: 1.25;
+    }
+
+    .section-desc {
+        color: var(--text-muted);
+        max-width: 700px;
+        margin: 0 auto 50px auto;
+        font-size: 1.05rem;
+    }
+
+    /* 1. HERO SECTION */
+    .hero-section {
+        position: relative;
+        background: linear-gradient(135deg, rgba(0, 34, 68, 0.92) 0%, rgba(0, 51, 102, 0.85) 100%), 
+                    url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+        color: #ffffff;
+        padding: 100px 0 120px 0;
+        overflow: hidden;
+    }
+
+    .hero-content {
+        max-width: 780px;
+    }
+
+    .hero-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: rgba(255, 255, 255, 0.12);
+        backdrop-filter: blur(8px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        padding: 6px 16px;
+        border-radius: 50px;
+        font-size: 0.85rem;
+        font-weight: 600;
+        color: #ffffff;
+        margin-bottom: 25px;
+    }
+
+    .hero-badge i { color: var(--accent-orange); }
+
+    .hero-title {
+        font-size: 3rem;
+        font-weight: 900;
+        line-height: 1.2;
+        margin-bottom: 20px;
+        letter-spacing: -0.5px;
+    }
+
+    .hero-subtitle {
+        font-size: 1.15rem;
+        color: #e2e8f0;
+        margin-bottom: 35px;
+        font-weight: 400;
+        line-height: 1.7;
+    }
+
+    .hero-actions {
+        display: flex;
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+
+    .btn-primary {
+        background-color: var(--accent-orange);
+        color: #ffffff;
+        padding: 14px 28px;
+        border-radius: 6px;
+        font-weight: 700;
+        font-size: 1rem;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        box-shadow: 0 4px 15px rgba(255, 102, 0, 0.4);
+    }
+
+    .btn-primary:hover {
+        background-color: var(--accent-hover);
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(255, 102, 0, 0.6);
+    }
+
+    .btn-outline {
+        border: 2px solid rgba(255, 255, 255, 0.4);
+        color: #ffffff;
+        padding: 14px 28px;
+        border-radius: 6px;
+        font-weight: 700;
+        font-size: 1rem;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .btn-outline:hover {
+        background: rgba(255, 255, 255, 0.15);
+        border-color: #ffffff;
+        transform: translateY(-2px);
+    }
+
+    /* 2. STATS BAR */
+    .stats-section {
+        background-color: #ffffff;
+        margin-top: -50px;
+        position: relative;
+        z-index: 10;
+        border-radius: 8px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        border: 1px solid var(--border-color);
+        padding: 30px;
+    }
+
+    .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+        text-align: center;
+    }
+
+    .stat-item {
+        padding: 10px;
+        border-right: 1px solid var(--border-color);
+    }
+
+    .stat-item:last-child { border-right: none; }
+
+    .stat-number {
+        font-size: 2.2rem;
+        font-weight: 800;
+        color: var(--secondary-blue);
+        line-height: 1;
+        margin-bottom: 5px;
+    }
+
+    .stat-label {
+        font-size: 0.88rem;
+        color: var(--text-muted);
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+
+    /* 3. PRODUCTS GRID */
+    .products-section {
+        background-color: var(--bg-light);
+    }
+
+    .products-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 25px;
+    }
+
+    .product-card {
+        background-color: var(--bg-card);
+        border-radius: 8px;
+        overflow: hidden;
+        border: 1px solid var(--border-color);
+        transition: all 0.3s ease;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .product-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+        border-color: rgba(0, 51, 102, 0.2);
+    }
+
+    .product-icon-wrapper {
+        height: 140px;
+        background: linear-gradient(135deg, #f0f4f8 0%, #e2e8f0 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 3.5rem;
+        color: var(--secondary-blue);
+        transition: all 0.3s ease;
+    }
+
+    .product-card:hover .product-icon-wrapper {
+        background: var(--secondary-blue);
+        color: var(--accent-orange);
+    }
+
+    .product-body {
+        padding: 25px;
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+    }
+
+    .product-body h3 {
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: var(--primary-navy);
+        margin-bottom: 10px;
+    }
+
+    .product-body p {
+        color: var(--text-muted);
+        font-size: 0.92rem;
+        margin-bottom: 20px;
+        flex-grow: 1;
+    }
+
+    .product-link {
+        color: var(--accent-orange);
+        font-weight: 700;
+        text-decoration: none;
+        font-size: 0.9rem;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        transition: gap 0.2s ease;
+    }
+
+    .product-link:hover {
+        gap: 10px;
+        color: var(--accent-hover);
+    }
+
+    /* 4. ENGINEERING ADVANTAGES */
+    .tech-features-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 30px;
+    }
+
+    .tech-feature-box {
+        display: flex;
+        gap: 20px;
+        padding: 25px;
+        border-radius: 8px;
+        background-color: #ffffff;
+        border: 1px solid var(--border-color);
+        transition: all 0.3s ease;
+    }
+
+    .tech-feature-box:hover {
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+        border-color: var(--accent-orange);
+    }
+
+    .tech-icon {
+        width: 55px;
+        height: 55px;
+        border-radius: 8px;
+        background-color: rgba(0, 51, 102, 0.08);
+        color: var(--secondary-blue);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        flex-shrink: 0;
+    }
+
+    .tech-content h4 {
+        font-size: 1.1rem;
+        font-weight: 700;
+        color: var(--primary-navy);
+        margin-bottom: 8px;
+    }
+
+    .tech-content p {
+        font-size: 0.9rem;
+        color: var(--text-muted);
+        margin: 0;
+    }
+
+    /* 5. CTA BANNER */
+    .cta-banner {
+        background: linear-gradient(135deg, var(--primary-navy) 0%, var(--secondary-blue) 100%);
+        color: #ffffff;
+        border-radius: 12px;
+        padding: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 30px;
+        flex-wrap: wrap;
+    }
+
+    .cta-text h3 {
+        font-size: 1.8rem;
+        font-weight: 800;
+        margin-bottom: 10px;
+    }
+
+    .cta-text p {
+        color: #d1d5db;
+        margin: 0;
+        font-size: 1rem;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 992px) {
+        .hero-title { font-size: 2.3rem; }
+        .stat-item { border-right: none; border-bottom: 1px solid var(--border-color); }
+        .stat-item:last-child { border-bottom: none; }
+        .cta-banner { padding: 35px 25px; text-align: center; justify-content: center; }
+    }
+</style>
+
+<!-- 1. HERO SECTION -->
+<section class="hero-section">
+    <div class="container">
+        <div class="hero-content">
+            <div class="hero-badge">
+                <i class="fa-solid fa-award"></i> Tiêu Chuẩn Kỹ Thuật FEM & ASTM International
+            </div>
+            <h1 class="hero-title">Giải Pháp Kệ Kho Tải Nặng & Nhà Thép Tiền Chế Tối Ưu</h1>
+            <p class="hero-subtitle">
+                Cơ Khí Hòa Long tư vấn thiết kế, sản xuất và lắp đặt trọn gói hệ thống giá kệ công nghiệp (Selective, Drive-In, VNA, ASRS) giúp tối ưu 200% diện tích lưu trữ cho nhà kho hiện đại.
+            </p>
+            <div class="hero-actions">
+                <a href="/cokhihoalong/lien-he/" class="btn-primary">
+                    <i class="fa-solid fa-calculator"></i> Yêu Cầu Báo Giá Kỹ Thuật
+                </a>
+                <a href="/cokhihoalong/san-pham/" class="btn-outline">
+                    <i class="fa-solid fa-cubes"></i> Xem Sản Phẩm
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 2. STATS BAR -->
+<div class="container">
+    <div class="stats-section">
+        <div class="stats-grid">
+            <div class="stat-item">
+                <div class="stat-number">8+</div>
+                <div class="stat-label">Năm Kinh Nghiệm</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">1,200+</div>
+                <div class="stat-label">Dự Án Hoàn Thành</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">15,000m²</div>
+                <div class="stat-label">Nhà Xưởng Sản Xuất</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">99.8%</div>
+                <div class="stat-label">Đánh Giá Hài Lòng</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 3. PRODUCTS SECTION -->
+<section class="products-section section-padding">
+    <div class="container">
+        <div class="text-center">
+            <span class="section-title-tag">Danh Mục Sản Phẩm</span>
+            <h2 class="section-title">Hệ Thống Lưu Trữ Công Nghiệp Trọng Điểm</h2>
+            <p class="section-desc">Được chế tạo từ thép cường độ cao, đáp ứng tải nặng từ 500kg - 3000kg/tầng bài bản cho kho logistics, F&B, chế biến và sản xuất.</p>
+        </div>
+
+        <div class="products-grid">
+            <!-- Card 1 -->
+            <div class="product-card">
+                <div class="product-icon-wrapper">
+                    <i class="fa-solid fa-boxes-stacked"></i>
                 </div>
-                <div class="card">
-                    <h3>Kệ Lối Đi Hẹp (VNA)</h3>
-                    <p>Tăng 40% sức chứa Pallet nhờ thu hẹp lối đi xe nâng.</p>
+                <div class="product-body">
+                    <h3>Kệ Tải Nặng Selective</h3>
+                    <p>Lựa chọn tối ưu cho kho hàng nhiều chủng loại. Khả năng tiếp cận Pallet 100%, dễ dàng tháo lắp và thay đổi khoảng cách tầng.</p>
+                    <a href="/cokhihoalong/san-pham/#ke-chua-hang" class="product-link">
+                        Thông số kỹ thuật <i class="fa-solid fa-arrow-right"></i>
+                    </a>
                 </div>
-                <div class="card">
+            </div>
+
+            <!-- Card 2 -->
+            <div class="product-card">
+                <div class="product-icon-wrapper">
+                    <i class="fa-solid fa-truck-ramp-box"></i>
+                </div>
+                <div class="product-body">
+                    <h3>Kệ Drive-In / Drive-Thru</h3>
+                    <p>Giải pháp lưu trữ mật độ cao cho kho lạnh và kho F&B. Tận dụng tối đa 85% thể tích nhà kho, giảm diện tích lối đi cho xe nâng.</p>
+                    <a href="/cokhihoalong/san-pham/#ke-chua-hang" class="product-link">
+                        Thông số kỹ thuật <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="product-card">
+                <div class="product-icon-wrapper">
+                    <i class="fa-solid fa-layer-group"></i>
+                </div>
+                <div class="product-body">
+                    <h3>Sàn Mezzanine & Kệ Tầng</h3>
+                    <p>Nhân đôi hoặc nhân ba diện tích sử dụng nhà kho mà không cần mở rộng mặt bằng xây dựng. Tải trọng sàn lên đến 1000kg/m².</p>
+                    <a href="/cokhihoalong/san-pham/#ke-trung-tai" class="product-link">
+                        Thông số kỹ thuật <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="product-card">
+                <div class="product-icon-wrapper">
+                    <i class="fa-solid fa-warehouse"></i>
+                </div>
+                <div class="product-body">
                     <h3>Nhà Thép Tiền Chế (PEB)</h3>
-                    <p>Khung thép cường độ cao, thiết kế chuẩn kết cấu công nghiệp.</p>
+                    <p>Thiết kế, gia công kết cấu khung thép vượt nhịp lớn cho nhà xưởng công nghiệp. Thi công nhanh, độ bền kết cấu trên 30 năm.</p>
+                    <a href="/cokhihoalong/san-pham/#nha-thep-tien-che" class="product-link">
+                        Thông số kỹ thuật <i class="fa-solid fa-arrow-right"></i>
+                    </a>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <footer>
-        <div class="footer-grid">
-            <div>
-                <h3>CƠ KHÍ HÒA LONG</h3>
-                <p>Thành viên FGROUP – Chuyên gia giải pháp lưu trữ nhà kho.</p>
+<!-- 4. TECHNICAL ADVANTAGES -->
+<section class="section-padding">
+    <div class="container">
+        <div class="text-center">
+            <span class="section-title-tag">Năng Lực Kỹ Thuật</span>
+            <h2 class="section-title">Tại Sao Chọn Cơ Khí Hòa Long?</h2>
+            <p class="section-desc">Chúng tôi làm chủ toàn bộ quy trình từ tính toán kết cấu cơ khí đến sản xuất tự động và kiểm định an toàn tại công trình.</p>
+        </div>
+
+        <div class="tech-features-grid">
+            <div class="tech-feature-box">
+                <div class="tech-icon"><i class="fa-solid fa-drafting-compass"></i></div>
+                <div class="tech-content">
+                    <h4>Thiết Kế Chuẩn FEM & ANSI</h4>
+                    <p>Mọi hệ thống kệ được mô phỏng tải trọng và ứng suất bằng phần mềm chuyên dụng trước khi đưa vào sản xuất hàng loạt.</p>
+                </div>
             </div>
-            <div>
-                <h3>Trang Chính</h3>
-                <p><a href="https://hoalongcorp.com" style="color:#ff6600;">hoalongcorp.com</a></p>
+
+            <div class="tech-feature-box">
+                <div class="tech-icon"><i class="fa-solid fa-industry"></i></div>
+                <div class="tech-content">
+                    <h4>Sơn Tĩnh Điện Cao Cấp</h4>
+                    <p>Dây chuyền sơn tĩnh điện tự động giúp bề mặt chống ăn mòn, chống trầy xước và chịu được môi trường kho lạnh nhiệt độ âm.</p>
+                </div>
+            </div>
+
+            <div class="tech-feature-box">
+                <div class="tech-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                <div class="tech-content">
+                    <h4>Bảo Hành Kỹ Thuật 5 Năm</h4>
+                    <p>Cam kết chất lượng bằng chính sách kiểm tra định kỳ an toàn kết cấu và bảo hành miễn phí trong suốt 60 tháng.</p>
+                </div>
+            </div>
+
+            <div class="tech-feature-box">
+                <div class="tech-icon"><i class="fa-solid fa-gears"></i></div>
+                <div class="tech-content">
+                    <h4>Gia Công Tự Động Hóa</h4>
+                    <p>Sử dụng máy cán định hình nhiều tầng và rô-bốt hàn tự động đảm bảo độ chính xác tuyệt đối từng chi tiết chân trụ, thanh beam.</p>
+                </div>
+            </div>
+
+            <div class="tech-feature-box">
+                <div class="tech-icon"><i class="fa-solid fa-truck-fast"></i></div>
+                <div class="tech-content">
+                    <h4>Tiến Độ Lắp Đặt Nhanh</h4>
+                    <p>Đội ngũ kỹ sư thi công giàu kinh nghiệm, đáp ứng tiến độ bàn giao gấp cho các nhà kho logistics quy mô lớn.</p>
+                </div>
+            </div>
+
+            <div class="tech-feature-box">
+                <div class="tech-icon"><i class="fa-solid fa-handshake"></i></div>
+                <div class="tech-content">
+                    <h4>Chi Phí Gốc Từ Nhà Máy</h4>
+                    <p>Sản xuất trực tiếp không qua trung gian, mang đến giá thành tối ưu nhất cho nhà đầu tư và doanh nghiệp.</p>
+                </div>
             </div>
         </div>
-    </footer>
-</body>
-</html>
+
+        <!-- 5. CTA BANNER -->
+        <div style="margin-top: 60px;">
+            <div class="cta-banner">
+                <div class="cta-text">
+                    <h3>Bạn Cần Khảo Sát & Thiết Kế Mặt Bằng Kho Miễn Phí?</h3>
+                    <p>Kỹ sư của Hòa Long sẵn sàng tư vấn trực tiếp và lên bản vẽ 2D/3D tối ưu cho kho hàng của bạn.</p>
+                </div>
+                <a href="/cokhihoalong/lien-he/" class="btn-primary" style="box-shadow: none;">
+                    <i class="fa-solid fa-headset"></i> Đăng Ký Tư Vấn Ngay
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
