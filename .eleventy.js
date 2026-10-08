@@ -1,8 +1,6 @@
 module.exports = function(eleventyConfig) {
-    // Copy các thư mục tài nguyên tĩnh nếu có vào thư mục dist
-    eleventyConfig.addPassthroughCopy("src/css");
+    // Chỉ giữ lại copy js vì src/js đã có sẵn
     eleventyConfig.addPassthroughCopy("src/js");
-    eleventyConfig.addPassthroughCopy("src/images");
 
     return {
         dir: {
