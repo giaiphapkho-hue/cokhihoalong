@@ -3,22 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Giới Thiệu - Cơ Khí Hòa Long (HLM - FGroup)</title>
-    <meta name="description" content="Tìm hiểu về Cơ Khí Hòa Long - Thương hiệu uy tín chuyên sản xuất kệ kho công nghiệp, sàn Mezzanine và nhà thép tiền chế tại Việt Nam.">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <style>
-        :root { --primary: #004b93; --accent: #ff6600; }
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Roboto', sans-serif; }
-        body { color: #333; line-height: 1.6; }
-        header { background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000; }
-        .container { width: 90%; max-width: 1200px; margin: auto; display: flex; justify-content: space-between; align-items: center; padding: 15px 0; }
-        .logo { font-size: 22px; font-weight: 700; color: var(--primary); text-decoration: none; }
-        nav a { margin-left: 20px; text-decoration: none; color: #333; font-weight: 500; }
-        nav a:hover, nav a.active { color: var(--primary); font-weight: 700; }
-        .content { padding: 60px 0; max-width: 900px; margin: auto; }
-        h1, h2 { color: var(--primary); margin-bottom: 20px; }
-        p { margin-bottom: 15px; }
-    </style>
+    <title>Giới Thiệu Cơ Khí Hòa Long (HLM) - Thành Viên FGroup Industrial</title>
+    <meta name="description" content="Tìm hiểu về Cơ Khí Hòa Long (HLM - FGroup): Nhà sản xuất hàng đầu Việt Nam chuyên về hệ thống kệ kho công nghiệp, kệ tải trọng nặng, sàn Mezzanine và nhà thép tiền chế.">
+    <link rel="canonical" href="https://hoalongcorp.com/gioi-thieu/">
+
+    <!-- Geo & Local SEO Tags -->
+    <meta name="geo.region" content="VN-LA">
+    <meta name="geo.placename" content="Long An">
+    <meta name="geo.position" content="10.5833;106.5000">
+    <meta name="ICBM" content="10.5833, 106.5000">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@700&display=swap" rel="stylesheet">
+
+    <!-- Schema.org Structured Data (GEO & Entity Search Optimized) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -26,35 +25,350 @@
       "mainEntity": {
         "@type": "Organization",
         "name": "Cơ Khí Hòa Long",
-        "parentOrganization": { "@type": "Organization", "name": "FGroup" }
+        "alternateName": "Hoa Long Mechanical (HLM)",
+        "url": "https://hoalongcorp.com",
+        "parentOrganization": {
+          "@type": "Organization",
+          "name": "FGroup",
+          "url": "https://fgroup.com.vn"
+        },
+        "description": "Cơ Khí Hòa Long (HLM) là nhà sản xuất và cung cấp giải pháp kệ chứa hàng công nghiệp, kệ tự động ASRS, sàn mezzanine và kết cấu thép tiền chế hàng đầu tại Việt Nam.",
+        "foundingDate": "2018",
+        "address": {
+          "@type": "PostalAddress",
+          "addressRegion": "Long An",
+          "addressCountry": "VN"
+        }
       }
     }
     </script>
+
+    <style>
+        :root {
+            --primary: #004b93;
+            --primary-dark: #002e5c;
+            --accent: #ff6600;
+            --accent-hover: #e65c00;
+            --text-main: #1a1a1a;
+            --text-muted: #555555;
+            --bg-light: #f8f9fa;
+            --border-color: #e5e7eb;
+            --font-serif: 'Merriweather', Georgia, serif;
+            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            color: var(--text-main);
+            background-color: #ffffff;
+            margin: 0;
+            padding: 0;
+            line-height: 1.7;
+        }
+
+        .container {
+            width: 92%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Page Hero Banner */
+        .page-hero {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+            color: #ffffff;
+            padding: 50px 0;
+            text-align: center;
+        }
+        .page-hero h1 {
+            font-family: var(--font-serif);
+            font-size: 32px;
+            margin-bottom: 12px;
+            line-height: 1.3;
+        }
+        .page-hero p {
+            font-size: 16px;
+            color: #dbeafe;
+            max-width: 760px;
+            margin: 0 auto;
+        }
+
+        /* Breadcrumb Nav */
+        .breadcrumb {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin: 20px 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .breadcrumb a {
+            color: var(--text-muted);
+            text-decoration: none;
+        }
+        .breadcrumb a:hover {
+            color: var(--primary);
+        }
+        .breadcrumb .sep { color: #aaa; }
+        .breadcrumb .current { color: var(--primary); font-weight: 600; }
+
+        /* Section Styling */
+        .section-header {
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 10px;
+            margin: 40px 0 28px;
+        }
+        .section-header h2 {
+            font-family: var(--font-serif);
+            font-size: 24px;
+            color: var(--primary);
+            margin: 0;
+            text-transform: uppercase;
+        }
+
+        /* Video Wrapper (Responsive 16:9 Aspect Ratio) */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+            margin: 32px 0 48px;
+            background-color: #000;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* Content Layout Grid */
+        .intro-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+            margin-bottom: 48px;
+        }
+        .intro-text h3 {
+            font-family: var(--font-serif);
+            font-size: 20px;
+            color: var(--primary-dark);
+            margin-top: 0;
+        }
+
+        /* Highlight Cards / Core Values Grid */
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            margin: 32px 0;
+        }
+        .value-card {
+            background: var(--bg-light);
+            border: 1px solid var(--border-color);
+            border-left: 4px solid var(--accent);
+            border-radius: 6px;
+            padding: 24px;
+        }
+        .value-card h3 {
+            font-family: var(--font-serif);
+            font-size: 18px;
+            color: var(--primary);
+            margin: 0 0 10px;
+        }
+        .value-card p {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin: 0;
+        }
+
+        /* Timeline Journey Section */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 30px auto;
+            padding-left: 20px;
+            border-left: 3px solid var(--primary);
+        }
+        .timeline-item {
+            position: relative;
+            margin-bottom: 28px;
+            padding-left: 20px;
+        }
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+            left: -28px;
+            top: 4px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--accent);
+            border: 3px solid #ffffff;
+        }
+        .timeline-year {
+            font-weight: 700;
+            font-size: 18px;
+            color: var(--primary);
+            margin-bottom: 4px;
+        }
+        .timeline-desc {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin: 0;
+        }
+
+        /* CTA Banner */
+        .cta-banner {
+            background: linear-gradient(90deg, var(--primary-dark) 0%, var(--primary) 100%);
+            color: #ffffff;
+            border-radius: 8px;
+            padding: 36px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 50px 0 60px;
+            gap: 20px;
+        }
+        .cta-content h3 {
+            font-family: var(--font-serif);
+            font-size: 22px;
+            margin: 0 0 8px;
+        }
+        .cta-content p {
+            margin: 0;
+            color: #dbeafe;
+            font-size: 14px;
+        }
+        .cta-btn {
+            background: var(--accent);
+            color: #ffffff;
+            padding: 12px 24px;
+            border-radius: 4px;
+            font-weight: 700;
+            font-size: 14px;
+            text-decoration: none;
+            white-space: nowrap;
+            transition: background 0.2s;
+        }
+        .cta-btn:hover {
+            background: var(--accent-hover);
+        }
+
+        @media (max-width: 768px) {
+            .page-hero h1 { font-size: 24px; }
+            .intro-grid { grid-template-columns: 1fr; }
+            .cta-banner { flex-direction: column; text-align: center; }
+        }
+    </style>
 </head>
 <body>
-    <header>
+
+    {% include "header.html" %}
+
+    <section class="page-hero">
         <div class="container">
-            <a href="index.html" class="logo">CƠ KHÍ HÒA LONG</a>
-            <nav>
-                <a href="index.html">Trang chủ</a>
-                <a href="gioi-thieu.html" class="active">Giới thiệu</a>
-                <a href="san-pham.html">Sản phẩm</a>
-                <a href="dich-vu.html">Dịch vụ</a>
-                <a href="thong-tin.html">Thông tin</a>
-                <a href="lien-he.html">Liên hệ</a>
-            </nav>
+            <h1>Cơ Khí Hòa Long (HLM) - Giải Pháp Kệ Kho Công Nghiệp Toàn Diện</h1>
+            <p>Thành viên khối công nghiệp Tập đoàn FGroup – Chuyên sâu nghiên cứu, chế tạo và thi công hạ tầng lưu trữ cho doanh nghiệp Việt Nam & Quốc tế.</p>
         </div>
-    </header>
+    </section>
 
-    <div class="container content" style="flex-direction: column;">
-        <h1>VỀ CƠ KHÍ HÒA LONG (HLM)</h1>
-        <p><strong>Cơ Khí Hòa Long (HLM)</strong> là thành viên thuộc <strong>FGROUP</strong>, chuyên sâu trong lĩnh vực tư vấn, thiết kế, sản xuất và thi công lắp đặt hệ thống kệ chứa hàng tải nặng, kệ kho thông minh và nhà thép tiền chế (PEB).</p>
+    <main class="container">
+
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="/">Trang chủ</a>
+            <span class="sep">›</span>
+            <span class="current">Giới thiệu</span>
+        </nav>
+
+        <!-- Video Giới thiệu Nhà máy HLM -->
+        <div class="section-header">
+            <h2>Video Giới Thiệu Năng Lực Sản Xuất</h2>
+        </div>
         
-        <h2>Triết Lý Thương Hiệu</h2>
-        <p><em>"Engineered by HLM – Built for Real Warehouses"</em>. Mọi giải pháp của Hòa Long đều hướng tới việc tối ưu hóa thực tế không gian lưu trữ (Space Utilization) và mật độ chứa hàng (Storage Density), đáp ứng chuẩn kỹ thuật an toàn cao nhất cho kho lạnh, kho logistics, kho điện tử.</p>
+        <div class="video-container">
+            <iframe 
+                src="https://www.youtube-nocookie.com/embed/y9J39heT0oo?start=2" 
+                title="Video Giới Thiệu Cơ Khí Hòa Long - HLM" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                allowfullscreen>
+            </iframe>
+        </div>
 
-        <h2>Năng Lực Sản Xuất</h2>
-        <p>Nhà máy quy mô tại Bến Lức, Long An với dây chuyền sản xuất hiện đại, đảm bảo độ chính xác cơ khí, khả năng chịu tải vượt trội và chuẩn hóa bề mặt sơn tĩnh điện chống ăn mòn.</p>
-    </div>
+        <!-- Tổng quan doanh nghiệp -->
+        <div class="intro-grid">
+            <div class="intro-text">
+                <h3>Về Hòa Long Mechanical (HLM)</h3>
+                <p>Công ty Cổ phần Sản xuất Cơ Khí Hòa Long (HLM) là đơn vị hàng đầu trong lĩnh vực thiết kế, chế tạo và lắp đặt hệ thống kệ kho công nghiệp tải trọng nặng, sàn thao tác Mezzanine và kết cấu nhà thép tiền chế.</p>
+                <p>Là thành viên thuộc khối công nghiệp của <strong>Tập đoàn FGroup</strong>, HLM kết nối năng lực kỹ thuật cơ khí chính xác với hệ sinh thái công nghiệp đồng bộ, tạo nên các giải pháp lưu trữ thông minh, tối ưu không gian và an toàn tuyệt đối cho nhà kho logistics.</p>
+            </div>
+            <div class="intro-text">
+                <h3>Triết Lý "Bán Cái Kho Cần"</h3>
+                <p>Tại HLM, chúng tôi không chỉ bán sản phẩm kệ chứa hàng đơn thuần mà mang đến <strong>giải pháp bài toán lưu trữ tổng thể</strong>. Đội ngũ kỹ sư HLM sẵn sàng từ chối các thiết kế thiếu an toàn để đảm bảo hệ thống vận hành bền bỉ trọn vòng đời.</p>
+                <p>Chúng tôi đồng hành cùng đối tác từ khâu khảo sát mặt bằng, lập mô hình 3D, sản xuất tại nhà máy Long An đến lắp đặt và bảo trì định kỳ trên toàn quốc.</p>
+            </div>
+        </div>
+
+        <!-- Giá trị cốt lõi -->
+        <div class="section-header">
+            <h2>Tầm Nhìn & Giá Trị Cốt Lõi</h2>
+        </div>
+
+        <div class="values-grid">
+            <div class="value-card">
+                <h3>🎯 Tầm Nhìn Chiến Lược</h3>
+                <p>Trở thành thương hiệu hàng đầu Việt Nam và khu vực Đông Nam Á về giải pháp kho bãi thông minh, hệ thống kệ chứa hàng tự động tích hợp công nghệ ASRS.</p>
+            </div>
+            <div class="value-card">
+                <h3>⚙️ Chất Lượng Tiêu Chuẩn</h3>
+                <p>Sản xuất trên dây chuyền cơ khí hiện đại, nguồn thép đạt chuẩn JIS/TCVN, bề mặt xử lý sơn tĩnh điện chống gỉ sét bền bỉ trong môi trường kho lạnh.</p>
+            </div>
+            <div class="value-card">
+                <h3>🤝 Đối Tác Đồng Hành</h3>
+                <p>Xem sự an toàn và hiệu quả chi phí của khách hàng là ưu tiên số 1. HLM tự hào hợp tác cùng các đối tác toàn cầu như Automha, Swisslog.</p>
+            </div>
+        </div>
+
+        <!-- Hành trình phát triển (Timeline) -->
+        <div class="section-header">
+            <h2>Hành Trình Phát Triển</h2>
+        </div>
+
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-year">2018 - Khởi Đầu Hành Trình</div>
+                <p class="timeline-desc">Thành lập Công ty Cổ phần Sản xuất Cơ Khí Hòa Long, tập trung vào sản xuất kệ chứa hàng công nghiệp và kết cấu thép.</p>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">2020 - Sáp Nhập Tập Đoàn FGroup</div>
+                <p class="timeline-desc">Chính thức trở thành thành viên cốt lõi khối FGroup Industrial, mở rộng quy mô nhà máy sản xuất tại Long An và công suất cung ứng.</p>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">2021 - Hợp Tác Quốc Tế</div>
+                <p class="timeline-desc">Đẩy mạnh tích hợp công nghệ kệ tự động, kết nối hợp tác chiến lược với các tập đoàn giải pháp kho tự động lớn (Automha, Swisslog).</p>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">2026 - Chuyển Mình Bứt Phá</div>
+                <p class="timeline-desc">Thực thi chiến lược <em>"Engineered by HLM – Built for Real Warehouses"</em>, tiên phong chuyển đổi số với công cụ tính toán kệ kho online và giải pháp kho xanh thông minh.</p>
+            </div>
+        </div>
+
+        <!-- CTA Banner -->
+        <div class="cta-banner">
+            <div class="cta-content">
+                <h3>Hợp Tác Cùng Cơ Khí Hòa Long</h3>
+                <p>Liên hệ đội ngũ chuyên gia HLM để tư vấn giải pháp quy hoạch kho bãi và nhận báo giá kỹ thuật tối ưu.</p>
+            </div>
+            <a href="/lien-he/" class="cta-btn">Liên Hệ Ngay Today</a>
+        </div>
+
+    </main>
+
+    {% include "footer.html" %}
+
 </body>
 </html>
