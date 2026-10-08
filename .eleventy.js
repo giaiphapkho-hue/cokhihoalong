@@ -1,5 +1,5 @@
 module.exports = function(eleventyConfig) {
-    // Chỉ giữ lại copy js vì src/js đã có sẵn
+    // Chỉ copy thư mục js nếu đã có trong src/
     eleventyConfig.addPassthroughCopy("src/js");
 
     return {
