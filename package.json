@@ -1,1 +1,12 @@
-
+{
+  "name": "cokhihoalong",
+  "version": "1.0.0",
+  "description": "Website Cơ Khí Hòa Long - Eleventy SSG",
+  "main": "index.js",
+  "scripts": {
+    "build": "eleventy"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.1"
+  }
+}
