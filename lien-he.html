@@ -215,7 +215,6 @@
             min-height: 90px;
         }
 
-        /* CHECKBOXES & RADIOS */
         .checkbox-group {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -266,6 +265,29 @@
             box-shadow: 0 6px 18px rgba(255, 102, 0, 0.4);
         }
 
+        #form-status {
+            margin-top: 15px;
+            padding: 12px;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            display: none;
+            text-align: center;
+        }
+
+        #form-status.success {
+            display: block;
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        #form-status.error {
+            display: block;
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
         /* BẢN ĐỒ */
         .map-section {
             max-width: 1200px;
@@ -294,7 +316,6 @@
             border: 0;
         }
 
-        /* RESPONSIVE */
         @media (max-width: 992px) {
             .contact-grid {
                 grid-template-columns: 1fr;
@@ -326,7 +347,7 @@
     <main class="contact-container">
         <div class="contact-grid">
             
-            <!-- THÔNG TIN LIÊN HỆ CHUẨN HÒA LONG -->
+            <!-- THÔNG TIN LIÊN HỆ -->
             <div class="contact-info-card">
                 <h2>KỆ CHỨA HÀNG HÒA LONG</h2>
                 <p class="intro-text">
@@ -366,45 +387,53 @@
                 <h2>Yêu Cầu Tư Vấn</h2>
                 <div class="form-subtitle">Giá kệ chứa hàng cho nhà kho công nghiệp</div>
                 
-                <form id="contactForm">
+                <!-- TÍCH HỢP FORMSUBMIT.CO CHUYỂN THÔNG BÁO VỀ GIAIPHAPKHO@GMAIL.COM -->
+                <form id="contactForm" action="https://formsubmit.co/giaiphapkho@gmail.com" method="POST">
+                    
+                    <!-- Cấu hình FormSubmit -->
+                    <input type="hidden" name="_subject" value="[Yêu Cầu Báo Giá Mới] từ Website Cơ Khí Hòa Long">
+                    <input type="hidden" name="_template" value="table">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="text" name="_honey" style="display:none">
+
                     <div class="form-row">
                         <div class="form-group">
                             <label for="fullname">Tên của Quý khách <span class="required">*</span></label>
-                            <input type="text" id="fullname" class="form-control" placeholder="Vui lòng cho HLM được biết tên" required>
+                            <input type="text" id="fullname" name="Tên_Quý_Khách" class="form-control" placeholder="Vui lòng cho HLM được biết tên" required>
                         </div>
                         <div class="form-group">
                             <label for="phone">Số điện thoại <span class="required">*</span></label>
-                            <input type="tel" id="phone" class="form-control" placeholder="Nhập số điện thoại" required>
+                            <input type="tel" id="phone" name="Số_Điện_Thoại" class="form-control" placeholder="Nhập số điện thoại" required>
                         </div>
                     </div>
 
                     <div class="form-row">
                         <div class="form-group">
                             <label for="email">Email</label>
-                            <input type="email" id="email" class="form-control" placeholder="example@domain.com">
+                            <input type="email" id="email" name="Email_Khách_Hàng" class="form-control" placeholder="example@domain.com">
                         </div>
                         <div class="form-group">
                             <label for="company">Tên Công ty</label>
-                            <input type="text" id="company" class="form-control" placeholder="Tên công ty của bạn">
+                            <input type="text" id="company" name="Tên_Công_Ty" class="form-control" placeholder="Tên công ty của bạn">
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label for="address">Địa chỉ</label>
-                        <input type="text" id="address" class="form-control" placeholder="Vui lòng cho HLM biết địa chỉ Công ty của Quý khách">
+                        <input type="text" id="address" name="Địa_Chỉ" class="form-control" placeholder="Vui lòng cho HLM biết địa chỉ Công ty của Quý khách">
                     </div>
 
                     <div class="form-group">
                         <label>Thông tin cần tư vấn:</label>
                         <div class="checkbox-group">
                             <label class="checkbox-label">
-                                <input type="checkbox" name="consult_type" value="Kệ kho - Pallet"> Kệ kho - Pallet
+                                <input type="checkbox" name="Thông_tin_cần_tư_vấn[]" value="Kệ kho - Pallet"> Kệ kho - Pallet
                             </label>
                             <label class="checkbox-label">
-                                <input type="checkbox" name="consult_type" value="Tự động hóa - Công nghệ kho"> Tự động hóa - Công nghệ kho
+                                <input type="checkbox" name="Thông_tin_cần_tư_vấn[]" value="Tự động hóa - Công nghệ kho"> Tự động hóa - Công nghệ kho
                             </label>
                             <label class="checkbox-label">
-                                <input type="checkbox" name="consult_type" value="Giải pháp"> Giải pháp tổng thể
+                                <input type="checkbox" name="Thông_tin_cần_tư_vấn[]" value="Giải pháp"> Giải pháp tổng thể
                             </label>
                         </div>
                     </div>
@@ -412,11 +441,11 @@
                     <div class="form-row">
                         <div class="form-group">
                             <label for="area">Diện tích hoặc công suất kho</label>
-                            <input type="text" id="area" class="form-control" placeholder="Ví dụ: 1000m2 / 500 Pallet">
+                            <input type="text" id="area" name="Diện_tích_hoặc_công_suất" class="form-control" placeholder="Ví dụ: 1000m2 / 500 Pallet">
                         </div>
                         <div class="form-group">
                             <label for="timeline">Dự kiến triển khai dự án</label>
-                            <select id="timeline" class="form-control">
+                            <select id="timeline" name="Dự_kiến_triển_khai" class="form-control">
                                 <option value="Ngay lập tức">Ngay lập tức</option>
                                 <option value="Tháng tới" selected>Tháng tới</option>
                                 <option value="Trong quý này">Trong quý này</option>
@@ -427,34 +456,100 @@
 
                     <div class="form-group">
                         <label for="note">Quý khách còn cần chúng tôi hỗ trợ thêm thông tin gì khác?</label>
-                        <textarea id="note" class="form-control" maxlength="300" placeholder="Nhập ghi chú hoặc thông số chi tiết..."></textarea>
+                        <textarea id="note" name="Ghi_chú_hỗ_trợ" class="form-control" maxlength="300" placeholder="Nhập ghi chú hoặc thông số chi tiết..."></textarea>
                         <div class="char-counter"><span id="charCount">0</span>/300 ký tự</div>
                     </div>
 
-                    <button type="submit" class="btn-submit">
+                    <button type="submit" id="btnSubmit" class="btn-submit">
                         <i class="fa-solid fa-paper-plane" style="margin-right: 8px;"></i> GỬI YÊU CẦU TƯ VẤN
                     </button>
+
+                    <div id="form-status"></div>
                 </form>
             </div>
 
         </div>
     </main>
 
-    <!-- BẢN ĐỒ VỊ TRÍ NHA MÁY & VP -->
+    <!-- BẢN ĐỒ -->
     <section class="map-section">
         <h2>Vị Trí Văn Phòng TP.HCM</h2>
         <div class="map-wrapper">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.4674753066923!2d106.7533036758374!3d10.775463759211021!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317525c506dc6efd%3A0xc3c940c313214bc1!2zMTkgVHLhuqduIFF1w73MgIEtpw6puLCBCw6xuaCBUcsawbmcgVMOieSwgVGjhu6cgxJDhu6ljLCBUaMOgbmggcGjhu5EgSOG7kyBDaMOtIE1pbmg!5e0!3m2!1svi!2svn!4v1710000000000!5m2!1svi!2svn" allowfullscreen="" loading="lazy"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.262826490605!2d106.7433892!3d10.7911679!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3175260124317619%3A0x6e9a7e6512140d3a!2zMTkgVHLhuqduIFF1w73CsyBLacOqbiwgQsOsypA2aCBUcsMawbmcgVMOieSwgUXXhuq1uIDIsIFRow6BuaCBwaOG7kSBI4buTIENow60gTWluaA!5e0!3m2!1svi!2svn!4v1700000000000!5m2!1svi!2svn" allowfullscreen="" loading="lazy"></iframe>
         </div>
     </section>
 
     <!-- KHU VỰC LOAD FOOTER TỰ ĐỘNG -->
     <div id="footer-placeholder"></div>
 
-    <!-- SCRIPT LOAD HEADER/FOOTER & XỬ LÝ SỰ KIỆN FORM -->
+    <!-- SCRIPT TỰ ĐỘNG NỔI NỔI VÀ GỬI FORM KHÔNG BỊ LOAD TRANG -->
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             // Load Header
             fetch('header.html')
                 .then(response => response.text())
-                .then(data =>
+                .then(data => {
+                    document.getElementById('header-placeholder').innerHTML = data;
+                })
+                .catch(err => console.error('Lỗi khi tải header:', err));
+
+            // Load Footer
+            fetch('footer.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('footer-placeholder').innerHTML = data;
+                })
+                .catch(err => console.error('Lỗi khi tải footer:', err));
+
+            // Đếm ký tự textarea
+            const noteInput = document.getElementById('note');
+            const charCount = document.getElementById('charCount');
+            if (noteInput && charCount) {
+                noteInput.addEventListener('input', function() {
+                    charCount.textContent = this.value.length;
+                });
+            }
+
+            // Gửi Form qua AJAX tới FormSubmit
+            const form = document.getElementById("contactForm");
+            const status = document.getElementById("form-status");
+            const btnSubmit = document.getElementById("btnSubmit");
+
+            form.addEventListener("submit", function(event) {
+                event.preventDefault();
+                btnSubmit.disabled = true;
+                btnSubmit.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> ĐANG GỬI...';
+
+                const formData = new FormData(form);
+
+                fetch(form.action, {
+                    method: "POST",
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                })
+                .then(response => {
+                    if (response.ok) {
+                        status.className = "success";
+                        status.innerHTML = "Cảm ơn Quý khách! Yêu cầu tư vấn đã được gửi thành công đến hệ thống.";
+                        form.reset();
+                        if (charCount) charCount.textContent = '0';
+                    } else {
+                        status.className = "error";
+                        status.innerHTML = "Có lỗi xảy ra khi gửi thông tin. Vui lòng thử lại sau!";
+                    }
+                })
+                .catch(error => {
+                    status.className = "error";
+                    status.innerHTML = "Không thể kết nối đến máy chủ. Vui lòng kiểm tra kết nối mạng!";
+                })
+                .finally(() => {
+                    btnSubmit.disabled = false;
+                    btnSubmit.innerHTML = '<i class="fa-solid fa-paper-plane" style="margin-right: 8px;"></i> GỬI YÊU CẦU TƯ VẤN';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
