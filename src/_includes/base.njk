@@ -1,0 +1,32 @@
+!DOCTYPE html
+html lang=vi
+head
+    meta charset=UTF-8
+    meta name=viewport content=width=device-width, initial-scale=1.0
+    title{{ title  default(KỆ CHỨA HÀNG HÒA LONG - Giải Pháp Giá Kệ Kho Công Nghiệp) }}title
+    meta name=description content={{ description  default('Cơ Khí Hòa Long chuyên sản xuất kệ kho pallet, kệ Selective, Drive-In, kệ tự động ASRS.') }}
+    
+    !-- Geo Tags tối ưu SEOGEO cho Doanh nghiệp --
+    meta name=geo.region content=VN-SG 
+    meta name=geo.placename content=Ho Chi Minh City 
+    meta name=geo.position content=10.791168;106.743389 
+    meta name=ICBM content=10.791168, 106.743389 
+
+    link rel=stylesheet href=httpscdnjs.cloudflare.comajaxlibsfont-awesome6.4.0cssall.min.css
+    link rel=stylesheet href={{ 'cssstyle.css'  url }}
+head
+body
+
+    !-- Ghép Header tĩnh trực tiếp --
+    {% include header.html %}
+
+    main
+        {{ content  safe }}
+    main
+
+    !-- Ghép Footer tĩnh trực tiếp --
+    {% include footer.html %}
+
+    script src={{ 'jsmain.js'  url }}script
+body
+html
