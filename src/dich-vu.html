@@ -1,413 +1,174 @@
 ---
 layout: base.njk
-title: "Dịch Vụ - Cơ Khí Hòa Long"
+title: "Dịch Vụ Trọn Gói - Cơ Khí Hòa Long"
 permalink: "/dich-vu/index.html"
 ---
-<!DOCTYPE html>
-<html lang="vi">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dịch Vụ - Cơ Khí Hòa Long</title>
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        /* BASE STYLES */
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-        }
-        body {
-            line-height: 1.6;
-            color: #333;
-            background-color: #f8f9fa;
-        }
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
 
-        /* PAGE HERO BANNER */
-        .page-banner {
-            background: linear-gradient(rgba(0, 51, 102, 0.85), rgba(0, 51, 102, 0.85)), url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
-            color: #fff;
-            text-align: center;
-            padding: 80px 20px;
-        }
-        .page-banner h1 {
-            font-size: 2.5rem;
-            margin-bottom: 15px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        .page-banner p {
-            font-size: 1.1rem;
-            max-width: 700px;
-            margin: 0 auto;
-            color: #d1d5db;
-        }
+<!-- PAGE HERO BANNER -->
+<section class="page-banner">
+    <div class="container">
+        <h1>Dịch Vụ Trọn Gói & Chuyên Nghiệp</h1>
+        <p>Hòa Long đồng hành cùng Quý doanh nghiệp từ khâu khảo sát mặt bằng, thiết kế tối ưu dung tích chứa đến thi công lắp đặt và bảo trì hệ thống kệ kho.</p>
+    </div>
+</section>
 
-        /* SERVICES SECTION */
-        .services-section {
-            padding: 70px 0;
-        }
-        .section-title {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-        .section-title h2 {
-            font-size: 2rem;
-            color: #003366;
-            position: relative;
-            display: inline-block;
-            padding-bottom: 10px;
-        }
-        .section-title h2::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 60px;
-            height: 3px;
-            background-color: #ff6600;
-        }
-        .section-title p {
-            color: #7f8c8d;
-            margin-top: 10px;
-        }
+<!-- MAIN SERVICES SECTION -->
+<section class="services-section">
+    <div class="container">
+        <div class="section-title">
+            <h2>Giải Pháp Dịch Vụ Của Chúng Tôi</h2>
+            <p>Đảm bảo an toàn, đúng tiến độ và tối ưu hóa diện tích kho bãi cho từng ngành hàng</p>
+        </div>
 
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-            gap: 30px;
-        }
-        .service-card {
-            background-color: #fff;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            transition: transform 0.3s, box-shadow 0.3s;
-            display: flex;
-            flex-direction: column;
-        }
-        .service-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.12);
-        }
-        .service-icon {
-            background-color: #003366;
-            color: #ff6600;
-            height: 90px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2.5rem;
-        }
-        .service-body {
-            padding: 25px;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-        }
-        .service-body h3 {
-            font-size: 1.3rem;
-            color: #003366;
-            margin-bottom: 12px;
-        }
-        .service-body p {
-            color: #666;
-            font-size: 0.95rem;
-            margin-bottom: 20px;
-            flex-grow: 1;
-        }
-        .service-features {
-            list-style: none;
-            margin-bottom: 20px;
-            border-top: 1px solid #eee;
-            padding-top: 15px;
-        }
-        .service-features li {
-            font-size: 0.88rem;
-            color: #555;
-            margin-bottom: 8px;
-            display: flex;
-            align-items: center;
-        }
-        .service-features li i {
-            color: #27ae60;
-            margin-right: 8px;
-        }
-        .btn-card {
-            display: block;
-            background-color: #ff6600;
-            color: #fff;
-            text-align: center;
-            padding: 10px 20px;
-            border-radius: 4px;
-            font-weight: bold;
-            transition: background 0.3s;
-        }
-        .btn-card:hover {
-            background-color: #e05500;
-        }
-
-        /* PROCESS SECTION */
-        .process-section {
-            background-color: #fff;
-            padding: 70px 0;
-            border-top: 1px solid #eef2f5;
-            border-bottom: 1px solid #eef2f5;
-        }
-        .process-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            margin-top: 40px;
-        }
-        .process-step {
-            text-align: center;
-            padding: 20px;
-            position: relative;
-        }
-        .step-number {
-            width: 50px;
-            height: 50px;
-            background-color: #ff6600;
-            color: #fff;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            font-size: 1.2rem;
-            margin: 0 auto 15px;
-            box-shadow: 0 4px 10px rgba(255, 102, 0, 0.3);
-        }
-        .process-step h4 {
-            font-size: 1.1rem;
-            color: #003366;
-            margin-bottom: 8px;
-        }
-        .process-step p {
-            font-size: 0.88rem;
-            color: #666;
-        }
-
-        /* CTA SECTION */
-        .cta-section {
-            background-color: #003366;
-            color: #fff;
-            padding: 60px 0;
-            text-align: center;
-        }
-        .cta-content h2 {
-            font-size: 2rem;
-            margin-bottom: 15px;
-        }
-        .cta-content p {
-            color: #d1d5db;
-            max-width: 600px;
-            margin: 0 auto 25px;
-        }
-
-        /* RESPONSIVE */
-        @media (max-width: 768px) {
-            .page-banner h1 {
-                font-size: 1.8rem;
-            }
-        }
-    </style>
-</head>
-<body>
-
-    <!-- Placeholder tải Header động -->
-    <div id="header-placeholder"></div>
-
-    <!-- MAIN CONTENT -->
-    <main>
-        <!-- PAGE HERO BANNER -->
-        <section class="page-banner">
-            <div class="container">
-                <h1>Dịch Vụ Trọn Gói & Chuyên Nghiệp</h1>
-                <p>Hòa Long đồng hành cùng Quý doanh nghiệp từ khâu khảo sát mặt bằng, thiết kế tối ưu dung tích chứa đến thi công lắp đặt và bảo trì hệ thống kệ kho.</p>
-            </div>
-        </section>
-
-        <!-- MAIN SERVICES SECTION -->
-        <section class="services-section">
-            <div class="container">
-                <div class="section-title">
-                    <h2>Giải Pháp Dịch Vụ Của Chúng Tôi</h2>
-                    <p>Đảm bảo an toàn, đúng tiến độ và tối ưu hóa diện tích kho bãi cho từng ngành hàng</p>
+        <div class="services-grid">
+            <!-- Service Card 1 -->
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-drafting-compass"></i>
                 </div>
-
-                <div class="services-grid">
-                    <!-- Service Card 1 -->
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <i class="fas fa-drafting-compass"></i>
-                        </div>
-                        <div class="service-body">
-                            <h3>Khảo Sát & Thiết Kế Bản Vẽ 3D Kho Bãi</h3>
-                            <p>Đội ngũ kỹ sư tiến hành đo đạc thực tế mặt bằng kho, phân tích luồng di chuyển xe nâng và lập bản vẽ layout 2D/3D chi tiết hoàn toàn miễn phí.</p>
-                            <ul class="service-features">
-                                <li><i class="fas fa-check-circle"></i> Tối ưu đến 80% diện tích lưu trữ</li>
-                                <li><i class="fas fa-check-circle"></i> Mô phỏng không gian kho bằng AutoCad & 3D</li>
-                                <li><i class="fas fa-check-circle"></i> Tư vấn tải trọng chuẩn xác theo tải hàng</li>
-                            </ul>
-                            <a href="lien-he.html" class="btn-card">Đăng Ký Khảo Sát</a>
-                        </div>
-                    </div>
-
-                    <!-- Service Card 2 -->
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <i class="fas fa-industry"></i>
-                        </div>
-                        <div class="service-body">
-                            <h3>Sản Xuất Kệ Kho Theo Yêu Cầu</h3>
-                            <p>Sở hữu nhà xưởng sản xuất hiện đại, dây chuyền sơn tĩnh điện tự động, cung cấp các loại kệ Heavy Duty, Selective, Drive-In, Mezzanine theo đúng chuẩn B2B.</p>
-                            <ul class="service-features">
-                                <li><i class="fas fa-check-circle"></i> Nguyên liệu thép cao cấp chuẩn JIS</li>
-                                <li><i class="fas fa-check-circle"></i> Bề mặt phủ sơn tĩnh điện chống gỉ sét</li>
-                                <li><i class="fas fa-check-circle"></i> Kiểm định tải trọng nghiêm ngặt trước khi xuất xưởng</li>
-                            </ul>
-                            <a href="lien-he.html" class="btn-card">Nhận Báo Giá Sản Xuất</a>
-                        </div>
-                    </div>
-
-                    <!-- Service Card 3 -->
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <i class="fas fa-tools"></i>
-                        </div>
-                        <div class="service-body">
-                            <h3>Thi Công & Lắp Đặt Chuyên Nghiệp</h3>
-                            <p>Đội ngũ kỹ thuật lành nghề thi công nhanh chóng, an toàn tuyệt đối, cam kết bàn giao kho bãi đúng tiến độ yêu cầu của nhà máy và trung tâm logistics.</p>
-                            <ul class="service-features">
-                                <li><i class="fas fa-check-circle"></i> Giám sát kỹ thuật nghiêm ngặt 24/7</li>
-                                <li><i class="fas fa-check-circle"></i> Đảm bảo chuẩn bảo hộ lao động (PPE)</li>
-                                <li><i class="fas fa-check-circle"></i> Bàn giao nghiệm thu chi tiết từng hạng mục</li>
-                            </ul>
-                            <a href="lien-he.html" class="btn-card">Tư Vấn Thi Công</a>
-                        </div>
-                    </div>
-
-                    <!-- Service Card 4 -->
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <i class="fas fa-truck-moving"></i>
-                        </div>
-                        <div class="service-body">
-                            <h3>Tháo Dỡ, Di Dời & Bán Hệ Thống Kệ</h3>
-                            <p>Hỗ trợ doanh nghiệp di chuyển nhà kho, thay đổi cấu trúc khung kệ hoặc nâng cấp hệ thống chứa hàng hiện hữu linh hoạt và tiết kiệm chi phí.</p>
-                            <ul class="service-features">
-                                <li><i class="fas fa-check-circle"></i> Tháo dỡ an toàn, không gây móp méo cấu trúc</li>
-                                <li><i class="fas fa-check-circle"></i> Vận chuyển trọn gói sang nhà kho mới</li>
-                                <li><i class="fas fa-check-circle"></i> Thay thế phụ kiện hỏng hóc, xệ chân kệ</li>
-                            </ul>
-                            <a href="lien-he.html" class="btn-card">Yêu Cầu Di Dời</a>
-                        </div>
-                    </div>
-
-                    <!-- Service Card 5 -->
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <i class="fas fa-clipboard-check"></i>
-                        </div>
-                        <div class="service-body">
-                            <h3>Bảo Trì & Kiểm Định An Toàn Kệ Kho</h3>
-                            <p>Cung cấp gói kiểm tra định kỳ 6-12 tháng, bảo dưỡng kết cấu chịu lực, phát hiện vết nứt, cong vênh nhằm tránh rủi ro sập kệ trong vận hành kho.</p>
-                            <ul class="service-features">
-                                <li><i class="fas fa-check-circle"></i> Đo độ nghiêng và kiểm tra lực siết bu-lông</li>
-                                <li><i class="fas fa-check-circle"></i> Lập báo cáo đánh giá rủi ro đạt chuẩn ISO</li>
-                                <li><i class="fas fa-check-circle"></i> Khắc phục sự cố khẩn cấp trong 24h</li>
-                            </ul>
-                            <a href="lien-he.html" class="btn-card">Đăng Ký Bảo Trì</a>
-                        </div>
-                    </div>
-
-                    <!-- Service Card 6 -->
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <i class="fas fa-warehouse"></i>
-                        </div>
-                        <div class="service-body">
-                            <h3>Tư Vấn & Quy Hoạch Tổng Thể WMS</h3>
-                            <p>Tư vấn bố trí vị trí kệ kết hợp hệ thống quản lý kho thông minh (WMS), tối ưu tuyến đường di chuyển cho xe nâng và nhân công nhặt hàng.</p>
-                            <ul class="service-features">
-                                <li><i class="fas fa-check-circle"></i> Chuẩn hóa mã vị trí kho (Location ID)</li>
-                                <li><i class="fas fa-check-circle"></i> Giảm thời gian xuất nhập kho tới 35%</li>
-                                <li><i class="fas fa-check-circle"></i> Đồng bộ giải pháp tự động hóa ASRS</li>
-                            </ul>
-                            <a href="lien-he.html" class="btn-card">Tư Vấn Giải Pháp</a>
-                        </div>
-                    </div>
+                <div class="service-body">
+                    <h3>Khảo Sát & Thiết Kế Bản Vẽ 3D Kho Bãi</h3>
+                    <p>Đội ngũ kỹ sư tiến hành đo đạc thực tế mặt bằng kho, phân tích luồng di chuyển xe nâng và lập bản vẽ layout 2D/3D chi tiết hoàn toàn miễn phí.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check-circle"></i> Tối ưu đến 80% diện tích lưu trữ</li>
+                        <li><i class="fas fa-check-circle"></i> Mô phỏng không gian kho bằng AutoCad & 3D</li>
+                        <li><i class="fas fa-check-circle"></i> Tư vấn tải trọng chuẩn xác theo tải hàng</li>
+                    </ul>
+                    <a href="/lien-he/" class="btn-card">Đăng Ký Khảo Sát</a>
                 </div>
             </div>
-        </section>
 
-        <!-- PROCESS SECTION -->
-        <section class="process-section">
-            <div class="container">
-                <div class="section-title">
-                    <h2>Quy Trình Làm Việc Tại Cơ Khí Hòa Long</h2>
-                    <p>5 bước tiêu chuẩn mang lại sự an tâm tuyệt đối cho khách hàng</p>
+            <!-- Service Card 2 -->
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-industry"></i>
                 </div>
-
-                <div class="process-grid">
-                    <div class="process-step">
-                        <div class="step-number">1</div>
-                        <h4>Tiếp Nhận Nhu Cầu</h4>
-                        <p>Ghi nhận thông tin tải trọng, diện tích kho và loại hàng hóa từ khách hàng.</p>
-                    </div>
-                    <div class="process-step">
-                        <div class="step-number">2</div>
-                        <h4>Khảo Sát & Thiết Kế</h4>
-                        <p>Đội ngũ kỹ sư đo đạc thực tế và lên bản vẽ layout 2D/3D chi tiết.</p>
-                    </div>
-                    <div class="process-step">
-                        <div class="step-number">3</div>
-                        <h4>Gửi Báo Giá & Hợp Đồng</h4>
-                        <p>Cung cấp phương án tối ưu chi phí và ký kết hợp đồng rõ ràng.</p>
-                    </div>
-                    <div class="process-step">
-                        <div class="step-number">4</div>
-                        <h4>Sản Xuất & Lắp Đặt</h4>
-                        <p>Gia công tại xưởng và triển khai thi công hoàn thiện tận nơi.</p>
-                    </div>
-                    <div class="process-step">
-                        <div class="step-number">5</div>
-                        <h4>Nghệ M Thu & Bảo Hành</h4>
-                        <p>Bàn giao hệ thống, hướng dẫn vận hành an toàn và bảo hành dài hạn.</p>
-                    </div>
+                <div class="service-body">
+                    <h3>Sản Xuất Kệ Kho Theo Yêu Cầu</h3>
+                    <p>Sở hữu nhà xưởng sản xuất hiện đại, dây chuyền sơn tĩnh điện tự động, cung cấp các loại kệ Heavy Duty, Selective, Drive-In, Mezzanine theo đúng chuẩn B2B.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check-circle"></i> Nguyên liệu thép cao cấp chuẩn JIS</li>
+                        <li><i class="fas fa-check-circle"></i> Bề mặt phủ sơn tĩnh điện chống gỉ sét</li>
+                        <li><i class="fas fa-check-circle"></i> Kiểm định tải trọng nghiêm ngặt trước khi xuất xưởng</li>
+                    </ul>
+                    <a href="/lien-he/" class="btn-card">Nhận Báo Giá Sản Xuất</a>
                 </div>
             </div>
-        </section>
 
-        <!-- CTA SECTION -->
-        <section class="cta-section">
-            <div class="container cta-content">
-                <h2>Bạn Cần Tư Vấn Thiết Kế Kệ Kho Hàng?</h2>
-                <p>Liên hệ ngay với các chuyên gia của Cơ Khí Hòa Long để nhận giải pháp tối ưu không gian và báo giá ưu đãi nhất.</p>
-                <a href="lien-he.html" class="btn-card" style="display: inline-block; padding: 12px 30px; font-size: 1.1rem;"><i class="fas fa-paper-plane"></i> Liên Hệ Ngay</a>
+            <!-- Service Card 3 -->
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-tools"></i>
+                </div>
+                <div class="service-body">
+                    <h3>Thi Công & Lắp Đặt Chuyên Nghiệp</h3>
+                    <p>Đội ngũ kỹ thuật lành nghề thi công nhanh chóng, an toàn tuyệt đối, cam kết bàn giao kho bãi đúng tiến độ yêu cầu của nhà máy và trung tâm logistics.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check-circle"></i> Giám sát kỹ thuật nghiêm ngặt 24/7</li>
+                        <li><i class="fas fa-check-circle"></i> Đảm bảo chuẩn bảo hộ lao động (PPE)</li>
+                        <li><i class="fas fa-check-circle"></i> Bàn giao nghiệm thu chi tiết từng hạng mục</li>
+                    </ul>
+                    <a href="/lien-he/" class="btn-card">Tư Vấn Thi Công</a>
+                </div>
             </div>
-        </section>
-    </main>
 
-    <!-- Placeholder tải Footer động -->
-    <div id="footer-placeholder"></div>
+            <!-- Service Card 4 -->
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-truck-moving"></i>
+                </div>
+                <div class="service-body">
+                    <h3>Tháo Dỡ, Di Dời & Bán Hệ Thống Kệ</h3>
+                    <p>Hỗ trợ doanh nghiệp di chuyển nhà kho, thay đổi cấu trúc khung kệ hoặc nâng cấp hệ thống chứa hàng hiện hữu linh hoạt và tiết kiệm chi phí.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check-circle"></i> Tháo dỡ an toàn, không gây móp méo cấu trúc</li>
+                        <li><i class="fas fa-check-circle"></i> Vận chuyển trọn gói sang nhà kho mới</li>
+                        <li><i class="fas fa-check-circle"></i> Thay thế phụ kiện hỏng hóc, xệ chân kệ</li>
+                    </ul>
+                    <a href="/lien-he/" class="btn-card">Yêu Cầu Di Dời</a>
+                </div>
+            </div>
 
-    <!-- Script điều khiển nhúng Header / Footer động -->
-    <script src="main.js"></script>
+            <!-- Service Card 5 -->
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-clipboard-check"></i>
+                </div>
+                <div class="service-body">
+                    <h3>Bảo Trì & Kiểm Định An Toàn Kệ Kho</h3>
+                    <p>Cung cấp gói kiểm tra định kỳ 6-12 tháng, bảo dưỡng kết cấu chịu lực, phát hiện vết nứt, cong vênh nhằm tránh rủi ro sập kệ trong vận hành kho.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check-circle"></i> Đo độ nghiêng và kiểm tra lực siết bu-lông</li>
+                        <li><i class="fas fa-check-circle"></i> Lập báo cáo đánh giá rủi ro đạt chuẩn ISO</li>
+                        <li><i class="fas fa-check-circle"></i> Khắc phục sự cố khẩn cấp trong 24h</li>
+                    </ul>
+                    <a href="/lien-he/" class="btn-card">Đăng Ký Bảo Trì</a>
+                </div>
+            </div>
 
-</body>
-</html>
+            <!-- Service Card 6 -->
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-warehouse"></i>
+                </div>
+                <div class="service-body">
+                    <h3>Tư Vấn & Quy Hoạch Tổng Thể WMS</h3>
+                    <p>Tư vấn bố trí vị trí kệ kết hợp hệ thống quản lý kho thông minh (WMS), tối ưu tuyến đường di chuyển cho xe nâng và nhân công nhặt hàng.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check-circle"></i> Chuẩn hóa mã vị trí kho (Location ID)</li>
+                        <li><i class="fas fa-check-circle"></i> Giảm thời gian xuất nhập kho tới 35%</li>
+                        <li><i class="fas fa-check-circle"></i> Đồng bộ giải pháp tự động hóa ASRS</li>
+                    </ul>
+                    <a href="/lien-he/" class="btn-card">Tư Vấn Giải Pháp</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PROCESS SECTION -->
+<section class="process-section">
+    <div class="container">
+        <div class="section-title">
+            <h2>Quy Trình Làm Việc Tại Cơ Khí Hòa Long</h2>
+            <p>5 bước tiêu chuẩn mang lại sự an tâm tuyệt đối cho khách hàng</p>
+        </div>
+
+        <div class="process-grid">
+            <div class="process-step">
+                <div class="step-number">1</div>
+                <h4>Tiếp Nhận Nhu Cầu</h4>
+                <p>Ghi nhận thông tin tải trọng, diện tích kho và loại hàng hóa từ khách hàng.</p>
+            </div>
+            <div class="process-step">
+                <div class="step-number">2</div>
+                <h4>Khảo Sát & Thiết Kế</h4>
+                <p>Đội ngũ kỹ sư đo đạc thực tế và lên bản vẽ layout 2D/3D chi tiết.</p>
+            </div>
+            <div class="process-step">
+                <div class="step-number">3</div>
+                <h4>Gửi Báo Giá & Hợp Đồng</h4>
+                <p>Cung cấp phương án tối ưu chi phí và ký kết hợp đồng rõ ràng.</p>
+            </div>
+            <div class="process-step">
+                <div class="step-number">4</div>
+                <h4>Sản Xuất & Lắp Đặt</h4>
+                <p>Gia công tại xưởng và triển khai thi công hoàn thiện tận nơi.</p>
+            </div>
+            <div class="process-step">
+                <div class="step-number">5</div>
+                <h4>Nghiệm Thu & Bảo Hành</h4>
+                <p>Bàn giao hệ thống, hướng dẫn vận hành an toàn và bảo hành dài hạn.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA SECTION -->
+<section class="cta-section">
+    <div class="container cta-content">
+        <h2>Bạn Cần Tư Vấn Thiết Kế Kệ Kho Hàng?</h2>
+        <p>Liên hệ ngay với các chuyên gia của Cơ Khí Hòa Long để nhận giải pháp tối ưu không gian và báo giá ưu đãi nhất.</p>
+        <a href="/lien-he/" class="btn-card" style="display: inline-block; padding: 12px 30px; font-size: 1.1rem;"><i class="fas fa-paper-plane"></i> Liên Hệ Ngay</a>
+    </div>
+</section>
