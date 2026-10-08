@@ -4,57 +4,423 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sản Phẩm Kệ Kho & Kết Cấu Thép - Cơ Khí Hòa Long</title>
-    <meta name="description" content="Danh mục sản phẩm kệ chứa hàng công nghiệp: Kệ Selective, VNA, Drive-in, Radio Shuttle, Multi-Tier, Sàn Mezzanine và Xà gồ C/Z.">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <meta name="description" content="Danh mục sản phẩm kệ chứa hàng công nghiệp: Kệ Selective, VNA, Drive-in, Radio Shuttle, Multi-Tier, Sàn Mezzanine và Xà gồ C/Z. Sản xuất tiêu chuẩn ISO 9001:2015.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@700&display=swap" rel="stylesheet">
+    
     <style>
-        :root { --primary: #004b93; --accent: #ff6600; }
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Roboto', sans-serif; }
-        body { color: #333; line-height: 1.6; }
-        header { background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000; }
-        .container { width: 90%; max-width: 1200px; margin: auto; display: flex; justify-content: space-between; align-items: center; padding: 15px 0; }
-        .logo { font-size: 22px; font-weight: 700; color: var(--primary); text-decoration: none; }
-        nav a { margin-left: 20px; text-decoration: none; color: #333; font-weight: 500; }
-        nav a:hover, nav a.active { color: var(--primary); font-weight: 700; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; margin-top: 30px; }
-        .card { border: 1px solid #ddd; padding: 20px; border-radius: 6px; }
-        .card h3 { color: var(--primary); margin-bottom: 10px; }
+        :root {
+            --primary: #004b93;
+            --primary-dark: #002e5c;
+            --accent: #ff6600;
+            --accent-hover: #e65c00;
+            --text-main: #1a1a1a;
+            --text-muted: #666666;
+            --bg-light: #f8f9fa;
+            --border-color: #e5e7eb;
+            --font-serif: 'Merriweather', Georgia, serif;
+            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            color: var(--text-main);
+            background-color: #ffffff;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Banner Hero Page */
+        .page-hero {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+            color: #ffffff;
+            padding: 48px 0;
+            text-align: center;
+        }
+        .page-hero h1 {
+            font-family: var(--font-serif);
+            font-size: 32px;
+            margin-bottom: 12px;
+            letter-spacing: -0.5px;
+        }
+        .page-hero p {
+            font-size: 16px;
+            color: #dbeafe;
+            max-width: 680px;
+            margin: 0 auto;
+            line-height: 1.5;
+        }
+
+        /* Layout Container */
+        .container {
+            width: 92%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Breadcrumb Nav */
+        .breadcrumb {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin: 20px 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .breadcrumb a {
+            color: var(--text-muted);
+            text-decoration: none;
+        }
+        .breadcrumb a:hover {
+            color: var(--primary);
+        }
+        .breadcrumb .sep { color: #aaa; }
+        .breadcrumb .current { color: var(--primary); font-weight: 600; }
+
+        /* Catalog Section Header */
+        .section-header {
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 10px;
+            margin: 36px 0 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+        .section-header h2 {
+            font-family: var(--font-serif);
+            font-size: 22px;
+            color: var(--primary);
+            margin: 0;
+            text-transform: uppercase;
+        }
+
+        /* Grid Sản Phẩm Card */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 28px;
+            margin-bottom: 50px;
+        }
+        .product-card {
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.08);
+        }
+        .card-image-wrap {
+            position: relative;
+            height: 210px;
+            background: #f1f5f9;
+            overflow: hidden;
+        }
+        .card-image-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+        .product-card:hover .card-image-wrap img {
+            transform: scale(1.05);
+        }
+        .badge-category {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background: var(--primary);
+            color: #ffffff;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 4px;
+            text-transform: uppercase;
+        }
+        .card-body {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+        .card-title {
+            font-family: var(--font-serif);
+            font-size: 18px;
+            font-weight: 700;
+            margin: 0 0 10px;
+            line-height: 1.35;
+        }
+        .card-title a {
+            color: var(--text-main);
+            text-decoration: none;
+        }
+        .card-title a:hover {
+            color: var(--primary);
+        }
+        .card-excerpt {
+            font-size: 13.5px;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 16px;
+            flex-grow: 1;
+        }
+        .card-features {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 20px;
+            font-size: 12.5px;
+            color: #4b5563;
+        }
+        .card-features li {
+            margin-bottom: 4px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .card-action {
+            display: flex;
+            gap: 12px;
+        }
+        .btn-detail {
+            flex: 1;
+            text-align: center;
+            background: #f3f4f6;
+            color: var(--text-main);
+            padding: 9px 0;
+            border-radius: 4px;
+            font-size: 13px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: background 0.2s;
+        }
+        .btn-detail:hover {
+            background: #e5e7eb;
+        }
+        .btn-quote-item {
+            flex: 1;
+            text-align: center;
+            background: var(--accent);
+            color: #ffffff;
+            padding: 9px 0;
+            border-radius: 4px;
+            font-size: 13px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: background 0.2s;
+        }
+        .btn-quote-item:hover {
+            background: var(--accent-hover);
+        }
+
+        /* Call To Action Box */
+        .cta-banner {
+            background: linear-gradient(90deg, var(--primary-dark) 0%, var(--primary) 100%);
+            color: #ffffff;
+            border-radius: 8px;
+            padding: 36px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 60px;
+            gap: 20px;
+        }
+        .cta-content h3 {
+            font-family: var(--font-serif);
+            font-size: 22px;
+            margin: 0 0 8px;
+        }
+        .cta-content p {
+            margin: 0;
+            color: #dbeafe;
+            font-size: 14px;
+        }
+        .cta-btn {
+            background: var(--accent);
+            color: #ffffff;
+            padding: 12px 24px;
+            border-radius: 4px;
+            font-weight: 700;
+            font-size: 14px;
+            text-decoration: none;
+            white-space: nowrap;
+            transition: background 0.2s;
+        }
+        .cta-btn:hover {
+            background: var(--accent-hover);
+        }
+
+        @media (max-width: 768px) {
+            .page-hero h1 { font-size: 26px; }
+            .product-grid { grid-template-columns: 1fr; }
+            .cta-banner { flex-direction: column; text-align: center; }
+        }
     </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <a href="index.html" class="logo">CƠ KHÍ HÒA LONG</a>
-            <nav>
-                <a href="index.html">Trang chủ</a>
-                <a href="gioi-thieu.html">Giới thiệu</a>
-                <a href="san-pham.html" class="active">Sản phẩm</a>
-                <a href="dich-vu.html">Dịch vụ</a>
-                <a href="thong-tin.html">Thông tin</a>
-                <a href="lien-he.html">Liên hệ</a>
-            </nav>
-        </div>
-    </header>
 
-    <div class="container" style="flex-direction: column; padding-top: 40px;">
-        <h1 style="color: var(--primary);">DANH MỤC SẢN PHẨM HLM</h1>
-        <div class="grid" style="width: 100%;">
-            <div class="card">
-                <h3>Hệ Thống Kệ Tải Nặng (Heavy Duty)</h3>
-                <p>Kệ Selective, Double Deep, Drive-In, Kệ VNA (Very Narrow Aisle), Kệ Push Back.</p>
-            </div>
-            <div class="card">
-                <h3>Kệ Tự Động & Mật Độ Cao</h3>
-                <p>Hệ thống Kệ Radio Shuttle, Kệ Kho Tự Động ASRS, Robot AGV/AMR.</p>
-            </div>
-            <div class="card">
-                <h3>Sàn Thao Tác & Shelving</h3>
-                <p>Sàn Mezzanine, Kệ Multi-Tier Shelving, Kệ Trung Tải Long Span.</p>
-            </div>
-            <div class="card">
-                <h3>Nhà Thép & Phụ Kiện</h3>
-                <p>Khung nhà thép tiền chế (PEB), Xà gồ C/Z mạ kẽm, Tấm lợp cách nhiệt.</p>
-            </div>
+    {% include "header.html" %}
+
+    <section class="page-hero">
+        <div class="container">
+            <h1>Sản Phẩm & Giải Pháp Lưu Trữ</h1>
+            <p>Hệ thống kệ chứa hàng tải trọng nặng, sàn kho công nghiệp & nhà thép tiền chế được thiết kế tối ưu diện tích và độ an toàn cao nhất.</p>
         </div>
-    </div>
+    </section>
+
+    <main class="container">
+        
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="/">Trang chủ</a>
+            <span class="sep">›</span>
+            <span class="current">Sản phẩm</span>
+        </nav>
+
+        <div class="section-header">
+            <h2>Kệ Tải Trọng Nặng & Tự Động Hóa</h2>
+        </div>
+
+        <div class="product-grid">
+            
+            <!-- Item 1: Kệ Selective -->
+            <article class="product-card">
+                <div class="card-image-wrap">
+                    <span class="badge-tag badge-category">Pallet Racking</span>
+                    <img src="https://via.placeholder.com/600x400/004b93/ffffff?text=Ke+Chua+Hang+Selective" alt="Kệ Chứa Hàng Selective">
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title"><a href="/lien-he/">Kệ Chứa Hàng Selective (Selective Rack)</a></h3>
+                    <p class="card-excerpt">Giải pháp lưu trữ pallet phổ biến nhất, truy xuất 100% hàng hóa trực tiếp, linh hoạt cho mọi kích thước pallet.</p>
+                    <ul class="card-features">
+                        <li>✔️ Tải trọng: 1000kg - 3000kg / tầng</li>
+                        <li>✔️ Truy xuất pallet trực tiếp 100%</li>
+                    </ul>
+                    <div class="card-action">
+                        <a href="/lien-he/" class="btn-detail">Xem thông số</a>
+                        <a href="/lien-he/" class="btn-quote-item">Nhận báo giá</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Item 2: Kệ Drive-In -->
+            <article class="product-card">
+                <div class="card-image-wrap">
+                    <span class="badge-tag badge-category">Mật Độ Cao</span>
+                    <img src="https://via.placeholder.com/600x400/002e5c/ffffff?text=Ke+Drive-In+Racking" alt="Kệ Drive-In Racking">
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title"><a href="/lien-he/">Kệ Chứa Hàng Drive-In / Drive-Through</a></h3>
+                    <p class="card-excerpt">Tối ưu đến 80% diện tích mặt bằng kho bằng cách giảm tối đa lối đi cho xe nâng, phù hợp kho lạnh, F&B.</p>
+                    <ul class="card-features">
+                        <li>✔️ Nguyên lý: FILO / FIFO</li>
+                        <li>✔️ Tiết kiệm không gian tối đa</li>
+                    </ul>
+                    <div class="card-action">
+                        <a href="/lien-he/" class="btn-detail">Xem thông số</a>
+                        <a href="/lien-he/" class="btn-quote-item">Nhận báo giá</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Item 3: Radio Shuttle -->
+            <article class="product-card">
+                <div class="card-image-wrap">
+                    <span class="badge-tag badge-category">Tự Động Hóa</span>
+                    <img src="https://via.placeholder.com/600x400/ff6600/ffffff?text=Ke+Radio+Shuttle" alt="Kệ Radio Shuttle">
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title"><a href="/lien-he/">Hệ Thống Kệ Radio Shuttle Robot</a></h3>
+                    <p class="card-excerpt">Sử dụng Robot Shuttle thông minh di chuyển pallet trong khoang kệ, tăng năng suất nhập xuất hàng gấp 2 lần.</p>
+                    <ul class="card-features">
+                        <li>✔️ Tự động hóa bán vận hành</li>
+                        <li>✔️ An toàn tuyệt đối cho khung kệ</li>
+                    </ul>
+                    <div class="card-action">
+                        <a href="/lien-he/" class="btn-detail">Xem thông số</a>
+                        <a href="/lien-he/" class="btn-quote-item">Nhận báo giá</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Item 4: Kệ VNA -->
+            <article class="product-card">
+                <div class="card-image-wrap">
+                    <span class="badge-tag badge-category">Lối Đi Hẹp</span>
+                    <img src="https://via.placeholder.com/600x400/004b93/ffffff?text=Ke+VNA+Very+Narrow+Aisle" alt="Kệ Very Narrow Aisle">
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title"><a href="/lien-he/">Kệ Lối Đi Rất Hẹp (VNA Racking)</a></h3>
+                    <p class="card-excerpt">Tận dụng chiều cao nhà kho đến 15m với lối đi hẹp chỉ từ 1.6m - 1.8m, tối ưu dung lượng kho bãi vượt trội.</p>
+                    <ul class="card-features">
+                        <li>✔️ Chiều cao khai thác: Lên tới 15m</li>
+                        <li>✔️ Sử dụng xe nâng chuyên dụng VNA</li>
+                    </ul>
+                    <div class="card-action">
+                        <a href="/lien-he/" class="btn-detail">Xem thông số</a>
+                        <a href="/lien-he/" class="btn-quote-item">Nhận báo giá</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Item 5: Sàn Mezzanine -->
+            <article class="product-card">
+                <div class="card-image-wrap">
+                    <span class="badge-tag badge-category">Kết Cấu Thép</span>
+                    <img src="https://via.placeholder.com/600x400/002e5c/ffffff?text=San+Lieu+Mezzanine+Floor" alt="Sàn Lửng Mezzanine">
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title"><a href="/lien-he/">Sàn Lửng Nhà Kho (Mezzanine Floor)</a></h3>
+                    <p class="card-excerpt">Nhân đôi hoặc nhân ba diện tích mặt bằng sử dụng mà không cần mở rộng diện tích xây dựng nhà xưởng.</p>
+                    <ul class="card-features">
+                        <li>✔️ Tải trọng sàn: 300 - 1500 kg/m²</li>
+                        <li>✔️ Tích hợp văn phòng hoặc kho phụ</li>
+                    </ul>
+                    <div class="card-action">
+                        <a href="/lien-he/" class="btn-detail">Xem thông số</a>
+                        <a href="/lien-he/" class="btn-quote-item">Nhận báo giá</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Item 6: Nhà Thép Tiền Chế & Xà Gồ -->
+            <article class="product-card">
+                <div class="card-image-wrap">
+                    <span class="badge-tag badge-category">Kết Cấu PEB</span>
+                    <img src="https://via.placeholder.com/600x400/333333/ffffff?text=Nha+Thep+Tien+Che+PEB" alt="Nhà Thép Tiền Chế PEB">
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title"><a href="/lien-he/">Nhà Thép Tiền Chế & Xà Gồ C/Z</a></h3>
+                    <p class="card-excerpt">Thiết kế, gia công và lắp dựng khung nhà thép tiền chế, xà gồ mạ kẽm cường độ cao cho nhà xưởng công nghiệp.</p>
+                    <ul class="card-features">
+                        <li>✔️ Tiêu chuẩn thiết kế: TCVN / AWS</li>
+                        <li>✔️ Thi công trọn gói nhanh chóng</li>
+                    </ul>
+                    <div class="card-action">
+                        <a href="/lien-he/" class="btn-detail">Xem thông số</a>
+                        <a href="/lien-he/" class="btn-quote-item">Nhận báo giá</a>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+
+        <!-- Banner Kỹ Thuật Báo Giá -->
+        <div class="cta-banner">
+            <div class="cta-content">
+                <h3>Bạn Cần Tư Vấn Thiết Kế Bản Vẽ Mặt Bằng Kho Miễn Phí?</h3>
+                <p>Đội ngũ kỹ sư Cơ Khí Hòa Long sẵn sàng khảo sát thực tế và lên phương án 2D/3D tối ưu cho nhà kho của bạn.</p>
+            </div>
+            <a href="/lien-he/" class="cta-btn">Gửi Yêu Cầu Khảo Sát</a>
+        </div>
+
+    </main>
+
+    {% include "footer.html" %}
+
 </body>
 </html>
