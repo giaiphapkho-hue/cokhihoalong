@@ -1,191 +1,217 @@
-<header class="site-header">
-    <!-- Top Bar Contact Info -->
-    <div class="header-topbar">
-        <div class="topbar-container">
-            <div class="topbar-left">
-                <span>📍 KCN Tân Bình, Mộc Bài, Tây Ninh</span>
-                <span class="sep">|</span>
-                <span>📞 Hotline: <a href="tel:0909000000">0909 000 000</a></span>
-            </div>
-            <div class="topbar-right">
-                <span>✉️ Email: <a href="mailto:info@hoalongcorp.com">info@hoalongcorp.com</a></span>
-            </div>
-        </div>
-    </div>
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tin Tức & Chuyên Mục - Cơ Khí Hòa Long</title>
+    <meta name="description" content="Cập nhật tin tức ngành kho vận, giải pháp tối ưu không gian nhà kho và tài liệu kỹ thuật từ Cơ Khí Hòa Long.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <style>
+        :root { 
+            --primary: #004b93; 
+            --primary-dark: #002e5c;
+            --accent: #ff6600; 
+            --accent-hover: #e65c00;
+            --text-main: #1a1a1a;
+            --text-muted: #666666;
+            --bg-light: #f8f9fa;
+            --border-color: #e5e7eb;
+            --font-serif: 'Merriweather', Georgia, serif;
+            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
 
-    <!-- Main Navigation Header -->
-    <div class="header-main">
-        <div class="header-container">
-            <a href="/" class="brand-logo">
-                <span class="logo-text">CƠ KHÍ HÒA LONG</span>
-                <span class="logo-sub">ENGINEERED FOR REAL WAREHOUSES</span>
-            </a>
+        .news-container { width: 92%; max-width: 1200px; margin: 20px auto 60px; font-family: var(--font-sans); color: var(--text-main); }
 
-            <nav class="main-nav" id="mainNav">
-                <ul>
-                    <li><a href="/">Trang chủ</a></li>
-                    <li><a href="/gioi-thieu/">Giới thiệu</a></li>
-                    <li><a href="/san-pham/">Sản phẩm</a></li>
-                    <li><a href="/dich-vu/">Dịch vụ</a></li>
-                    <li><a href="/thong-tin/">Thông tin</a></li>
-                    <li><a href="/lien-he/">Liên hệ</a></li>
-                </ul>
-            </nav>
+        /* Breadcrumb Cấu trúc Cha - Con */
+        .breadcrumb { font-size: 13px; color: var(--text-muted); margin-bottom: 20px; display: flex; align-items: center; gap: 8px; }
+        .breadcrumb a { color: var(--text-muted); text-decoration: none; }
+        .breadcrumb a:hover { color: var(--primary); }
+        .breadcrumb span.separator { color: #999; }
+        .breadcrumb span.current { color: var(--primary); font-weight: 600; }
 
-            <div class="header-action">
-                <a href="/lien-he/" class="btn-quote">Báo Giá Kỹ Thuật</a>
-                <button class="mobile-toggle" aria-label="Toggle Navigation" onclick="document.getElementById('mainNav').classList.toggle('active')">
-                    ☰
-                </button>
-            </div>
-        </div>
-    </div>
-</header>
+        .news-section-title { 
+            border-bottom: 2px solid var(--primary); 
+            padding-bottom: 8px; 
+            margin: 25px 0 20px 0; 
+            font-family: var(--font-serif); 
+            font-size: 20px; 
+            color: var(--primary); 
+            text-transform: uppercase; 
+            font-weight: 700; 
+            letter-spacing: 0.5px;
+        }
 
-<style>
-    :root {
-        --hdr-primary: #004b93;
-        --hdr-dark: #002e5c;
-        --hdr-accent: #ff6600;
-        --hdr-accent-hover: #e65c00;
-        --hdr-border: #e5e7eb;
-    }
-
-    .site-header {
-        width: 100%;
-        background: #fff;
-        border-bottom: 1px solid var(--hdr-border);
-        font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    }
-
-    /* Topbar styling */
-    .header-topbar {
-        background: var(--hdr-dark);
-        color: #dbeafe;
-        font-size: 12px;
-        padding: 6px 0;
-    }
-    .topbar-container {
-        width: 92%;
-        max-width: 1200px;
-        margin: 0 auto;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-    .topbar-left, .topbar-right {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-    }
-    .topbar-container a {
-        color: #fff;
-        text-decoration: none;
-        font-weight: 600;
-    }
-    .topbar-container .sep { opacity: 0.4; }
-
-    /* Main navbar styling */
-    .header-main {
-        padding: 14px 0;
-        background: #ffffff;
-    }
-    .header-container {
-        width: 92%;
-        max-width: 1200px;
-        margin: 0 auto;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-    .brand-logo {
-        text-decoration: none;
-        display: flex;
-        flex-direction: column;
-    }
-    .logo-text {
-        font-family: 'Merriweather', Georgia, serif;
-        font-size: 20px;
-        font-weight: 700;
-        color: var(--hdr-primary);
-        letter-spacing: -0.3px;
-    }
-    .logo-sub {
-        font-size: 9px;
-        font-weight: 700;
-        color: var(--hdr-accent);
-        letter-spacing: 0.8px;
-        text-transform: uppercase;
-    }
-
-    /* Links */
-    .main-nav ul {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        gap: 24px;
-    }
-    .main-nav a {
-        color: #1a1a1a;
-        text-decoration: none;
-        font-size: 14px;
-        font-weight: 600;
-        padding: 8px 0;
-        transition: color 0.2s;
-    }
-    .main-nav a:hover {
-        color: var(--hdr-accent);
-    }
-
-    /* Button & Mobile Toggle */
-    .header-action {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-    }
-    .btn-quote {
-        background: var(--hdr-accent);
-        color: #fff;
-        padding: 8px 16px;
-        border-radius: 4px;
-        font-size: 13px;
-        font-weight: 700;
-        text-decoration: none;
-        transition: background 0.2s;
-    }
-    .btn-quote:hover {
-        background: var(--hdr-accent-hover);
-    }
-    .mobile-toggle {
-        display: none;
-        background: none;
-        border: none;
-        font-size: 22px;
-        cursor: pointer;
-        color: var(--hdr-primary);
-    }
-
-    /* Mobile Responsive */
-    @media (max-width: 868px) {
-        .header-topbar { display: none; }
-        .mobile-toggle { display: block; }
-        .main-nav {
-            display: none;
-            position: absolute;
-            top: 60px;
-            left: 0;
+        /* Hero Spotlight */
+        .news-hero { display: grid; grid-template-columns: 1fr; gap: 24px; margin-bottom: 30px; }
+        .featured-card { 
+            position: relative; 
+            border-radius: 8px; 
+            overflow: hidden; 
+            min-height: 380px; 
+            background: #111;
+            display: flex;
+            align-items: flex-end;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        .featured-card img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.75; transition: transform 0.4s ease; }
+        .featured-card:hover img { transform: scale(1.02); }
+        .featured-content { 
+            position: relative; 
+            z-index: 2; 
+            padding: 32px; 
+            background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.9) 100%);
             width: 100%;
-            background: #fff;
-            box-shadow: 0 10px 15px rgba(0,0,0,0.1);
-            border-top: 1px solid var(--hdr-border);
-            z-index: 100;
+            color: #fff;
         }
-        .main-nav.active { display: block; }
-        .main-nav ul {
-            flex-direction: column;
-            padding: 16px 20px;
-            gap: 12px;
-        }
-    }
-</style>
+        .badge-tag { display: inline-block; background: var(--accent); color: #fff; font-size: 11px; font-weight: 700; text-transform: uppercase; padding: 4px 10px; border-radius: 3px; margin-bottom: 12px; }
+        .featured-title { font-family: var(--font-serif); font-size: 24px; font-weight: 700; line-height: 1.3; margin-bottom: 10px; }
+        .featured-title a { color: #fff; text-decoration: none; }
+        .featured-title a:hover { color: #ffd1b3; }
+        .featured-snippet { font-size: 14px; color: #ddd; line-height: 1.6; margin-bottom: 14px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; max-width: 900px; }
+
+        /* Articles & Sidebar */
+        .news-body { display: grid; grid-template-columns: 2.8fr 1.2fr; gap: 32px; }
+        @media (max-width: 900px) { .news-body { grid-template-columns: 1fr; } }
+
+        .articles-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 24px; }
+        .article-card { background: #fff; border: 1px solid var(--border-color); border-radius: 6px; overflow: hidden; display: flex; flex-direction: column; transition: transform 0.2s, box-shadow 0.2s; }
+        .article-card:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.06); }
+        .article-thumb { height: 170px; width: 100%; object-fit: cover; }
+        .article-content { padding: 18px; display: flex; flex-direction: column; flex-grow: 1; }
+        .article-title { font-family: var(--font-serif); font-size: 15px; font-weight: 700; color: var(--text-main); margin-bottom: 10px; line-height: 1.4; }
+        .article-title a { color: var(--text-main); text-decoration: none; }
+        .article-title a:hover { color: var(--primary); }
+        .article-excerpt { font-size: 13px; color: var(--text-muted); margin-bottom: 15px; flex-grow: 1; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+        .article-link { font-size: 13px; color: var(--accent); font-weight: 600; text-decoration: none; }
+
+        .sidebar-widget { background: var(--bg-light); border: 1px solid var(--border-color); padding: 20px; border-radius: 6px; margin-bottom: 24px; }
+        .widget-title { font-family: var(--font-serif); font-size: 16px; font-weight: 700; color: var(--primary); margin-bottom: 15px; padding-bottom: 8px; border-bottom: 2px solid var(--accent); }
+        .brand-box { background: var(--primary); color: #fff; text-align: center; padding: 24px 16px; border-radius: 6px; }
+        .brand-box h3 { font-family: var(--font-serif); font-size: 18px; margin-bottom: 10px; }
+        .brand-box p { font-size: 13px; color: #dbeafe; margin-bottom: 16px; line-height: 1.5; }
+        .btn-action { background: var(--accent); color: #fff; text-decoration: none; padding: 10px 18px; border-radius: 4px; font-weight: 600; font-size: 13px; display: inline-block; transition: background 0.2s; }
+        .btn-action:hover { background: var(--accent-hover); }
+
+        .category-list { list-style: none; font-size: 14px; line-height: 2.2; }
+        .category-list a { color: var(--text-main); text-decoration: none; display: flex; justify-content: space-between; border-bottom: 1px dashed var(--border-color); }
+        .category-list a:hover { color: var(--accent); }
+
+        .skeleton { background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%); background-size: 200% 100%; animation: loading 1.5s infinite; border-radius: 4px; }
+        @keyframes loading { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } }
+    </style>
+</head>
+<body>
+
+    {% include "header.html" %}
+
+    <main class="news-container">
+        
+        <!-- Breadcrumb thể hiện quan hệ Cha (Trang chủ) - Con (Thông tin) -->
+        <nav class="breadcrumb">
+            <a href="/">Trang chủ</a>
+            <span class="separator">›</span>
+            <span class="current">Thông tin & Tin tức</span>
+        </nav>
+
+        <div class="news-section-title">Tiêu Điểm Tin Tức</div>
+        <div id="hero-spotlight" class="news-hero">
+            <div class="featured-card skeleton" style="height: 380px;"></div>
+        </div>
+
+        <div class="news-section-title">Bài Viết Mới Nhất</div>
+        <div class="news-body">
+            
+            <div>
+                <div class="articles-grid" id="rss-news-list">
+                    <div class="article-card" style="height: 300px;"><div class="skeleton" style="height: 100%;"></div></div>
+                    <div class="article-card" style="height: 300px;"><div class="skeleton" style="height: 100%;"></div></div>
+                    <div class="article-card" style="height: 300px;"><div class="skeleton" style="height: 100%;"></div></div>
+                </div>
+            </div>
+
+            <aside>
+                <div class="brand-box">
+                    <h3>Cơ Khí Hòa Long</h3>
+                    <p>Chuyên tư vấn & chế tạo hệ thống kệ chứa hàng công nghiệp, nhà thép tiền chế tiêu chuẩn ISO 9001:2015.</p>
+                    <a href="/lien-he/" class="btn-action">Yêu Cầu Báo Giá</a>
+                </div>
+
+                <div class="sidebar-widget" style="margin-top: 24px;">
+                    <div class="widget-title">Chuyên Mục Sản Phẩm</div>
+                    <ul class="category-list">
+                        <li><a href="/san-pham/"><span>⚙️ Kệ Tải Trọng Nặng</span> <span>›</span></a></li>
+                        <li><a href="/san-pham/"><span>🏗️ Nhà Thép Tiền Chế (PEB)</span> <span>›</span></a></li>
+                        <li><a href="/san-pham/"><span>📦 Kệ Kho Thông Minh ASRS</span> <span>›</span></a></li>
+                        <li><a href="/san-pham/"><span>🏢 Sàn Mezzanine Nhà Kho</span> <span>›</span></a></li>
+                        <li><a href="/san-pham/"><span>❄️ Kệ Kho Lạnh F&B</span> <span>›</span></a></li>
+                    </ul>
+                </div>
+            </aside>
+        </div>
+
+    </main>
+
+    {% include "footer.html" %}
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const rssUrl = 'https://hoalongcorp.com/feed/';
+            const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`;
+
+            fetch(apiUrl)
+                .then(res => res.json())
+                .then(data => {
+                    if (data.status === 'ok' && data.items.length > 0) {
+                        const items = data.items;
+                        
+                        const heroContainer = document.getElementById('hero-spotlight');
+                        const firstPost = items[0];
+                        const firstThumb = firstPost.thumbnail || 'https://via.placeholder.com/800x500?text=C%C6%A1+Kh%C3%AD+H%C3%B2a+Long';
+                        const firstDesc = firstPost.description.replace(/(<([^>]+)>)/gi, "").substring(0, 160);
+
+                        heroContainer.innerHTML = `
+                            <div class="featured-card">
+                                <img src="${firstThumb}" alt="${firstPost.title}">
+                                <div class="featured-content">
+                                    <span class="badge-tag">Bài Viết Mới</span>
+                                    <h1 class="featured-title">
+                                        <a href="${firstPost.link}" target="_blank" rel="noopener">${firstPost.title}</a>
+                                    </h1>
+                                    <p class="featured-snippet">${firstDesc}...</p>
+                                    <a href="${firstPost.link}" target="_blank" rel="noopener" style="color: #ffa466; font-weight: 700; text-decoration: none; font-size: 14px;">Xem chi tiết bài viết →</a>
+                                </div>
+                            </div>
+                        `;
+
+                        const gridContainer = document.getElementById('rss-news-list');
+                        gridContainer.innerHTML = '';
+                        
+                        items.slice(1).forEach(post => {
+                            const card = document.createElement('article');
+                            card.className = 'article-card';
+                            const thumb = post.thumbnail || 'https://via.placeholder.com/400x250?text=Hoa+Long+Mechanical';
+                            const desc = post.description.replace(/(<([^>]+)>)/gi, "").substring(0, 100);
+
+                            card.innerHTML = `
+                                <img class="article-thumb" src="${thumb}" alt="${post.title}" loading="lazy">
+                                <div class="article-content">
+                                    <h3 class="article-title">
+                                        <a href="${post.link}" target="_blank" rel="noopener">${post.title}</a>
+                                    </h3>
+                                    <p class="article-excerpt">${desc}...</p>
+                                    <a href="${post.link}" target="_blank" rel="noopener" class="article-link">Đọc tiếp →</a>
+                                </div>
+                            `;
+                            gridContainer.appendChild(card);
+                        });
+                    }
+                })
+                .catch(err => console.log('Lỗi tải dữ liệu tin tức:', err));
+        });
+    </script>
+</body>
+</html>
