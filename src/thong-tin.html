@@ -16,6 +16,7 @@
             --primary: #004b93; 
             --primary-dark: #003366;
             --accent: #ff6600; 
+            --accent-hover: #e65c00;
             --text-main: #1a1a1a;
             --text-muted: #666666;
             --bg-light: #f8f9fa;
@@ -27,60 +28,63 @@
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body { color: var(--text-main); font-family: var(--font-sans); background-color: #fff; line-height: 1.6; }
 
-        /* Top Bar & Header */
-        .top-bar { background: #111; color: #ccc; font-size: 13px; padding: 6px 0; border-bottom: 1px solid #222; }
-        .top-bar .container { display: flex; justify-content: space-between; align-items: center; }
-        
-        header { background: #fff; border-bottom: 2px solid var(--primary); sticky: top; top: 0; z-index: 1000; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
         .container { width: 92%; max-width: 1240px; margin: auto; }
-        
-        .header-inner { display: flex; justify-content: space-between; align-items: center; padding: 18px 0; }
+
+        /* ================= HEADER STANDARD ================= */
+        .top-bar { background: #111; color: #ccc; font-size: 13px; padding: 8px 0; border-bottom: 1px solid #222; }
+        .top-bar .container { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
+        .top-bar-info { display: flex; gap: 20px; }
+        .top-bar-info span { display: inline-flex; align-items: center; gap: 6px; }
+
+        header { background: #fff; border-bottom: 3px solid var(--primary); position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 15px rgba(0,0,0,0.06); }
+        .header-inner { display: flex; justify-content: space-between; align-items: center; padding: 16px 0; }
         .logo { font-family: var(--font-serif); font-size: 24px; font-weight: 700; color: var(--primary); text-decoration: none; letter-spacing: -0.5px; }
         .logo span { color: var(--accent); }
         
-        nav { display: flex; gap: 24px; }
+        nav { display: flex; gap: 24px; align-items: center; }
         nav a { text-decoration: none; color: var(--text-main); font-weight: 600; font-size: 15px; transition: color 0.2s; }
         nav a:hover, nav a.active { color: var(--accent); }
+        .btn-header-cta { background: var(--accent); color: #fff !important; padding: 8px 16px; border-radius: 4px; font-weight: 700 !important; transition: background 0.2s; }
+        .btn-header-cta:hover { background: var(--accent-hover); }
 
-        /* Hero Magazine Section */
-        .magazine-hero { margin-top: 30px; display: grid; grid-template-columns: 2fr 1fr; gap: 24px; }
-        @media (max-width: 900px) { .magazine-hero { grid-template-columns: 1fr; } }
-
+        /* ================= MAGAZINE HERO SPOTLIGHT ================= */
+        .magazine-hero { margin-top: 24px; display: grid; grid-template-columns: 1fr; gap: 24px; }
+        
         .featured-card { 
             position: relative; 
             border-radius: 8px; 
             overflow: hidden; 
-            height: 420px; 
+            min-height: 400px; 
             background: #000;
             display: flex;
             align-items: flex-end;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.12);
         }
-        .featured-card img { position: absolute; width: 100%; height: 100%; object-fit: cover; opacity: 0.75; transition: transform 0.5s ease; }
-        .featured-card:hover img { transform: scale(1.04); }
+        .featured-card img { position: absolute; top:0; left:0; width: 100%; height: 100%; object-fit: cover; opacity: 0.75; transition: transform 0.5s ease; }
+        .featured-card:hover img { transform: scale(1.03); }
         .featured-content { 
             position: relative; 
             z-index: 2; 
-            padding: 30px; 
-            background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.85) 100%);
+            padding: 32px; 
+            background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.9) 100%);
             width: 100%;
             color: #fff;
         }
         .badge { display: inline-block; background: var(--accent); color: #fff; font-size: 11px; font-weight: 700; text-transform: uppercase; padding: 4px 10px; border-radius: 3px; margin-bottom: 12px; letter-spacing: 0.5px; }
-        .featured-title { font-family: var(--font-serif); font-size: 26px; font-weight: 700; line-height: 1.3; margin-bottom: 10px; text-shadow: 0 2px 4px rgba(0,0,0,0.5); }
+        .featured-title { font-family: var(--font-serif); font-size: 26px; font-weight: 700; line-height: 1.3; margin-bottom: 12px; }
         .featured-title a { color: #fff; text-decoration: none; }
         .featured-title a:hover { color: #ffd1b3; }
-        .featured-snippet { font-size: 14px; color: #ddd; line-height: 1.5; margin-bottom: 12px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+        .featured-snippet { font-size: 14px; color: #ddd; line-height: 1.6; margin-bottom: 14px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; max-width: 900px; }
 
-        /* Magazine Section Header */
+        /* ================= SECTION HEADERS ================= */
         .section-header { border-bottom: 2px solid var(--primary); padding-bottom: 8px; margin: 40px 0 24px 0; display: flex; justify-content: space-between; align-items: flex-end; }
         .section-header h2 { font-family: var(--font-serif); font-size: 20px; color: var(--primary-dark); text-transform: uppercase; letter-spacing: 0.5px; font-weight: 700; }
 
-        /* Content Layout with Sidebar */
+        /* ================= MAGAZINE BODY LAYOUT ================= */
         .magazine-body { display: grid; grid-template-columns: 2.8fr 1.2fr; gap: 32px; }
         @media (max-width: 900px) { .magazine-body { grid-template-columns: 1fr; } }
 
-        /* Main Articles Grid */
+        /* Articles Grid */
         .articles-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 24px; }
         .article-card { background: #fff; border: 1px solid var(--border-color); border-radius: 6px; overflow: hidden; display: flex; flex-direction: column; transition: transform 0.2s, box-shadow 0.2s; }
         .article-card:hover { transform: translateY(-4px); box-shadow: 0 12px 20px rgba(0,0,0,0.08); }
@@ -90,33 +94,56 @@
         .article-title a { color: var(--text-main); text-decoration: none; }
         .article-title a:hover { color: var(--primary); }
         .article-excerpt { font-size: 13px; color: var(--text-muted); margin-bottom: 15px; flex-grow: 1; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
-        .article-meta { font-size: 12px; color: var(--accent); font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 4px; }
+        .article-meta { font-size: 13px; color: var(--accent); font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 4px; }
 
-        /* Sidebar Styles */
+        /* Sidebar Widgets */
         .sidebar-widget { background: var(--bg-light); border: 1px solid var(--border-color); padding: 20px; border-radius: 6px; margin-bottom: 24px; }
         .widget-title { font-family: var(--font-serif); font-size: 16px; font-weight: 700; color: var(--primary); margin-bottom: 15px; padding-bottom: 8px; border-bottom: 2px solid var(--accent); }
         .brand-box { background: var(--primary); color: #fff; text-align: center; padding: 24px 16px; border-radius: 6px; }
         .brand-box h3 { font-family: var(--font-serif); font-size: 18px; margin-bottom: 10px; }
-        .brand-box p { font-size: 13px; color: #dbeafe; margin-bottom: 16px; }
+        .brand-box p { font-size: 13px; color: #dbeafe; margin-bottom: 16px; line-height: 1.5; }
         .btn-subscribe { background: var(--accent); color: #fff; text-decoration: none; padding: 10px 18px; border-radius: 4px; font-weight: 600; font-size: 13px; display: inline-block; transition: background 0.2s; }
-        .btn-subscribe:hover { background: #e65c00; }
+        .btn-subscribe:hover { background: var(--accent-hover); }
+
+        .category-list { list-style: none; font-size: 14px; line-height: 2.2; }
+        .category-list a { color: var(--text-main); text-decoration: none; display: flex; justify-content: space-between; border-bottom: 1px dashed var(--border-color); }
+        .category-list a:hover { color: var(--accent); }
 
         /* Skeleton Loading */
         .skeleton { background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%); background-size: 200% 100%; animation: loading 1.5s infinite; border-radius: 4px; }
         @keyframes loading { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } }
+
+        /* ================= FOOTER STANDARD ================= */
+        footer { background: #0f172a; color: #94a3b8; font-size: 14px; padding-top: 50px; margin-top: 60px; border-top: 4px solid var(--primary); }
+        .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1.2fr; gap: 30px; padding-bottom: 40px; }
+        @media (max-width: 900px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
+        @media (max-width: 600px) { .footer-grid { grid-template-columns: 1fr; } }
+
+        .footer-col h4 { font-family: var(--font-serif); color: #fff; font-size: 16px; margin-bottom: 18px; position: relative; padding-bottom: 8px; }
+        .footer-col h4::after { content: ''; position: absolute; bottom: 0; left: 0; width: 35px; height: 2px; background: var(--accent); }
+        .footer-col p { margin-bottom: 12px; line-height: 1.6; }
+        .footer-links { list-style: none; }
+        .footer-links li { margin-bottom: 10px; }
+        .footer-links a { color: #94a3b8; text-decoration: none; transition: color 0.2s; }
+        .footer-links a:hover { color: #fff; }
+
+        .footer-bottom { background: #080d1a; padding: 20px 0; font-size: 13px; text-align: center; color: #64748b; border-top: 1px solid #1e293b; }
     </style>
 </head>
 <body>
 
-    <!-- Top Bar -->
+    <!-- TOP BAR -->
     <div class="top-bar">
         <div class="container">
-            <div><strong>TẠP CHÍ KỸ THUẬT:</strong> Cập nhật giải pháp kho vận & cơ khí chế tạo</div>
-            <div>Hòa Long Mechanical • Ban Biên Tập Nội Dung</div>
+            <div class="top-bar-info">
+                <span>📍 Lô C, Đường số 1, KCN Hải Sơn, Long An</span>
+                <span>📞 Hotline: 0913 888 111</span>
+            </div>
+            <div><strong>HLM MAGAZINE:</strong> Chuyên san Kỹ thuật & Kho vận Công nghiệp</div>
         </div>
     </div>
 
-    <!-- Main Navigation Header -->
+    <!-- MAIN HEADER -->
     <header>
         <div class="container header-inner">
             <a href="index.html" class="logo">CƠ KHÍ <span>HÒA LONG</span></a>
@@ -126,12 +153,13 @@
                 <a href="san-pham.html">Sản phẩm</a>
                 <a href="dich-vu.html">Dịch vụ</a>
                 <a href="thong-tin.html" class="active">Thông tin</a>
-                <a href="lien-he.html">Liên hệ</a>
+                <a href="lien-he.html" class="btn-header-cta">Liên hệ báo giá</a>
             </nav>
         </div>
     </header>
 
-    <main class="container" style="padding-bottom: 60px;">
+    <!-- MAIN CONTENT AREA -->
+    <main class="container" style="padding-bottom: 20px;">
         
         <!-- Hero Spotlight Section -->
         <div class="section-header">
@@ -139,11 +167,11 @@
         </div>
         
         <div id="hero-spotlight" class="magazine-hero">
-            <!-- Dynamic Content loaded via JS -->
-            <div class="featured-card skeleton" style="grid-column: 1 / -1; height: 350px;"></div>
+            <!-- Skeleton Loader khi đang tải dữ liệu -->
+            <div class="featured-card skeleton" style="height: 380px;"></div>
         </div>
 
-        <!-- Main Content Area -->
+        <!-- Main Content Area: Grid + Sidebar -->
         <div class="section-header">
             <h2>Bài Viết & Chuyên Mục Mới Nhất</h2>
         </div>
@@ -152,7 +180,7 @@
             <!-- Left Column: Articles Grid -->
             <div>
                 <div class="articles-grid" id="rss-news-list">
-                    <!-- Skeleton Loaders -->
+                    <!-- Skeletons khi tải bài -->
                     <div class="article-card" style="height: 320px;"><div class="skeleton" style="height: 100%;"></div></div>
                     <div class="article-card" style="height: 320px;"><div class="skeleton" style="height: 100%;"></div></div>
                     <div class="article-card" style="height: 320px;"><div class="skeleton" style="height: 100%;"></div></div>
@@ -169,11 +197,12 @@
 
                 <div class="sidebar-widget" style="margin-top: 24px;">
                     <div class="widget-title">Chuyên Mục Chính</div>
-                    <ul style="list-style: none; font-size: 14px; line-height: 2;">
-                        <li><a href="#" style="color: var(--text-main); text-decoration: none;">⚙️ Hệ Thống Kệ Pallet Heavy Duty</a></li>
-                        <li><a href="#" style="color: var(--text-main); text-decoration: none;">🏗️ Kết Cấu Nhàn Thép Tiền Chế</a></li>
-                        <li><a href="#" style="color: var(--text-main); text-decoration: none;">📦 Giải Pháp Kho Thông Minh ASRS</a></li>
-                        <li><a href="#" style="color: var(--text-main); text-decoration: none;">📋 Tiêu Chuẩn An Toàn Nhà Kho</a></li>
+                    <ul class="category-list">
+                        <li><a href="#"><span>⚙️ Hệ Thống Kệ Heavy Duty</span> <span>›</span></a></li>
+                        <li><a href="#"><span>🏗️ Kết Cấu Nhà Thép Tiền Chế</span> <span>›</span></a></li>
+                        <li><a href="#"><span>📦 Giải Pháp Kho Thông Minh ASRS</span> <span>›</span></a></li>
+                        <li><a href="#"><span>📋 Tiêu Chuẩn An Toàn Nhà Kho</span> <span>›</span></a></li>
+                        <li><a href="#"><span>❄️ Kệ Kho Mát & Kho Lạnh F&B</span> <span>›</span></a></li>
                     </ul>
                 </div>
             </aside>
@@ -181,7 +210,52 @@
 
     </main>
 
-    <!-- RSS Fetch Script -->
+    <!-- FOOTER -->
+    <footer>
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <h4 style="color:#fff;">CƠ KHÍ HÒA LONG</h4>
+                <p>Chuyên tư vấn, thiết kế, sản xuất và lắp đặt hệ thống giá kệ chứa hàng công nghiệp, nhà thép tiền chế và giải pháp tự động hóa kho hàng.</p>
+                <p><strong>Hotline:</strong> 0913 888 111</p>
+                <p><strong>Email:</strong> kinhdoanh@hoalongcorp.com</p>
+            </div>
+            
+            <div class="footer-col">
+                <h4>Sản Phẩm Chính</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Kệ Chứa Pallet Selective</a></li>
+                    <li><a href="#">Kệ Drive-In / Drive-Thru</a></li>
+                    <li><a href="#">Hệ Thống Radio Shuttle</a></li>
+                    <li><a href="#">Kệ Sàn Mezzanine Floor</a></li>
+                    <li><a href="#">Nhà Thép Tiền Chế PEB</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Liên Kết Nhanh</h4>
+                <ul class="footer-links">
+                    <li><a href="gioi-thieu.html">Về Chúng Tôi</a></li>
+                    <li><a href="dich-vu.html">Dịch Vụ Kỹ Thuật</a></li>
+                    <li><a href="thong-tin.html">Tạp Chí & Tin Tức</a></li>
+                    <li><a href="lien-he.html">Liên Hệ & Khảo Sát</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Tư Vấn & Khảo Sát</h4>
+                <p>Đăng ký ngay để nhận bản vẽ 2D/3D thiết kế mặt bằng kho miễn phí từ đội ngũ kỹ sư Hòa Long.</p>
+                <a href="lien-he.html" class="btn-subscribe" style="width: 100%; text-align: center; margin-top: 8px;">Yêu Cầu Khảo Sát Kho</a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container">
+                © 2026 Cơ Khí Hòa Long (Hoa Long Mechanical). All rights reserved. Đồng bộ dữ liệu trực tiếp từ hoalongcorp.com.
+            </div>
+        </div>
+    </footer>
+
+    <!-- RSS FETCH SCRIPT -->
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             const rssUrl = 'https://hoalongcorp.com/feed/';
@@ -193,17 +267,17 @@
                     if (data.status === 'ok' && data.items.length > 0) {
                         const items = data.items;
                         
-                        // 1. Render Featured Spotlight Article (Bài đầu tiên)
+                        // 1. Render Featured Spotlight Article (Bài mới nhất)
                         const heroContainer = document.getElementById('hero-spotlight');
                         const firstPost = items[0];
                         const firstThumb = firstPost.thumbnail || 'https://via.placeholder.com/800x500?text=Hoa+Long+Mechanical';
                         const firstDesc = firstPost.description.replace(/(<([^>]+)>)/gi, "").substring(0, 160);
 
                         heroContainer.innerHTML = `
-                            <div class="featured-card" style="grid-column: 1 / -1;">
+                            <div class="featured-card">
                                 <img src="${firstThumb}" alt="${firstPost.title}">
                                 <div class="featured-content">
-                                    <span class="badge">Bài Nổi Bật</span>
+                                    <span class="badge">Bài Nổi Bật Mới Nhất</span>
                                     <h1 class="featured-title">
                                         <a href="${firstPost.link}" target="_blank">${firstPost.title}</a>
                                     </h1>
@@ -213,7 +287,7 @@
                             </div>
                         `;
 
-                        // 2. Render Remaining Articles Grid (Các bài tiếp theo)
+                        // 2. Render Articles Grid (Các bài còn lại)
                         const gridContainer = document.getElementById('rss-news-list');
                         gridContainer.innerHTML = '';
                         
@@ -237,7 +311,7 @@
                         });
                     }
                 })
-                .catch(err => console.log('Không thể tải dữ liệu tin tức:', err));
+                .catch(err => console.log('Không thể tải dữ liệu RSS:', err));
         });
     </script>
 </body>
