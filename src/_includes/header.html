@@ -1,4 +1,4 @@
-<!-- HEADER CHUẨN CƠ KHÍ HÒA LONG -->
+<!-- HEADER CHUẨN CƠ KHÍ HÒA LONG & ĐA NGÔN NGỮ -->
 <style>
     /* TOP BAR STYLES */
     .top-bar {
@@ -40,10 +40,15 @@
     .top-info a:hover {
         color: #ff6600;
     }
+    .top-actions {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
     .top-social {
         display: flex;
         align-items: center;
-        gap: 12px;
+        gap: 10px;
     }
     .top-social a {
         color: #d1d5db;
@@ -62,6 +67,43 @@
         background-color: #ff6600;
         color: #ffffff;
         transform: translateY(-2px);
+    }
+
+    /* GOOGLE TRANSLATE WIDGET STYLES */
+    .lang-switcher-wrapper {
+        display: inline-flex;
+        align-items: center;
+        position: relative;
+    }
+    #google_translate_element {
+        display: inline-block;
+    }
+    .goog-te-gadget {
+        font-family: inherit !important;
+        font-size: 0 !important; /* Dấu chữ Powered by Google */
+        color: transparent !important;
+    }
+    .goog-te-gadget .goog-te-combo {
+        background-color: #003366;
+        color: #ffffff;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        padding: 4px 8px;
+        border-radius: 4px;
+        font-size: 0.8rem;
+        font-weight: 600;
+        cursor: pointer;
+        outline: none;
+        transition: all 0.2s ease;
+    }
+    .goog-te-gadget .goog-te-combo:hover {
+        border-color: #ff6600;
+    }
+    /* Ẩn banner trên cùng của Google Translate */
+    body {
+        top: 0 !important;
+    }
+    .goog-te-banner-frame, .skiptranslate {
+        display: none !important;
     }
 
     /* MAIN HEADER STYLES */
@@ -125,13 +167,9 @@
         align-items: center;
         gap: 5px;
     }
-    .nav-link:hover,
-    .nav-link.active {
+    .nav-link:hover {
         color: #003366;
         background-color: #f0f4f8;
-    }
-    .nav-link.active {
-        color: #ff6600;
     }
 
     /* DROPDOWN MENU */
@@ -139,7 +177,7 @@
         position: absolute;
         top: 100%;
         left: 0;
-        width: 230px;
+        width: 240px;
         background-color: #ffffff;
         box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
         border-radius: 6px;
@@ -204,25 +242,29 @@
         border-radius: 4px;
         transition: background-color 0.2s ease;
     }
-    .menu-toggle:hover {
-        background-color: #f0f4f8;
-    }
 
-    /* RESPONSIVE DESIGN (DI ĐỘNG & TABLET) */
+    /* RESPONSIVE DESIGN */
     @media (max-width: 992px) {
         .top-bar {
-            display: none;
+            display: block;
+            padding: 6px 0;
+        }
+        .top-info {
+            display: none; /* Ẩn thông tin liên hệ dài trên di động */
+        }
+        .top-bar-container {
+            justify-content: flex-end;
         }
         .menu-toggle {
             display: block;
         }
         .main-nav {
             position: fixed;
-            top: 65px;
+            top: 60px;
             left: -100%;
             width: 80%;
             max-width: 320px;
-            height: calc(100vh - 65px);
+            height: calc(100vh - 60px);
             background-color: #ffffff;
             flex-direction: column;
             align-items: flex-start;
@@ -268,7 +310,7 @@
     }
 </style>
 
-<!-- TOP BAR -->
+<!-- TOP BAR WITH MULTI-LANGUAGE SWITCHER -->
 <div class="top-bar">
     <div class="top-bar-container">
         <div class="top-info">
@@ -276,11 +318,19 @@
             <span><i class="fa-solid fa-phone"></i> Hotline/Zalo: <a href="tel:0901890689">+84 901 890 689</a></span>
             <span><i class="fa-solid fa-envelope"></i> <a href="mailto:contact@hoalongcorp.com">contact@hoalongcorp.com</a></span>
         </div>
-        <div class="top-social">
-            <a href="https://facebook.com" target="_blank" rel="noopener" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-            <a href="https://zalo.me/0901890689" target="_blank" rel="noopener" title="Zalo"><i class="fa-solid fa-comment"></i></a>
-            <a href="https://youtube.com" target="_blank" rel="noopener" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        <div class="top-actions">
+            <!-- Google Translate Widget -->
+            <div class="lang-switcher-wrapper">
+                <i class="fa-solid fa-globe" style="color: #ff6600; margin-right: 6px; font-size: 0.85rem;"></i>
+                <div id="google_translate_element"></div>
+            </div>
+
+            <div class="top-social">
+                <a href="https://facebook.com" target="_blank" rel="noopener" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://zalo.me/0901890689" target="_blank" rel="noopener" title="Zalo"><i class="fa-solid fa-comment"></i></a>
+                <a href="https://youtube.com" target="_blank" rel="noopener" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                <a href="https://linkedin.com" target="_blank" rel="noopener" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            </div>
         </div>
     </div>
 </div>
@@ -293,11 +343,11 @@
             <span class="logo-subtitle">Giải Pháp Lưu Trữ Kho Hàng & PEB</span>
         </a>
 
-        <button class="menu-toggle" id="mobileMenuBtn" aria-label="Toggle Navigation">
-            <i class="fa-solid fa-bars" id="menuIcon"></i>
+        <button class="menu-toggle" id="hlMobileMenuBtn" aria-label="Toggle Navigation">
+            <i class="fa-solid fa-bars" id="hlMenuIcon"></i>
         </button>
 
-        <nav class="main-nav" id="mainNav" itemscope itemtype="http://schema.org/SiteNavigationElement">
+        <nav class="main-nav" id="hlMainNav" itemscope itemtype="http://schema.org/SiteNavigationElement">
             <div class="nav-item">
                 <a href="/cokhihoalong/" class="nav-link">Trang Chủ</a>
             </div>
@@ -332,31 +382,43 @@
     </div>
 </header>
 
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const mainNav = document.getElementById('mainNav');
-        const menuIcon = document.getElementById('menuIcon');
-        const navItems = document.querySelectorAll('.nav-item');
+<!-- SCRIPT CHUYỂN NGÔN NGỮ & ĐIỀU HƯỚNG MOBILE -->
+<script type="text/javascript">
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement({
+            pageLanguage: 'vi',
+            includedLanguages: 'vi,en,zh-CN,ja,ko',
+            layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+            autoDisplay: false
+        }, 'google_translate_element');
+    }
+</script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
-        if (mobileMenuBtn && mainNav) {
-            mobileMenuBtn.addEventListener('click', function() {
-                mainNav.classList.toggle('active');
-                if (mainNav.classList.contains('active')) {
-                    menuIcon.classList.remove('fa-bars');
-                    menuIcon.classList.add('fa-xmark');
+<script>
+    (function() {
+        // Đổi tên ID riêng biệt để tránh xung đột với main.js
+        const btn = document.getElementById('hlMobileMenuBtn');
+        const nav = document.getElementById('hlMainNav');
+        const icon = document.getElementById('hlMenuIcon');
+
+        if (btn && nav) {
+            btn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                nav.classList.toggle('active');
+                if (nav.classList.contains('active')) {
+                    icon.className = 'fa-solid fa-xmark';
                 } else {
-                    menuIcon.classList.remove('fa-xmark');
-                    menuIcon.classList.add('fa-bars');
+                    icon.className = 'fa-solid fa-bars';
                 }
             });
         }
 
-        // Xử lý toggle dropdown trên giao diện di động
-        navItems.forEach(item => {
+        // Dropdown trên mobile
+        document.querySelectorAll('.main-nav .nav-item').forEach(function(item) {
             const dropdown = item.querySelector('.dropdown-menu');
-            if (dropdown) {
-                const link = item.querySelector('.nav-link');
+            const link = item.querySelector('.nav-link');
+            if (dropdown && link) {
                 link.addEventListener('click', function(e) {
                     if (window.innerWidth <= 992) {
                         e.preventDefault();
@@ -365,5 +427,5 @@
                 });
             }
         });
-    });
+    })();
 </script>
