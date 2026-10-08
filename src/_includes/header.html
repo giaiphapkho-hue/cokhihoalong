@@ -1,4 +1,4 @@
-<!-- HEADER CHUẨN CƠ KHÍ HÒA LONG & ĐA NGÔN NGỮ -->
+<!-- HEADER CHUẨN CƠ KHÍ HÒA LONG & ĐA NGÔN NGỮ TỐI ƯU -->
 <style>
     /* TOP BAR STYLES */
     .top-bar {
@@ -48,7 +48,7 @@
     .top-social {
         display: flex;
         align-items: center;
-        gap: 10px;
+        gap: 8px;
     }
     .top-social a {
         color: #d1d5db;
@@ -69,40 +69,75 @@
         transform: translateY(-2px);
     }
 
-    /* GOOGLE TRANSLATE WIDGET STYLES */
-    .lang-switcher-wrapper {
-        display: inline-flex;
-        align-items: center;
+    /* CUSTOM LANGUAGE SWITCHER STYLES */
+    .custom-lang-switcher {
         position: relative;
-    }
-    #google_translate_element {
         display: inline-block;
     }
-    .goog-te-gadget {
-        font-family: inherit !important;
-        font-size: 0 !important; /* Dấu chữ Powered by Google */
-        color: transparent !important;
-    }
-    .goog-te-gadget .goog-te-combo {
-        background-color: #003366;
+    .lang-btn {
+        background-color: rgba(255, 255, 255, 0.1);
         color: #ffffff;
         border: 1px solid rgba(255, 255, 255, 0.2);
-        padding: 4px 8px;
+        padding: 4px 10px;
         border-radius: 4px;
         font-size: 0.8rem;
         font-weight: 600;
         cursor: pointer;
-        outline: none;
+        display: flex;
+        align-items: center;
+        gap: 6px;
         transition: all 0.2s ease;
     }
-    .goog-te-gadget .goog-te-combo:hover {
+    .lang-btn:hover {
         border-color: #ff6600;
+        background-color: rgba(255, 102, 0, 0.2);
     }
-    /* Ẩn banner trên cùng của Google Translate */
+    .lang-flag {
+        width: 18px;
+        height: 13px;
+        object-fit: cover;
+        border-radius: 2px;
+    }
+    .lang-dropdown {
+        position: absolute;
+        top: calc(100% + 5px);
+        right: 0;
+        background-color: #002244;
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        border-radius: 6px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        min-width: 140px;
+        display: none;
+        z-index: 2000;
+        overflow: hidden;
+    }
+    .lang-dropdown.show {
+        display: block;
+    }
+    .lang-option {
+        padding: 8px 12px;
+        color: #e2e8f0;
+        font-size: 0.82rem;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        cursor: pointer;
+        transition: background-color 0.2s ease;
+    }
+    .lang-option:hover {
+        background-color: #ff6600;
+        color: #ffffff;
+    }
+
+    /*Ẩn hoàn toàn Google Translate Widget gốc & Google Banner */
+    #google_translate_element {
+        display: none !important;
+    }
     body {
         top: 0 !important;
     }
-    .goog-te-banner-frame, .skiptranslate {
+    .goog-te-banner-frame, .skiptranslate, .goog-te-balloon-frame {
         display: none !important;
     }
 
@@ -250,7 +285,7 @@
             padding: 6px 0;
         }
         .top-info {
-            display: none; /* Ẩn thông tin liên hệ dài trên di động */
+            display: none;
         }
         .top-bar-container {
             justify-content: flex-end;
@@ -310,7 +345,7 @@
     }
 </style>
 
-<!-- TOP BAR WITH MULTI-LANGUAGE SWITCHER -->
+<!-- TOP BAR WITH CUSTOM LANGUAGE SWITCHER -->
 <div class="top-bar">
     <div class="top-bar-container">
         <div class="top-info">
@@ -319,11 +354,34 @@
             <span><i class="fa-solid fa-envelope"></i> <a href="mailto:contact@hoalongcorp.com">contact@hoalongcorp.com</a></span>
         </div>
         <div class="top-actions">
-            <!-- Google Translate Widget -->
-            <div class="lang-switcher-wrapper">
-                <i class="fa-solid fa-globe" style="color: #ff6600; margin-right: 6px; font-size: 0.85rem;"></i>
-                <div id="google_translate_element"></div>
+            <!-- Custom Language Switcher -->
+            <div class="custom-lang-switcher">
+                <button class="lang-btn" id="langBtn" aria-label="Select Language">
+                    <img src="https://flagcdn.com/w20/vn.png" alt="VIE" class="lang-flag" id="currentLangFlag">
+                    <span id="currentLangText">VIE</span>
+                    <i class="fa-solid fa-chevron-down" style="font-size: 0.7rem; margin-left: 2px;"></i>
+                </button>
+                <div class="lang-dropdown" id="langDropdown">
+                    <div class="lang-option" data-lang="vi" data-flag="https://flagcdn.com/w20/vn.png" data-label="VIE">
+                        <img src="https://flagcdn.com/w20/vn.png" alt="VN" class="lang-flag"> Tiếng Việt
+                    </div>
+                    <div class="lang-option" data-lang="en" data-flag="https://flagcdn.com/w20/gb.png" data-label="ENG">
+                        <img src="https://flagcdn.com/w20/gb.png" alt="EN" class="lang-flag"> English
+                    </div>
+                    <div class="lang-option" data-lang="zh-CN" data-flag="https://flagcdn.com/w20/cn.png" data-label="CHI">
+                        <img src="https://flagcdn.com/w20/cn.png" alt="ZH" class="lang-flag"> 中文 (Chinese)
+                    </div>
+                    <div class="lang-option" data-lang="ja" data-flag="https://flagcdn.com/w20/jp.png" data-label="JPN">
+                        <img src="https://flagcdn.com/w20/jp.png" alt="JA" class="lang-flag"> 日本語 (Japanese)
+                    </div>
+                    <div class="lang-option" data-lang="ko" data-flag="https://flagcdn.com/w20/kr.png" data-label="KOR">
+                        <img src="https://flagcdn.com/w20/kr.png" alt="KO" class="lang-flag"> 한국어 (Korean)
+                    </div>
+                </div>
             </div>
+
+            <!-- Google Translate Container (Hidden) -->
+            <div id="google_translate_element"></div>
 
             <div class="top-social">
                 <a href="https://facebook.com" target="_blank" rel="noopener" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
@@ -382,7 +440,7 @@
     </div>
 </header>
 
-<!-- SCRIPT CHUYỂN NGÔN NGỮ & ĐIỀU HƯỚNG MOBILE -->
+<!-- GOOGLE TRANSLATE SDK -->
 <script type="text/javascript">
     function googleTranslateElementInit() {
         new google.translate.TranslateElement({
@@ -395,9 +453,80 @@
 </script>
 <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
+<!-- CUSTOM SCRIPT ĐIỀU KHIỂN TRANSLATE & MENU MOBILE -->
 <script>
     (function() {
-        // Đổi tên ID riêng biệt để tránh xung đột với main.js
+        // --- 1. XỬ LÝ CHUYỂN ĐỔI NGÔN NGỮ CỦA CUSTOM UI ---
+        const langBtn = document.getElementById('langBtn');
+        const langDropdown = document.getElementById('langDropdown');
+        const currentLangFlag = document.getElementById('currentLangFlag');
+        const currentLangText = document.getElementById('currentLangText');
+        const langOptions = document.querySelectorAll('.lang-option');
+
+        // Hàm đọc cookie
+        function getCookie(name) {
+            const v = document.cookie.match('(^|;) ?' + name + '=([^;]*)(;|\$)');
+            return v ? v[2] : null;
+        }
+
+        // Hàm thiết lập cookie Translate
+        function setTranslateCookie(lang) {
+            const domain = window.location.hostname;
+            document.cookie = `googtrans=/vi/${lang}; path=/; domain=${domain}`;
+            document.cookie = `googtrans=/vi/${lang}; path=/`;
+        }
+
+        // Cập nhật giao diện nút dựa trên ngôn ngữ đang chọn
+        function updateUI(lang, flag, label) {
+            currentLangFlag.src = flag;
+            currentLangText.textContent = label;
+        }
+
+        // Kiểm tra cookie hiện tại khi tải trang
+        const currentTrans = getCookie('googtrans');
+        if (currentTrans) {
+            const langCode = currentTrans.split('/').pop();
+            const matchedOpt = Array.from(langOptions).find(opt => opt.getAttribute('data-lang') === langCode);
+            if (matchedOpt) {
+                updateUI(langCode, matchedOpt.getAttribute('data-flag'), matchedOpt.getAttribute('data-label'));
+            }
+        }
+
+        // Bật/tắt menu ngôn ngữ
+        if (langBtn && langDropdown) {
+            langBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                langDropdown.classList.toggle('show');
+            });
+
+            document.addEventListener('click', function() {
+                langDropdown.classList.remove('show');
+            });
+        }
+
+        // Xử lý sự kiện khi chọn ngôn ngữ
+        langOptions.forEach(opt => {
+            opt.addEventListener('click', function() {
+                const targetLang = this.getAttribute('data-lang');
+                const flag = this.getAttribute('data-flag');
+                const label = this.getAttribute('data-label');
+
+                updateUI(targetLang, flag, label);
+                langDropdown.classList.remove('show');
+
+                if (targetLang === 'vi') {
+                    // Trở về mặc định
+                    document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+                    document.cookie = `googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=${window.location.hostname}`;
+                } else {
+                    setTranslateCookie(targetLang);
+                }
+
+                location.reload();
+            });
+        });
+
+        // --- 2. XỬ LÝ MENU MOBILE ---
         const btn = document.getElementById('hlMobileMenuBtn');
         const nav = document.getElementById('hlMainNav');
         const icon = document.getElementById('hlMenuIcon');
@@ -414,7 +543,6 @@
             });
         }
 
-        // Dropdown trên mobile
         document.querySelectorAll('.main-nav .nav-item').forEach(function(item) {
             const dropdown = item.querySelector('.dropdown-menu');
             const link = item.querySelector('.nav-link');
